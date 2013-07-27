@@ -6,7 +6,7 @@
 Turans Graph Theorem
 ========================================
 
-Contents:
+Inhaltsverzeichnis:
 
 .. toctree::
    :maxdepth: 2
@@ -14,4 +14,6 @@ Contents:
    introduction
    theorem
    proof
+   sources
+
 

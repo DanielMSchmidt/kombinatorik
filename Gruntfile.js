@@ -44,7 +44,10 @@ module.exports = function (grunt) {
         },
         shell: {
             makeHTML: {
-                command: 'make html'
+                command: 'make html',
+                options: {
+                    stdout: true
+                }
             },
             open: {
                 command: 'open localhost:9000'
