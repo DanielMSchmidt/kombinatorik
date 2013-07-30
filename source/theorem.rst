@@ -2,6 +2,8 @@
 Das Theorem
 ===========
 
+.. todo:: Eventuell in Definitionen Part auslagern (Links innerhalb von Sphinx auf die Begriffe)
+
 *****************
 Umgangssprachlich
 *****************
@@ -52,3 +54,4 @@ Turáns Graphtheorem besagt, dass für einen Graph G = (V,E) mit n Kanten ohne p
 .. math:: \mid E \mid \le (1- \frac{1}{p-1}) \frac{n^2}{2}
 
 Hierbei muss p allerdings größer 1 sein, da wir ansonsten durch 0 teilen würden und da ein 1 Knoten großer Kreis sich schon durch die Definition von Kanten und Kreisen ausschließt.
+
