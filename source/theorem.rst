@@ -10,6 +10,16 @@ Umgangssprachlich
 
 Die Frage mit der sich das Theorem beschäftigt ist, wie viele Kanten kann man maximal in einem ungerichteten Graphen mit n Knoten einbringen ohne das ein ein p Knoten großer Kreis entsteht.
 
+*******************
+Turáns Graphtheorem
+*******************
+
+Turáns Graphtheorem besagt, dass für einen Graph G = (V,E) mit n Kanten ohne p-Kreis gilt:
+
+.. math:: \mid E \mid \le (1- \frac{1}{p-1}) \frac{n^2}{2}
+
+Hierbei muss p allerdings größer 1 sein, da wir ansonsten durch 0 teilen würden und da ein 1 Knoten großer Kreis sich schon durch die Definition von Kanten und Kreisen ausschließt.
+
 ************
 Definitionen
 ************
@@ -45,13 +55,5 @@ wobei V die Knotenmenge von G ist. Für die Kantenmenge E' gilt in ähnlicher We
 
 wobei E die Kantenmenge von G ist.
 
-*******************
-Turáns Graphtheorem
-*******************
 
-Turáns Graphtheorem besagt, dass für einen Graph G = (V,E) mit n Kanten ohne p-Kreis gilt:
-
-.. math:: \mid E \mid \le (1- \frac{1}{p-1}) \frac{n^2}{2}
-
-Hierbei muss p allerdings größer 1 sein, da wir ansonsten durch 0 teilen würden und da ein 1 Knoten großer Kreis sich schon durch die Definition von Kanten und Kreisen ausschließt.
 
