@@ -18,3 +18,37 @@ Verschiebt man nun das Gewicht von :math:`v_j` nach :math:`v_i`, sodass das Gewi
 .. todo:: wieso ist das nicht f(w') = f(w) + w_j s_j - w_j s_j = f(w) ?
 
 Wiederholen wir dies, so reduziert sich die Anzahl der Knoten mit einem positiven Gewicht um einen pro Schritt, sodass nach einigen Schritten keine adjazenten Knoten mit einem positiven Gewicht mehr übrig sind.
+Gehen wir davon aus, dass es sich um eine optimale Verteilung handelt so konzentriert sich das Gewicht in einem Kreis, beispielsweise der Größe k.
+Nun lässt sich in den Fällen in denen es :math:`w_1,w_2` gibt, sodass gilt :math:`w_1 > w_2 > 0` :math:`\epsilon` wählen, sodass :math:`0 < \epsilon < w_1 - w_2` gilt. Setzt man nun :math:`w_1 := w_1 - \epsilon` und :math:`w_2 := w_2 + \epsilon` so ergibt sich für die neue Verteilung w':
+
+.. todo:: Wieso zur Hölle ändert sich das, ich zieh doch nur beim einen was ab und beim anderen was drauf.
+
+.. math::
+
+  f(w') = f(w) + \epsilon(w_1 - w_2) - \epsilon^2 > f(w)
+
+Hieraus schlussfolgern wir, dass f(w) sein maximum erreicht sofern :math:`w_i` in einem k-Kreis :math:`w_i = \frac{1}{k}` ist und ansonsten :math:`w_i = 0`. Da ein k-Kreis :math:`\frac{k(k-1)}{2}` Kanten hat folgt daraus
+
+.. math::
+
+  f(w) = \frac{k(k-1)}{2} \frac{1}{k^2} = \frac{1}{2}(1 - \frac{1}{k})
+
+Da :math:`\frac{1}{2}(1 - \frac{1}{k})` sich erhöht, wenn k sich erhöht setzen wir k auf ein Maximum. Dieses ist p-1, da der Graph G keine p-Kreise also maximal (p-1)-Kreise enthält, woraus sich folgendes für jede Verteilung w ergibt:
+
+.. todo:: Vielleicht split benutzen
+
+.. math::
+
+  f(w) = \frac{k(k-1)}{2} \frac{1}{k^2} = \frac{1}{2}(1 - \frac{1}{k}) \le \frac{1}{2}(1 - \frac{1}{p - 1})
+
+Dies gilt dann insbesondere für die gleichmäßige Verteilung, welche durch :math:`w_i = \frac{1}{n}` für alle i gegeben ist. Hierdurch ergibt sich
+
+.. todo:: Wo kommt das \frac{|E|}{n^2} her?
+
+.. math::
+
+  \frac{\mid E \mid}{n^2} = f(w = \frac{1}{n}) \le \frac{1}{2}(1 - \frac{1}{p - 1})
+
+Dies entspricht exakt dem geforderten :math:`\mid E \mid \le (1- \frac{1}{p-1}) \frac{n^2}{2}`.
+
+.. todo:: Eventuell einmal umformen um das zu zeigen
