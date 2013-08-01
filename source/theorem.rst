@@ -59,3 +59,4 @@ wobei E die Kantenmenge von G ist.
 
 
 
+.. todo:: r-patit, turan graph, Kanten shiften

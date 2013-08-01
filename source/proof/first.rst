@@ -1,6 +1,10 @@
 Erster Beweis: Induktion über p
 ===============================
 
+
+.. todo:: von eins anfangen zu zählen (ich benutze dass n >= 2 und p >=3)
+
+
 *************
 Voraussetzung
 *************
@@ -12,6 +16,9 @@ Sei G ein ungerichteter Graph der n+1-ten Ordnung, bestehend aus einer Knotenmen
 ****************
 Induktionsanfang
 ****************
+
+.. todo:: Induktion ist über n
+
 Sei p = 2, so gilt
 
 .. math::
