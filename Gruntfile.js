@@ -51,8 +51,13 @@ module.exports = function (grunt) {
                     ]
                 }
             }
+        },
+        'gh-pages': {
+            options: {
+              base: 'build/html'
+            },
+            src: ['**/*']
         }
-
     });
 
     grunt.registerTask('server', function (target) {
@@ -65,5 +70,10 @@ module.exports = function (grunt) {
 
     grunt.registerTask('default', [
         'server'
+    ]);
+
+    grunt.registerTask('deploy', [
+        'shell:makeHTML',
+        'gh-pages'
     ]);
 };
