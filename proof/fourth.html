@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Vierter Beweis: Wahrscheinlichkeitstheorie &mdash; Kombinatorik  documentation</title>
+    
+    <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/theme_extras.js"></script>
+    <link rel="top" title="Kombinatorik  documentation" href="../index.html" />
+    <link rel="up" title="Beweise" href="../proof.html" />
+    <link rel="next" title="Fünfter Beweis" href="fifth.html" />
+    <link rel="prev" title="Dritter Beweis: Wahrscheinlichkeitsverteilung" href="third.html" /> 
+  </head>
+  <body>
+      <div class="header"><h1 class="heading"><a href="../index.html">
+          <span>Kombinatorik  documentation</span></a></h1>
+        <h2 class="heading"><span>Vierter Beweis: Wahrscheinlichkeitstheorie</span></h2>
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="third.html">Dritter Beweis: Wahrscheinlichkeitsverteilung</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="fifth.html">Fünfter Beweis</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="vierter-beweis-wahrscheinlichkeitstheorie">
+<h1>Vierter Beweis: Wahrscheinlichkeitstheorie<a class="headerlink" href="#vierter-beweis-wahrscheinlichkeitstheorie" title="Permalink to this headline">¶</a></h1>
+<p>Sei G ein beliebiger Graph mit der Knotenmenge <span class="math">\(V = \{ v_1,...,v_n \}\)</span> und seien der Grad der Knoten angegeben als <span class="math">\(d_j\)</span> für den Knoten <span class="math">\(v_j\)</span>. Sie zudem <span class="math">\(\omega(G)\)</span> für die Kreiszahl von G, also der Grad des größten Kreises in G.</p>
+<p>Nehmen wir an es gilt</p>
+<div class="math">
+\[\omega(G) \ge \sum^n_{i-1} \frac{1}{n - d_i}\]</div>
+<p>Wählt man nun eine beliebige Permutation der Knotenmenge <span class="math">\(\pi = v_1,v_2,...,v_n\)</span>, wobei jede mit der selben Wahrscheinlichkeit <span class="math">\(\frac{1}{n!}\)</span> auftreten kann. Konstruiert man nun <span class="math">\(C_{\pi}\)</span> so, dass wir einen Knoten <span class="math">\(v_i\)</span> nur genau dann in <span class="math">\(C_{\pi}\)</span> ist, wenn <span class="math">\(v_i\)</span> benachbart zu allen <span class="math">\(v_j (j &lt; i)\)</span>, also vorherigen Knoten ist. Per Definition ist <span class="math">\(C_{\pi}\)</span> ein p-Kreis in G.
+Setzt man nun <span class="math">\(X = \mid C_{\pi} \mid\)</span> die dazugehörige Zufallsvariable, wobei <span class="math">\(X = \sum^n_{i=1} X_i\)</span> und <span class="math">\(X_i\)</span> die Zufallsvariable zu dem Knoten <span class="math">\(v_i\)</span>. Sei <span class="math">\(X_i = 1\)</span> wenn <span class="math">\(v_i \in C_{\pi}\)</span> und <span class="math">\(X_i = 0\)</span> wenn <span class="math">\(v_i \notin C_{\pi}\)</span>.</p>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="third.html">Dritter Beweis: Wahrscheinlichkeitsverteilung</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="fifth.html">Fünfter Beweis</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+        &copy; Copyright 2013, Daniel Schmidt.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

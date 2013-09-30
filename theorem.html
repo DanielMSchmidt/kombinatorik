@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Das Theorem &mdash; Kombinatorik  documentation</title>
+    
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/theme_extras.js"></script>
+    <link rel="top" title="Kombinatorik  documentation" href="index.html" />
+    <link rel="next" title="Beweise" href="proof.html" />
+    <link rel="prev" title="Einleitung" href="introduction.html" /> 
+  </head>
+  <body>
+      <div class="header"><h1 class="heading"><a href="index.html">
+          <span>Kombinatorik  documentation</span></a></h1>
+        <h2 class="heading"><span>Das Theorem</span></h2>
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="introduction.html">Einleitung</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="proof.html">Beweise</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="das-theorem">
+<h1>Das Theorem<a class="headerlink" href="#das-theorem" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="umgangssprachlich">
+<h2>Umgangssprachlich<a class="headerlink" href="#umgangssprachlich" title="Permalink to this headline">¶</a></h2>
+<p>Die Frage mit der sich das Theorem beschäftigt ist, wie viele Kanten kann man maximal in einem ungerichteten Graphen mit n Knoten einbringen ohne das ein ein p Knoten großer Kreis entsteht.</p>
+</div>
+<div class="section" id="turans-graphtheorem">
+<h2>Turáns Graphtheorem<a class="headerlink" href="#turans-graphtheorem" title="Permalink to this headline">¶</a></h2>
+<p>Turáns Graphtheorem besagt, dass für einen Graph G = (V,E) mit n Kanten ohne p-Kreis gilt:</p>
+<div class="math">
+\[\mid E \mid \le (1- \frac{1}{p-1}) \frac{n^2}{2}\]</div>
+<p>Hierbei muss p allerdings größer 1 sein, da wir ansonsten durch 0 teilen würden und da ein 1 Knoten großer Kreis sich schon durch die Definition von Kanten und Kreisen ausschließt.</p>
+</div>
+<div class="section" id="definitionen">
+<h2>Definitionen<a class="headerlink" href="#definitionen" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ungerichteter-graph">
+<h3>Ungerichteter Graph<a class="headerlink" href="#ungerichteter-graph" title="Permalink to this headline">¶</a></h3>
+<p>Sei der ungerichtete Graph G definiert als Knotenmenge V</p>
+<div class="math">
+\[V = \{ v_1, ..., v_n \}\]</div>
+<p>und Kantenmenge E, wobei zwei Knoten <span class="math">\(v_i, v_j\)</span> benachbart sind falls</p>
+<div class="math">
+\[(v_i, v_j) \in E\]</div>
+</div>
+<div class="section" id="ordnung-des-graphen">
+<h3>Ordnung des Graphen<a class="headerlink" href="#ordnung-des-graphen" title="Permalink to this headline">¶</a></h3>
+<p>Ein Graph G hat die Ordnung n, wenn G(E) aus n Kanten besteht. In diesem Fall wird G auch als <span class="math">\(G_n\)</span> benannt.</p>
+</div>
+<div class="section" id="p-kreis-p-clique-von-graph-g">
+<h3>p-Kreis (p-clique) von Graph G<a class="headerlink" href="#p-kreis-p-clique-von-graph-g" title="Permalink to this headline">¶</a></h3>
+<p>Dies ist ein vollständiger Untergraph von G der Ordnung p, also ein Graph K für dessen Knotenmenge V&#8217; gilt</p>
+<div class="math">
+\[\forall v \in V': v \in V\]</div>
+<p>wobei V die Knotenmenge von G ist. Für die Kantenmenge E&#8217; gilt in ähnlicher Weise</p>
+<div class="math">
+\[\forall e \in E': e \in E\]</div>
+<p>wobei E die Kantenmenge von G ist.</p>
+</div>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="introduction.html">Einleitung</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="proof.html">Beweise</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+        &copy; Copyright 2013, Daniel Schmidt.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

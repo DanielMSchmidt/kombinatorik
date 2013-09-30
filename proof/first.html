@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Erster Beweis: Induktion über p &mdash; Kombinatorik  documentation</title>
+    
+    <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/theme_extras.js"></script>
+    <link rel="top" title="Kombinatorik  documentation" href="../index.html" />
+    <link rel="up" title="Beweise" href="../proof.html" />
+    <link rel="next" title="Zweiter Beweis: Struktur des Turàn Graphs" href="second.html" />
+    <link rel="prev" title="Beweise" href="../proof.html" /> 
+  </head>
+  <body>
+      <div class="header"><h1 class="heading"><a href="../index.html">
+          <span>Kombinatorik  documentation</span></a></h1>
+        <h2 class="heading"><span>Erster Beweis: Induktion über p</span></h2>
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="../proof.html">Beweise</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="second.html">Zweiter Beweis: Struktur des Turàn Graphs</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="erster-beweis-induktion-uber-p">
+<h1>Erster Beweis: Induktion über p<a class="headerlink" href="#erster-beweis-induktion-uber-p" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="voraussetzung">
+<h2>Voraussetzung<a class="headerlink" href="#voraussetzung" title="Permalink to this headline">¶</a></h2>
+<p>Sei G ein ungerichteter Graph der n+1-ten Ordnung, bestehend aus einer Knotenmenge <span class="math">\(V = \{ v_0,...,v_n \}\)</span> und einer Kantenmenge E, welche zwei verbundene Knoten <span class="math">\(v_i, v_j\)</span> mit <span class="math">\(0 \le i &lt; j \le n\)</span> definiert als</p>
+<div class="math">
+\[(v_i, v_j) \in E\]</div>
+</div>
+<div class="section" id="induktionsanfang">
+<h2>Induktionsanfang<a class="headerlink" href="#induktionsanfang" title="Permalink to this headline">¶</a></h2>
+<p>Sei p = 2, so gilt</p>
+<div class="math">
+\[\mid E \mid \le (1 - \frac{1}{p-1})\frac{n^2}{2} = (1 - \frac{1}{2-1})\frac{n^2}{2} = (1 - 1)\frac{n^2}{2} = 0 \frac{n^2}{2} = 0\]</div>
+<p>Dies ist trivialerweise wahr, da ein Kreis bestehend aus zwei Knoten exakt eine Kante benötigt.</p>
+</div>
+<div class="section" id="induktionsvoraussetzung">
+<h2>Induktionsvoraussetzung<a class="headerlink" href="#induktionsvoraussetzung" title="Permalink to this headline">¶</a></h2>
+<div class="math">
+\[\mid E \mid \le (1 - \frac{1}{p-1})\frac{n^2}{2}\]</div>
+</div>
+<div class="section" id="induktionsschluss">
+<h2>Induktionsschluss<a class="headerlink" href="#induktionsschluss" title="Permalink to this headline">¶</a></h2>
+<p>Zum Beweis des Induktionsschlusses nutzen wir eine zweite Induktion über n:</p>
+<p>Sei n &lt; p, so ist die Aussage wahr, da es keinen p großen Kreis mit n verschiedenen Kanten geben kann.</p>
+<p>Sei <span class="math">\(n \ge p\)</span>, so gibt es einen (p - 1)-Kreis A, da ansonsten noch weitere Kanten hinzufügbar wären. Setzt man nun B := V A, so lässt sich die Anzahl der Kanten in A (<span class="math">\(e_A\)</span>), B (<span class="math">\(e_B\)</span>) und zwischen A und B (<span class="math">\(e_{A,B}\)</span>) abschätzen:</p>
+<p>Die Anzahl der Kanten in A beträgt <span class="math">\({ p - 1 \choose 2}\)</span>, da A aus p-1 Kanten besteht und <span class="math">\({ n \choose k}\)</span> der Anzahl der Kombinationsmöglichkeiten von n Objekten in Tupel der Größe k entspricht.</p>
+<p>Für die Anzahl der Kanten in B gilt</p>
+<div class="math">
+\[e_B \le \frac{1}{2}(1 - \frac{1}{p - 1})(n - p + 1)^2\]</div>
+<p>Für die Kanten zwischen A und B ergibt sich</p>
+<div class="math">
+\[e_{A,B} \le (p - 2)(n - p + 1)\]</div>
+<p>Daraus ergibt sich für die Gesamtanzahl der Kanten</p>
+<div class="math">
+\[\begin{split}\begin{align}
+\begin{split}
+\mid E \mid &amp;= e_A + e_{A,B} + e_B \\
+&amp;\le { p - 1 \choose 2} + \frac{1}{2}(1 - \frac{1}{p - 1})(n - p + 1)^2 + (p - 2)(n - p + 1) \\
+&amp;= .... \\
+&amp;= (1 - \frac{1}{p - 1})\frac{n^2}{2} \\
+\end{split}
+\end{align}\end{split}\]</div>
+<p>Somit ist das Theorem per Induktion bewiesen.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="../proof.html">Beweise</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="second.html">Zweiter Beweis: Struktur des Turàn Graphs</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+        &copy; Copyright 2013, Daniel Schmidt.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

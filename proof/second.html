@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Zweiter Beweis: Struktur des Turàn Graphs &mdash; Kombinatorik  documentation</title>
+    
+    <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/theme_extras.js"></script>
+    <link rel="top" title="Kombinatorik  documentation" href="../index.html" />
+    <link rel="up" title="Beweise" href="../proof.html" />
+    <link rel="next" title="Dritter Beweis" href="third.html" />
+    <link rel="prev" title="Erster Beweis: Induktion über p" href="first.html" /> 
+  </head>
+  <body>
+      <div class="header"><h1 class="heading"><a href="../index.html">
+          <span>Kombinatorik  documentation</span></a></h1>
+        <h2 class="heading"><span>Zweiter Beweis: Struktur des Turàn Graphs</span></h2>
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="first.html">Erster Beweis: Induktion über p</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="third.html">Dritter Beweis</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="zweiter-beweis-struktur-des-turan-graphs">
+<h1>Zweiter Beweis: Struktur des Turàn Graphs<a class="headerlink" href="#zweiter-beweis-struktur-des-turan-graphs" title="Permalink to this headline">¶</a></h1>
+<p>In diesem Beweis gehen wir von vornherein davon aus, dass G keinen p-Kreis beinhaltet und schließen von dieser Annahme auf die maximale Anzahl an Kanten.
+Sei <span class="math">\(v_m \in V\)</span> ein Knoten mit Grad <span class="math">\(d_m = max_{1 \le j \le n} d_j\)</span>, also ein Knoten mit der maximalen Anzahl an Nachbarn.
+Sei S die Menge der Nachbarn von <span class="math">\(v_m\)</span>, so ist <span class="math">\(\mid S \mid = d_m\)</span>, zudem lässt sich T setze als <span class="math">\(T := V \setminus S\)</span>.</p>
+<p>Da G keinen p-Kreis enthält und alle Knoten in S mit <span class="math">\(v_m\)</span> verbunden sind kann es in S keinen (p - 1)-Kreis geben.</p>
+<p>Konstruiert man nun einen Graph H auf V, sodass H alle Kanten in S und zwischen S und T beinhaltet, allerdings keine in T, so ist T eine unabhängige Knotenmenge und H ohne p-Kreis.</p>
+<p>Sei <span class="math">\(d'_j\)</span> der Grad von <span class="math">\(v_j\)</span> in H. Ist <span class="math">\(v_j \in S\)</span>, so gilt aufgrund des Aufbaus von H auch <span class="math">\(d'_j \ge d_j\)</span>, andernfalls ist <span class="math">\(v_j \in T\)</span>, wodurch <span class="math">\(d'_j = \mid S \mid = d_m \ge d_j\)</span>. Also gilt in jedem Fall <span class="math">\(d'_j \ge d_j\)</span>.</p>
+<p>Daraus folgt <span class="math">\(\mid E(H) \mid \ge \mid E \mid\)</span> und unter allen Graphen mit der maximalen Anzahl an Kanten muss einer in dieser Form sein.</p>
+<p>Per Induktion ergibt sich für einen von S ausgehenden Graph mit <span class="math">\(n_{p-1} = \mid T\mid\)</span></p>
+<div class="math">
+\[\mid E\mid \le \mid E(H)\mid \le E(K_{n_1,...,n_{p - 1}})\]</div>
+<p>Dies impliziert <span class="math">\(\mid E \mid \le (1 - \frac{1}{p-1})\frac{n^2}{2}\)</span></p>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="first.html">Erster Beweis: Induktion über p</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="third.html">Dritter Beweis</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+        &copy; Copyright 2013, Daniel Schmidt.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

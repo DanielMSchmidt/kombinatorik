@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Dritter Beweis: Wahrscheinlichkeitsverteilung &mdash; Kombinatorik  documentation</title>
+    
+    <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/theme_extras.js"></script>
+    <link rel="top" title="Kombinatorik  documentation" href="../index.html" />
+    <link rel="up" title="Beweise" href="../proof.html" />
+    <link rel="next" title="Vierter Beweis" href="fourth.html" />
+    <link rel="prev" title="Zweiter Beweis: Struktur des Turàn Graphs" href="second.html" /> 
+  </head>
+  <body>
+      <div class="header"><h1 class="heading"><a href="../index.html">
+          <span>Kombinatorik  documentation</span></a></h1>
+        <h2 class="heading"><span>Dritter Beweis: Wahrscheinlichkeitsverteilung</span></h2>
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="second.html">Zweiter Beweis: Struktur des Turàn Graphs</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="fourth.html">Vierter Beweis</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="dritter-beweis-wahrscheinlichkeitsverteilung">
+<h1>Dritter Beweis: Wahrscheinlichkeitsverteilung<a class="headerlink" href="#dritter-beweis-wahrscheinlichkeitsverteilung" title="Permalink to this headline">¶</a></h1>
+<p>Sei w eine Wahrscheinlichkeitsverteilung <span class="math">\(w = (w_1,...,w_n)\)</span> auf den Knoten mit <span class="math">\(w_i \ge 0\)</span> und <span class="math">\(\sum^n_{i=1} w_i = 1\)</span>, so um die maximale Anzahl der Kanten zu erhalten folgende Funktion maximiert werden.</p>
+<div class="math">
+\[f(w) = \sum_{v_i,v_j \in E} w_i w_j\]</div>
+<p>Nimmt man nun an, dass w eine beliebige Verteilung ist und <span class="math">\(v_i\)</span> und <span class="math">\(v_j\)</span> ein Paar unbenachbarte Knoten mit positiven Gewichten <span class="math">\(w_i\)</span> und <span class="math">\(w_j\)</span>. Sein nun <span class="math">\(s_i\)</span> die Summe aller zu <span class="math">\(v_i\)</span> adjazenten Knoten und <span class="math">\(s_j\)</span> ähnlich für <span class="math">\(v_j\)</span>, so kann man annehmen, dass <span class="math">\(s_i \ge s_j\)</span> ist.</p>
+<p>Verschiebt man nun das Gewicht von <span class="math">\(v_j\)</span> nach <span class="math">\(v_i\)</span>, sodass das Gewicht von <span class="math">\(v_j\)</span> auf 0 fällt, so ergibt sich für die neue Verteilung w&#8217;</p>
+<div class="math">
+\[f(w') = f(w) + w_j s_j - w_j s_j \ge f(w)\]</div>
+<p>Wiederholen wir dies, so reduziert sich die Anzahl der Knoten mit einem positiven Gewicht um einen pro Schritt, sodass nach einigen Schritten keine adjazenten Knoten mit einem positiven Gewicht mehr übrig sind.
+Gehen wir davon aus, dass es sich um eine optimale Verteilung handelt so konzentriert sich das Gewicht in einem Kreis, beispielsweise der Größe k.
+Nun lässt sich in den Fällen in denen es <span class="math">\(w_1,w_2\)</span> gibt, sodass gilt <span class="math">\(w_1 &gt; w_2 &gt; 0\)</span> <span class="math">\(\epsilon\)</span> wählen, sodass <span class="math">\(0 &lt; \epsilon &lt; w_1 - w_2\)</span> gilt. Setzt man nun <span class="math">\(w_1 := w_1 - \epsilon\)</span> und <span class="math">\(w_2 := w_2 + \epsilon\)</span> so ergibt sich für die neue Verteilung w&#8217;:</p>
+<div class="math">
+\[\begin{split}f(w') = f(w) + \epsilon(w_1 - w_2) - \epsilon^2 &gt; f(w)\end{split}\]</div>
+<p>Hieraus schlussfolgern wir, dass f(w) sein maximum erreicht sofern <span class="math">\(w_i\)</span> in einem k-Kreis <span class="math">\(w_i = \frac{1}{k}\)</span> ist und ansonsten <span class="math">\(w_i = 0\)</span>. Da ein k-Kreis <span class="math">\(\frac{k(k-1)}{2}\)</span> Kanten hat folgt daraus</p>
+<div class="math">
+\[f(w) = \frac{k(k-1)}{2} \frac{1}{k^2} = \frac{1}{2}(1 - \frac{1}{k})\]</div>
+<p>Da <span class="math">\(\frac{1}{2}(1 - \frac{1}{k})\)</span> sich erhöht, wenn k sich erhöht setzen wir k auf ein Maximum. Dieses ist p-1, da der Graph G keine p-Kreise also maximal (p-1)-Kreise enthält, woraus sich folgendes für jede Verteilung w ergibt:</p>
+<div class="math">
+\[f(w) = \frac{k(k-1)}{2} \frac{1}{k^2} = \frac{1}{2}(1 - \frac{1}{k}) \le \frac{1}{2}(1 - \frac{1}{p - 1})\]</div>
+<p>Dies gilt dann insbesondere für die gleichmäßige Verteilung, welche durch <span class="math">\(w_i = \frac{1}{n}\)</span> für alle i gegeben ist. Hierdurch ergibt sich</p>
+<div class="math">
+\[\frac{\mid E \mid}{n^2} = f(w = \frac{1}{n}) \le \frac{1}{2}(1 - \frac{1}{p - 1})\]</div>
+<p>Dies entspricht exakt dem geforderten <span class="math">\(\mid E \mid \le (1- \frac{1}{p-1}) \frac{n^2}{2}\)</span>.</p>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="second.html">Zweiter Beweis: Struktur des Turàn Graphs</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="fourth.html">Vierter Beweis</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+        &copy; Copyright 2013, Daniel Schmidt.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>
