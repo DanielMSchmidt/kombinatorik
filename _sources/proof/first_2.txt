@@ -1,0 +1,28 @@
+Erster Beweis: Induktion über p
+===============================
+
+*************
+Voraussetzung
+*************
+
+Sei G ein ungerichteter Graph der n-ten Ordnung, bestehend aus einer Knotenmenge :math:`V = \{ v_1,...,v_n \}` und einer Kantenmenge E, welche zwei verbundene Knoten :math:`v_i, v_j` mit :math:`0 < i < j \le n` definiert als
+
+.. math::
+  (v_i, v_j) \in E
+
+****************
+Induktionsanfang
+****************
+
+Sei n \le p - 1, so gilt:
+
+.. math::
+  \mid E \mid \le (1 - \frac{1}{p-1}) \frac{n^2}{2}
+
+***********************
+Induktionsvoraussetzung
+***********************
+
+*****************
+Induktionsschluss
+*****************

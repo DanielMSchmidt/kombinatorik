@@ -1,16 +1,15 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Dritter Beweis: Wahrscheinlichkeitsverteilung &mdash; Kombinatorik  documentation</title>
+    <title>Dritter Beweis: Wahrscheinlichkeitsverteilung — Kombinatorik  documentation</title>
     
-    <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/print.css" type="text/css" />
+    
+    
+    
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -39,11 +38,11 @@
       <div class="topnav">
       
         <p>
-        «&#160;&#160;<a href="second.html">Zweiter Beweis: Struktur des Turàn Graphs</a>
-        &#160;&#160;::&#160;&#160;
+        «&nbsp;&nbsp;<a href="second.html">Zweiter Beweis: Struktur des Turàn Graphs</a>
+        &nbsp;&nbsp;::&nbsp;&nbsp;
         <a class="uplink" href="../index.html">Contents</a>
-        &#160;&#160;::&#160;&#160;
-        <a href="fourth.html">Vierter Beweis</a>&#160;&#160;»
+        &nbsp;&nbsp;::&nbsp;&nbsp;
+        <a href="fourth.html">Vierter Beweis</a>&nbsp;&nbsp;»
         </p>
 
       </div>
@@ -56,12 +55,12 @@
 <div class="math">
 \[f(w) = \sum_{v_i,v_j \in E} w_i w_j\]</div>
 <p>Nimmt man nun an, dass w eine beliebige Verteilung ist und <span class="math">\(v_i\)</span> und <span class="math">\(v_j\)</span> ein Paar unbenachbarte Knoten mit positiven Gewichten <span class="math">\(w_i\)</span> und <span class="math">\(w_j\)</span>. Sein nun <span class="math">\(s_i\)</span> die Summe aller zu <span class="math">\(v_i\)</span> adjazenten Knoten und <span class="math">\(s_j\)</span> ähnlich für <span class="math">\(v_j\)</span>, so kann man annehmen, dass <span class="math">\(s_i \ge s_j\)</span> ist.</p>
-<p>Verschiebt man nun das Gewicht von <span class="math">\(v_j\)</span> nach <span class="math">\(v_i\)</span>, sodass das Gewicht von <span class="math">\(v_j\)</span> auf 0 fällt, so ergibt sich für die neue Verteilung w&#8217;</p>
+<p>Verschiebt man nun das Gewicht von <span class="math">\(v_j\)</span> nach <span class="math">\(v_i\)</span>, sodass das Gewicht von <span class="math">\(v_j\)</span> auf 0 fällt, so ergibt sich für die neue Verteilung w’</p>
 <div class="math">
 \[f(w') = f(w) + w_j s_j - w_j s_j \ge f(w)\]</div>
 <p>Wiederholen wir dies, so reduziert sich die Anzahl der Knoten mit einem positiven Gewicht um einen pro Schritt, sodass nach einigen Schritten keine adjazenten Knoten mit einem positiven Gewicht mehr übrig sind.
 Gehen wir davon aus, dass es sich um eine optimale Verteilung handelt so konzentriert sich das Gewicht in einem Kreis, beispielsweise der Größe k.
-Nun lässt sich in den Fällen in denen es <span class="math">\(w_1,w_2\)</span> gibt, sodass gilt <span class="math">\(w_1 &gt; w_2 &gt; 0\)</span> <span class="math">\(\epsilon\)</span> wählen, sodass <span class="math">\(0 &lt; \epsilon &lt; w_1 - w_2\)</span> gilt. Setzt man nun <span class="math">\(w_1 := w_1 - \epsilon\)</span> und <span class="math">\(w_2 := w_2 + \epsilon\)</span> so ergibt sich für die neue Verteilung w&#8217;:</p>
+Nun lässt sich in den Fällen in denen es <span class="math">\(w_1,w_2\)</span> gibt, sodass gilt <span class="math">\(w_1 &gt; w_2 &gt; 0\)</span> <span class="math">\(\epsilon\)</span> wählen, sodass <span class="math">\(0 &lt; \epsilon &lt; w_1 - w_2\)</span> gilt. Setzt man nun <span class="math">\(w_1 := w_1 - \epsilon\)</span> und <span class="math">\(w_2 := w_2 + \epsilon\)</span> so ergibt sich für die neue Verteilung w’:</p>
 <div class="math">
 \[\begin{split}f(w') = f(w) + \epsilon(w_1 - w_2) - \epsilon^2 &gt; f(w)\end{split}\]</div>
 <p>Hieraus schlussfolgern wir, dass f(w) sein maximum erreicht sofern <span class="math">\(w_i\)</span> in einem k-Kreis <span class="math">\(w_i = \frac{1}{k}\)</span> ist und ansonsten <span class="math">\(w_i = 0\)</span>. Da ein k-Kreis <span class="math">\(\frac{k(k-1)}{2}\)</span> Kanten hat folgt daraus</p>
@@ -81,17 +80,17 @@ Nun lässt sich in den Fällen in denen es <span class="math">\(w_1,w_2\)</span>
       <div class="bottomnav">
       
         <p>
-        «&#160;&#160;<a href="second.html">Zweiter Beweis: Struktur des Turàn Graphs</a>
-        &#160;&#160;::&#160;&#160;
+        «&nbsp;&nbsp;<a href="second.html">Zweiter Beweis: Struktur des Turàn Graphs</a>
+        &nbsp;&nbsp;::&nbsp;&nbsp;
         <a class="uplink" href="../index.html">Contents</a>
-        &#160;&#160;::&#160;&#160;
-        <a href="fourth.html">Vierter Beweis</a>&#160;&#160;»
+        &nbsp;&nbsp;::&nbsp;&nbsp;
+        <a href="fourth.html">Vierter Beweis</a>&nbsp;&nbsp;»
         </p>
 
       </div>
 
     <div class="footer">
-        &copy; Copyright 2013, Daniel Schmidt.
+        © Copyright 2013, Daniel Schmidt.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
     </div>
   </body>
