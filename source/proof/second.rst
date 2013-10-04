@@ -1,28 +1,26 @@
 Zweiter Beweis: Struktur des Turàn Graphs
 =========================================
 
-In diesem Beweis gehen wir von vornherein davon aus, dass G keinen p-Kreis beinhaltet und schließen von dieser Annahme auf die maximale Anzahl an Kanten.
-Sei :math:`v_m \in V` ein Knoten mit Grad :math:`d_m = max_{1 \le j \le n} d_j`, also ein Knoten mit der maximalen Anzahl an Nachbarn.
-Sei S die Menge der Nachbarn von :math:`v_m`, so ist :math:`\mid S \mid = d_m`, zudem lässt sich T setze als :math:`T := V \setminus S`.
+In diesem Beweis nutzen wir die Struktur eines Turàn Graphens aus. Wir haben einen p - Cliquenfreien Graphen G gegeben mit der Knotenmenge V und einer Kantenmenge E. Nun setzen wir :math:`v_m` so, dass für dessen Grad gilt :math:`d_m := max_{1 \le j \le n} d_j`, sprich wir suchen uns den Knoten mit den meisten Kanten im Graphen aus.
 
-Da G keinen p-Kreis enthält und alle Knoten in S mit :math:`v_m` verbunden sind kann es in S keinen (p - 1)-Kreis geben.
+Nun setzen wir S als Menge der Nachbarn von :math:`v_m`, wodurch :math:`\mid S \mid = d_m` ist und definieren :math:`T := V \backslash S`. Da alle Knoten aus S mit :math:`v_m` verbunden sind, :math:`v_m \notin S` und G p - Cliquenfrei ist muss S (p - 1) - Cliquenfrei sein.
 
-.. todo:: Eventuell eine Illustration dazu einführen (ähnlich die aus The Book)
+Definieren wir nun H als neuen Graphen mit identischer Knotenmenge, für den alle Kanten aus S übernommen werden und jeder Knoten aus S mit jedem aus T verbunden ist, so ist T als eine unabhängige Menge in K. Hieraus folgt, dass es in T ebenfalls keine p - Clique geben kann, H ist also wie G p - Cliquenfrei.
 
-Konstruiert man nun einen Graph H auf V, sodass H alle Kanten in S und zwischen S und T beinhaltet, allerdings keine in T, so ist T eine unabhängige Knotenmenge und H ohne p-Kreis.
+Bezeichnen wir den Grad eines Knotens in G nun als :math:`d_j` und eines Knotens in H als :math:`d'_j`.
+Untersucht man nun die Grade in H, so lassen sich zwei Fälle unterscheiden:
 
-Sei :math:`d'_j` der Grad von :math:`v_j` in H. Ist :math:`v_j \in S`, so gilt aufgrund des Aufbaus von H auch :math:`d'_j \ge d_j`, andernfalls ist :math:`v_j \in T`, wodurch :math:`d'_j = \mid S \mid = d_m \ge d_j`. Also gilt in jedem Fall :math:`d'_j \ge d_j`.
+**Fall 1:** :math:`v_j \in S`
 
-.. todo:: Wieso folgt das daraus?
+Hier gilt :math:`d'_j \ge d_j`, da keine Kanten entfernt wurden, aber eventuell welche hinzugefügt wurden, falls :math:`T \neq \varnothing`.
 
-Daraus folgt :math:`\mid E(H) \mid \ge \mid E \mid` und unter allen Graphen mit der maximalen Anzahl an Kanten muss einer in dieser Form sein.
 
-.. todo:: Eventuell mal selber induzieren
+**Fall 2:** :math:`v_j \in T`
 
-Per Induktion ergibt sich für einen von S ausgehenden Graph mit :math:`n_{p-1} = \mid T\mid`
+Es gilt :math:`d'_j =^1 \mid S \mid \\ =^2 d_m \\ \ge^3 d_j`.
 
-.. math::
-  \mid E\mid \le \mid E(H)\mid \le E(K_{n_1,...,n_{p - 1}})
+(1) gilt, da jedes Element aus T mit jedem Element aus S eine Kante teilt.
+(2) und 3. gelten, da :math:`v_m` so gewählt wurde, dass beide Kriterien erfüllt sind.
 
-Dies impliziert :math:`\mid E \mid \le (1 - \frac{1}{p-1})\frac{n^2}{2}`
+Hieraus folgt :math:`\forall v_j \in V: d'_j \ge d_j` und somit auch :math:`\mid E(H) \mid \ge \mid E \mid`. Dementsprechend muss es einen maximalen Graphen dieser Form geben.
 
