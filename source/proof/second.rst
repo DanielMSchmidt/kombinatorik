@@ -24,3 +24,9 @@ Es gilt :math:`d'_j =^1 \mid S \mid \\ =^2 d_m \\ \ge^3 d_j`.
 
 Hieraus folgt :math:`\forall v_j \in V: d'_j \ge d_j` und somit auch :math:`\mid E(H) \mid \ge \mid E \mid`. Dementsprechend muss es einen maximalen Graphen dieser Form geben.
 
+
+.. todo: Muss ich hier darauf achten, dass K_{n_1,...,n_{p-1}} p-cliquenfrei ist?
+
+Aus :math:`\mid E \mid \le \mid E(H) \mid \le \mid E(K_{n_1,...,n_{p-1}}) \mid` folgt, dass die Behauptung gilt und die erste Hälfte dieser Ungleichung haben wir bereits bewiesen. Hierzu betrachten wir zunächst lediglich die Knotenmenge S, da T bereits eine unabhängige Teilmenge ist. Wählen wir nun die Kanten in der Knotenmenge S so, dass jeder Knoten miteinander verbunden ist, also :math:`E(S) := \{ (a,b) \mid a \in S, b \in S, a \neq b \}` gilt. Da ein Turàn Graph so beschaffen ist, dass er alle Elemente aus seinen unabhängigen Untergruppen miteinander verbindet entspricht die Kantenmaximale Form von S genau :math:`K_{1,...,1}`, wodurch sich die zweite Hälfte der Gleichung dementsprechend abschätzen lässt.
+
+.. todo: Muss ich zeigen, wieso die Behauptung hieraus folgt, bzw wieso tut sie das?
