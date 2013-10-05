@@ -1,27 +1,24 @@
 'use strict';
-var lrSnippet = require('grunt-contrib-livereload/lib/utils').livereloadSnippet;
-var mountFolder = function (connect, dir) {
-    return connect.static(require('path').resolve(dir));
-};
+var LIVERELOAD_PORT = 35729;
 
 module.exports = function (grunt) {
-    // load all grunt tasks
-    require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
-    grunt.loadNpmTasks('grunt-shell');
-
+    require('load-grunt-tasks')(grunt);
+    require('time-grunt')(grunt);
 
     // configurable paths
-    var yeomanConfig = {
-        app: 'app',
-        dist: 'dist'
-    };
-
     grunt.initConfig({
-        yeoman: yeomanConfig,
         watch: {
-            shell: {
+            rst: {
                 files: ['source/{,*/}*.rst'],
                 tasks: ['shell:makeHTML']
+            },
+            livereload: {
+                options: {
+                    livereload: LIVERELOAD_PORT
+                },
+                files: [
+                    'build/html/{,*/}*.html'
+                ]
             }
         },
         clean: {
@@ -37,41 +34,36 @@ module.exports = function (grunt) {
             },
             server: '.tmp'
         },
-        open: {
-            server: {
-                path: 'http://localhost:9000'
-            }
-        },
         shell: {
             makeHTML: {
-                command: 'make html',
-                options: {
-                    stdout: true
-                }
+                command: 'make html'
             },
-            open: {
-                command: 'open localhost:9000'
-            }
         },
         connect: {
-          server: {
             options: {
-              port: 9000,
-              base: 'build/html'
+                port: 9000,
+            },
+            livereload: {
+                options: {
+                    livereload: LIVERELOAD_PORT,
+                    base: [
+                        'build/html',
+                    ]
+                }
             }
-          }
+        },
+        'gh-pages': {
+            options: {
+              base: 'build/html'
+            },
+            src: ['**/*']
         }
-
     });
 
-    grunt.renameTask('regarde', 'watch');
-
     grunt.registerTask('server', function (target) {
-
         grunt.task.run([
             'shell:makeHTML',
-            'connect:server',
-            'open',
+            'connect:livereload',
             'watch'
         ]);
     });
@@ -80,5 +72,8 @@ module.exports = function (grunt) {
         'server'
     ]);
 
-
+    grunt.registerTask('deploy', [
+        'shell:makeHTML',
+        'gh-pages'
+    ]);
 };

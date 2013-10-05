@@ -55,5 +55,8 @@ wobei V die Knotenmenge von G ist. Für die Kantenmenge E' gilt in ähnlicher We
 
 wobei E die Kantenmenge von G ist.
 
+.. todo:: Add Kreiszahl (or sth. like that) => clique number
 
 
+
+.. todo:: r-patit, turan graph, Kanten shiften
