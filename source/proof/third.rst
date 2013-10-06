@@ -1,54 +1,73 @@
+.. todo:: Das ganze einmal in PS für einen n = 5 Graphen machen
+
 Dritter Beweis: Wahrscheinlichkeitsverteilung
 =============================================
 
-Sei w eine Wahrscheinlichkeitsverteilung :math:`w = (w_1,...,w_n)` auf den Knoten mit :math:`w_i \ge 0` und :math:`\sum^n_{i=1} w_i = 1`, so um die maximale Anzahl der Kanten zu erhalten folgende Funktion maximiert werden.
+In diesem Beweis betrachten wir die Wahrscheinlichkeitsverteilung auf den Knoten des Graphen. Diese notieren wir als :math:`w = (w_1,...,w_n)` und es gilt :math:`w_i \ge 0`, sowie :math:`\sum^n_{i=1}w_i = 1`. Des weiteren definieren wir eine Funktion :math:`f(w) = \sum_{v_i, v_j \in E} w_i w_j`, welche wir zu maximieren versuchen.
+
+
+Setzen wir nun :math:`v_i` und :math:`v_j` als zwei nicht benachbarte Ecken mit positiven Gewicht :math:`w_i, w_j` und fassen das Gewicht ihrer adjazenten Knoten zusammen als :math:`s_i, s_j` und nehmen :math:`s_i \ge s_j` an.
+
+Bewegen wir nun das Gewicht von :math:`v_j` nach :math:`v_i`, setzen also :math:`w'_i := w_i + w_j` und :math:`w'_j := 0`, dann ergibt sich für die neue Gewichtung :math:`w'`:
 
 .. math::
-  f(w) = \sum_{v_i,v_j \in E} w_i w_j
+  f(w') &=^1
+  f(w) + w_j s_i - w_j s_j \\
+  &=^2 f(w) + (s_i - s_j) w_j \\
+  &\ge^3 f(w)
 
-Nimmt man nun an, dass w eine beliebige Verteilung ist und :math:`v_i` und :math:`v_j` ein Paar unbenachbarte Knoten mit positiven Gewichten :math:`w_i` und :math:`w_j`. Sein nun :math:`s_i` die Summe aller zu :math:`v_i` adjazenten Knoten und :math:`s_j` ähnlich für :math:`v_j`, so kann man annehmen, dass :math:`s_i \ge s_j` ist.
+(1) FILL
+(2) ME
+(3) UP
 
-Verschiebt man nun das Gewicht von :math:`v_j` nach :math:`v_i`, sodass das Gewicht von :math:`v_j` auf 0 fällt, so ergibt sich für die neue Verteilung w'
-
-.. math::
-
-  f(w') = f(w) + w_j s_j - w_j s_j \ge f(w)
+Wir können dies nun wiederholen bis es keine nicht-adjazenten Ecken mit positiver Gewichtung mehr gibt und erhalten danach eine  optimierte Verteilung, da bei jeder Umformung :math:`f(w') \ge f(w)` gilt. Zudem muss es eine optimale Verteilung geben in der alle Gewichte in einer k-Clique zusammengezogen sind, da sich das Gewicht innerhalb einer solchen Clique beim Tausch lediglich verschieben würde, insgesamt aber gleich bleibt.
 
 
-.. todo:: wieso ist das nicht f(w') = f(w) + w_j s_j - w_j s_j = f(w) ?
+Gehen wir nun von einer solchen Clique aus, so lassen sich die Gewichte innerhalb der Clique ebenfalls verschieben. Diese bewegen wir in der Form, dass wir uns zwei Ecken mit positiven Gewicht wählen für die :math:`w_1 > w_2 > 0` gilt und ein :math:`\varepsilon` für das :math:`0 < \varepsilon < w_1 - w_2` gilt. Dieses :math:`\varepsilon` addieren wir auf :math:`w_2` und subtrahieren es von :math:`w_1`.
 
-Wiederholen wir dies, so reduziert sich die Anzahl der Knoten mit einem positiven Gewicht um einen pro Schritt, sodass nach einigen Schritten keine adjazenten Knoten mit einem positiven Gewicht mehr übrig sind.
-Gehen wir davon aus, dass es sich um eine optimale Verteilung handelt so konzentriert sich das Gewicht in einem Kreis, beispielsweise der Größe k.
-Nun lässt sich in den Fällen in denen es :math:`w_1,w_2` gibt, sodass gilt :math:`w_1 > w_2 > 0` :math:`\epsilon` wählen, sodass :math:`0 < \epsilon < w_1 - w_2` gilt. Setzt man nun :math:`w_1 := w_1 - \epsilon` und :math:`w_2 := w_2 + \epsilon` so ergibt sich für die neue Verteilung w':
-
-.. todo:: Wieso zur Hölle ändert sich das, ich zieh doch nur beim einen was ab und beim anderen was drauf.
+Da
 
 .. math::
+  f(w') &=^1 f(w) + \varepsilon (w_1 - w_2) - \varepsilon^2 \\
+  &=^2 f(w) + \varepsilon ((w_1 - w_2) - \varepsilon) \\
+  >^3 f(w)
 
-  f(w') = f(w) + \epsilon(w_1 - w_2) - \epsilon^2 > f(w)
 
-Hieraus schlussfolgern wir, dass f(w) sein maximum erreicht sofern :math:`w_i` in einem k-Kreis :math:`w_i = \frac{1}{k}` ist und ansonsten :math:`w_i = 0`. Da ein k-Kreis :math:`\frac{k(k-1)}{2}` Kanten hat folgt daraus
+(1) FILL
+(2) ME
+(3) UP
 
-.. math::
+gilt, optimiert diese Gewichtsverlagerung die k-Clique bis es keine ungleichen Gewichtungen mehr in ihr gibt. Da w = 1 gilt und alle Knoten außerhalb der Clique die Gewichtung 0 hat wird jeder Knoten innerhalb der Clique die Gewichtung :math:`w_i = \frac{1}{k}`.
 
-  f(w) = \frac{k(k-1)}{2} \frac{1}{k^2} = \frac{1}{2}(1 - \frac{1}{k})
 
-Da :math:`\frac{1}{2}(1 - \frac{1}{k})` sich erhöht, wenn k sich erhöht setzen wir k auf ein Maximum. Dieses ist p-1, da der Graph G keine p-Kreise also maximal (p-1)-Kreise enthält, woraus sich folgendes für jede Verteilung w ergibt:
-
-.. todo:: Vielleicht split benutzen
-
-.. math::
-
-  f(w) = \frac{k(k-1)}{2} \frac{1}{k^2} = \frac{1}{2}(1 - \frac{1}{k}) \le \frac{1}{2}(1 - \frac{1}{p - 1})
-
-Dies gilt dann insbesondere für die gleichmäßige Verteilung, welche durch :math:`w_i = \frac{1}{n}` für alle i gegeben ist. Hierdurch ergibt sich
-
-.. todo:: Wo kommt das \frac{|E|}{n^2} her?
+In einer k-Clique können maximal :math:`\frac{k (k-1)}{2}` Kanten sein, also :math:`\frac{\text{Jeder Punkt} (\text{Jeder Punkt mit dem er sich verbinden kann})}{\text{Enden einer Kante}}`. Für die Gewichtung ergibt sich also:
 
 .. math::
+  f(w) &=^1 \sum_{v_i, v_j \in E} w_i w_j  \\
+  &=^2 \sum_{v_i, v_j \in E} \frac{1}{k^2}  \\
+  &=^3 \mid E \mid \frac{1}{k^2}  \\
+  &=^4 \frac{k (k-1)}{2} \frac{1}{k^2}  \\
+  &= \frac{k (k-1)}{2k^2} \\
+  &= \frac{k-1}{2k} \\
+  &= \frac{1}{2} (1 - \frac{1}{k})
 
-  \frac{\mid E \mid}{n^2} = f(w = \frac{1}{n}) \le \frac{1}{2}(1 - \frac{1}{p - 1})
 
-Dies entspricht exakt dem geforderten :math:`\mid E \mid \le (1- \frac{1}{p-1}) \frac{n^2}{2}`.
+(1) FILL
+(2) ME
+(3) UP
+(4) PLEASE
 
-.. todo:: Eventuell einmal umformen um das zu zeigen
+
+Da diese Funktion maximal ist wenn k maximal ist und der höchstmögliche Wert für k genau p - 1 ist gilt weiter:
+
+.. math::
+  f(w) &= \frac{1}{2} (1 - \frac{1}{k}) \\
+  &\le \frac{1}{2} (1 - \frac{1}{p-1})
+
+
+Insbesondere gilt dann auch
+
+
+.. math::
+  &\frac{\mid E \mid}{n^2} = f(w_i = \frac{1}{n}) \le \frac{1}{2} (1 - \frac{1}{p-1}) \\
+  \Longleftrightarrow &\mid E \mid = f(w_i = \frac{1}{n}) * n^2 \le \frac{1}{2} (1 - \frac{1}{p-1}) * n^2
