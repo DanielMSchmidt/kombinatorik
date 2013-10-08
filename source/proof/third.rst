@@ -1,5 +1,3 @@
-.. todo:: Das ganze einmal in PS für einen n = 5 Graphen machen
-
 Dritter Beweis: Wahrscheinlichkeitsverteilung
 =============================================
 
@@ -15,12 +13,11 @@ Bewegen wir nun das Gewicht von :math:`v_j` nach :math:`v_i`, setzen also :math:
 .. math::
   f(w') &=^1
   f(w) + w_j s_i - w_j s_j \\
-  &=^2 f(w) + (s_i - s_j) w_j \\
-  &\ge^3 f(w)
+  &= f(w) + (s_i - s_j) w_j \\
+  &\ge^2 f(w)
 
-(1) FILL
-(2) ME
-(3) UP
+(1) Dies gilt aufgrund des verschobenen Gewichts. Dieses wird in der Multiplikation auf seitens :math:`s_j` nicht mehr betrachtet, bei :math:`s_i` schon.
+(2) Dies gilt, da :math:`w_j` als Ecke mit positiven Gewicht ausgewählt wurde.
 
 Wir können dies nun wiederholen bis es keine nicht-adjazenten Ecken mit positiver Gewichtung mehr gibt und erhalten danach eine  optimierte Verteilung, da bei jeder Umformung :math:`f(w') \ge f(w)` gilt. Zudem muss es eine optimale Verteilung geben in der alle Gewichte in einer k-Clique zusammengezogen sind, da sich das Gewicht innerhalb einer solchen Clique beim Tausch lediglich verschieben würde, insgesamt aber gleich bleibt.
 
@@ -31,13 +28,12 @@ Da
 
 .. math::
   f(w') &=^1 f(w) + \varepsilon (w_1 - w_2) - \varepsilon^2 \\
-  &=^2 f(w) + \varepsilon ((w_1 - w_2) - \varepsilon) \\
-  >^3 f(w)
+  &= f(w) + \varepsilon ((w_1 - w_2) - \varepsilon) \\
+  &>^2 f(w)
 
 
-(1) FILL
-(2) ME
-(3) UP
+(1) .. todo:: Fill me up
+(2) Da :math:`0 < \varepsilon < w_1 - w_2` gilt.
 
 gilt, optimiert diese Gewichtsverlagerung die k-Clique bis es keine ungleichen Gewichtungen mehr in ihr gibt. Da w = 1 gilt und alle Knoten außerhalb der Clique die Gewichtung 0 hat wird jeder Knoten innerhalb der Clique die Gewichtung :math:`w_i = \frac{1}{k}`.
 
@@ -47,17 +43,16 @@ In einer k-Clique können maximal :math:`\frac{k (k-1)}{2}` Kanten sein, also :m
 .. math::
   f(w) &=^1 \sum_{v_i, v_j \in E} w_i w_j  \\
   &=^2 \sum_{v_i, v_j \in E} \frac{1}{k^2}  \\
-  &=^3 \mid E \mid \frac{1}{k^2}  \\
-  &=^4 \frac{k (k-1)}{2} \frac{1}{k^2}  \\
+  &= \mid E \mid \frac{1}{k^2}  \\
+  &=^3 \frac{k (k-1)}{2} \frac{1}{k^2}  \\
   &= \frac{k (k-1)}{2k^2} \\
   &= \frac{k-1}{2k} \\
   &= \frac{1}{2} (1 - \frac{1}{k})
 
 
-(1) FILL
-(2) ME
-(3) UP
-(4) PLEASE
+(1) Definition von f.
+(2) Setzung von :math:`w_i := \frac{1}{k}`.
+(3) Dies gilt, da wie oben erwähnt in einer k-Clique maximal :math:`\frac{k (k-1)}{2}` Kanten sein können.
 
 
 Da diese Funktion maximal ist wenn k maximal ist und der höchstmögliche Wert für k genau p - 1 ist gilt weiter:
