@@ -52,7 +52,7 @@ In einer k-Clique können maximal :math:`\frac{k (k-1)}{2}` Kanten sein, also :m
 
 (1) Definition von f.
 (2) Setzung von :math:`w_i := \frac{1}{k}`.
-(3) Dies gilt, da wie oben erwähnt in einer k-Clique maximal :math:`\frac{k (k-1)}{2}` Kanten sein können.
+(3) Dies gilt, da wie oben erwähnt in einer k-Clique maximal :math:`\frac{k (k-1)}{2}` Kanten sein.
 
 
 Da diese Funktion maximal ist wenn k maximal ist und der höchstmögliche Wert für k genau p - 1 ist gilt weiter:
