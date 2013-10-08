@@ -9,7 +9,7 @@ Das Theorem
 Umgangssprachlich
 *****************
 
-Die Frage mit der sich das Theorem beschäftigt ist, wie viele Kanten kann man maximal in einem ungerichteten Graphen mit n Knoten einbringen ohne das ein ein p Knoten großer Kreis entsteht.
+Die Frage mit der sich das Theorem beschäftigt ist, wie viele Kanten kann man maximal in einem ungerichteten Graphen mit n Knoten einbringen ohne das eine p - Clique entsteht.
 
 *******************
 Turáns Graphtheorem
@@ -19,7 +19,7 @@ Turáns Graphtheorem besagt, dass für einen Graph G = (V,E) mit n Kanten ohne p
 
 .. math:: \mid E \mid \le (1- \frac{1}{p-1}) \frac{n^2}{2}
 
-Hierbei muss p allerdings größer 1 sein, da wir ansonsten durch 0 teilen würden und da ein 1 Knoten großer Kreis sich schon durch die Definition von Kanten und Kreisen ausschließt.
+Hierbei muss p allerdings größer 1 sein, da wir ansonsten durch 0 teilen würden und da eine 1 - Clique aus weniger als einer Kante bestehen müsste, da eine Kante zwei Knoten verbindet. 
 
 ************
 Definitionen
@@ -33,18 +33,16 @@ Sei der ungerichtete Graph G definiert als Knotenmenge V
 
 und Kantenmenge E, wobei zwei Knoten :math:`v_i, v_j` benachbart sind falls
 
-.. math::  (v_i, v_j) \in E
-
-Ordnung des Graphen
-"""""""""""""""""""""""
-
-Ein Graph G hat die Ordnung n, wenn G(E) aus n Kanten besteht. In diesem Fall wird G auch als :math:`G_n` benannt.
+.. math::  \{v_i, v_j\} \in E
 
 
-p-Kreis (p-clique) von Graph G
+Grad eines Knotens & Adjazente Knoten
+"""""""""""""""""""""""""""""""""""""
+
+p - Clique im Graph G
 """"""""""""""""""""""""""""""
 
-Dies ist ein vollständiger Untergraph von G der Ordnung p, also ein Graph K für dessen Knotenmenge V' gilt
+Dies ist ein vollständiger Untergraph von G mit p Kanten, also ein Graph K für dessen Knotenmenge V' gilt
 
 .. math::  \forall v \in V': v \in V
 
@@ -54,12 +52,29 @@ wobei V die Knotenmenge von G ist. Für die Kantenmenge E' gilt in ähnlicher We
 
 wobei E die Kantenmenge von G ist.
 
-.. todo:: Add Kreiszahl (or sth. like that) => clique number
+
+r - partiter Graph
+""""""""""""""""""
+hat partitionen und so
 
 
+vollständiger k - partiter Graph
+""""""""""""""""""""""""""""""""
 
-vollständiger (p-1) - partiter Graph
-      |
 alle Kanten zwischen partitionen
-TODO FILL ME!
-.. todo:: r-patit, turan graph, Kanten shiften, Grad einführen
+
+
+Turàn Graph
+"""""""""""
+
+.. todo:: Was meinte ich mit Kanten shiften?
+
+
+************
+Hilfsbeweise
+************
+
+Sei G ein Graph ohne p-Clique. Dann besitzt G höchstens so viele Kanten wie der (p-1) Turàn Graph
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+( mit p = 2 anfangen)
