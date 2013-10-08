@@ -3,6 +3,7 @@ Das Theorem
 ===========
 
 .. todo:: Eventuell in Definitionen Part auslagern (Links innerhalb von Sphinx auf die Begriffe)
+.. todo:: Beweis das der k-Turàn Graph größer als jeder vollständige k-partite Graph ist muss noch rein
 
 *****************
 Umgangssprachlich
@@ -66,4 +67,4 @@ vollständiger (p-1) - partiter Graph
       |
 alle Kanten zwischen partitionen
 TODO FILL ME!
-.. todo:: r-patit, turan graph, Kanten shiften
+.. todo:: r-patit, turan graph, Kanten shiften, Grad einführen
