@@ -4,6 +4,8 @@ Das Theorem
 
 .. todo:: Eventuell in Definitionen Part auslagern (Links innerhalb von Sphinx auf die Begriffe)
 .. todo:: Beweis das der k-Turàn Graph größer als jeder vollständige k-partite Graph ist muss noch rein (Sei G ein Graph ohne p-Clique. Dann besitzt G höchstens so viele Kanten wie der (p-1) Turàn Graph ( mit p = 2 anfangen))
+.. todo:: Was meinte ich mit Kanten shiften?
+
 
 *****************
 Umgangssprachlich
@@ -36,8 +38,12 @@ und Kantenmenge E, wobei zwei Knoten :math:`v_i, v_j` benachbart sind falls
 .. math::  \{v_i, v_j\} \in E
 
 
-Grad eines Knotens & Adjazente Knoten
+Grad eines Knotens
 """""""""""""""""""""""""""""""""""""
+
+Der Grad :math:`d_m` eines Knotens :math:`v_m` ist definitert als die Anzahl der benachbarten Knoten, sprich
+
+.. math:: d_m = \mid \{ v_i \mid v_i \in V \wedge \{ v_i, v_m \} \in E \} \mid
 
 p - Clique im Graph G
 """"""""""""""""""""""""""""""
@@ -53,28 +59,43 @@ wobei V die Knotenmenge von G ist. Für die Kantenmenge E' gilt in ähnlicher We
 wobei E die Kantenmenge von G ist.
 
 
+unabhängige Knotenmenge
+"""""""""""""""""""""""
+
+Eine Menge von Knoten wird als unabhängig bezeichnet, wenn es innerhalb dieser Menge keine Kanten gibt, sondern nur nach Knoten außerhalb dieser.
+
+
 r - partiter Graph
 """"""""""""""""""
-hat partitionen und so
+
+Ein r - partiter Graph besteht aus r disjunkten und unabhängigen Knotenmengen, welche untereinander durch Kanten verbunden sein können. Diese Knotenmengen bilden zudem eine Partition der gesamten Knotenmenge.
 
 
-vollständiger k - partiter Graph
+vollständiger r - partiter Graph
 """"""""""""""""""""""""""""""""
 
-alle Kanten zwischen partitionen
+Ein r - partiter Graph wird vollständig genannt, wenn jedes Element mit jedem anderen verbunden ist, außer mit denen, die in einer unabhängigen Knotenmenge mit ihm sind.
 
 
 Turàn Graph
 """""""""""
 
-.. todo:: Was meinte ich mit Kanten shiften?
+Ein Turàn Graph ist ein vollständiger r - partiter Graph bei dem sich die Größe jeder Partition maximal um 1 unterscheidet.
 
 
 ************
 Hilfsbeweise
 ************
 
-Sei G ein Graph ohne p-Clique. Dann besitzt G höchstens so viele Kanten wie der (p-1) Turàn Graph
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Sei G ein Graph ohne p-Clique. Dann besitzt G höchstens so viele Kanten wie der (p - 1) Turàn Graph
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-( mit p = 2 anfangen)
+**Induktionsanfang:**
+
+
+**Induktionvoraussetzung:**
+
+
+**Induktionsschluss:**
+
+
