@@ -59,4 +59,11 @@ wobei E die Kantenmenge von G ist.
 
 
 
+
+
+
+vollständiger (p-1) - partiter Graph
+      |
+alle Kanten zwischen partitionen
+TODO FILL ME!
 .. todo:: r-patit, turan graph, Kanten shiften

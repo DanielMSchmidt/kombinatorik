@@ -3,6 +3,8 @@
 Dritter Beweis: Wahrscheinlichkeitsverteilung
 =============================================
 
+.. todo:: Im vortrag sagen dass man hiermit das ganze problem ganz leicht erklären
+
 In diesem Beweis betrachten wir die Wahrscheinlichkeitsverteilung auf den Knoten des Graphen. Diese notieren wir als :math:`w = (w_1,...,w_n)` und es gilt :math:`w_i \ge 0`, sowie :math:`\sum^n_{i=1}w_i = 1`. Des weiteren definieren wir eine Funktion :math:`f(w) = \sum_{v_i, v_j \in E} w_i w_j`, welche wir zu maximieren versuchen.
 
 
