@@ -67,7 +67,7 @@ Da diese Funktion maximal ist wenn k maximal ist und der höchstmögliche Wert f
   &\le \frac{1}{2} (1 - \frac{1}{p-1})
 
 
-Insbesondere gilt dann auch
+Insbesondere gilt dies dann auch für die uniforme Verteilung
 
 
 .. math::
