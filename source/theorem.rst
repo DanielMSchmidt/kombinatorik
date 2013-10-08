@@ -21,7 +21,7 @@ Turáns Graphtheorem besagt, dass für einen Graph G = (V,E) mit n Kanten ohne p
 
 .. math:: \mid E \mid \le (1- \frac{1}{p-1}) \frac{n^2}{2}
 
-Hierbei muss p allerdings größer 1 sein, da wir ansonsten durch 0 teilen würden und da eine 1 - Clique aus weniger als einer Kante bestehen müsste, da eine Kante zwei Knoten verbindet. 
+Hierbei muss p allerdings größer 1 sein, da wir ansonsten durch 0 teilen würden und da eine 1 - Clique aus weniger als einer Kante bestehen müsste, da eine Kante zwei Knoten verbindet.
 
 ************
 Definitionen
@@ -86,6 +86,25 @@ Ein Turàn Graph ist ein vollständiger r - partiter Graph bei dem sich die Grö
 ************
 Hilfsbeweise
 ************
+
+Ein Turàn Graph hat immer mindestens so viele Kanten wie ein entsprechender r - patiter Graph
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+Es ist zu zeigen, dass die Anzahl der Kanten in einem vollständigen (p - 1) - partiten Graphen :math:`K_{n_1,...,n_{p - 1}}` genau dann maximal ist, wenn :math:`\mid n_i - n_j \mid \le 1` f.a. i,j gilt.
+
+
+Wir nehmen für unseren r-partiten Graphen an, dass :math:`\mid n_i - n_j \mid > 1`, also :math:`n_1 \ge n_2 + 2` gilt.
+Verschieben wir eine Ecke aus :math:`V_1` in die Ecke :math:`V_2`, so erhalten wir einen Graphen :math:`K_{n_1 - 1, n_2 + 1,...,n_{p - 1}}`. Dieser besitzt aufgrund der Verschiebung :math:`(n_1 - 1)(n_2 + 1) - n_1 n_2` mehr Knoten als der ursprüngliche Graph, denn es gilt
+
+.. math::
+	(n_1 - 1)(n_2 + 1) - n_1 n_2 &= n_1 n_2 - n_2 + n_1 - n_1 - 1 - n_1 n_2 \\
+	&= n_1 - n_2 - 1 \\
+	&\ge^1 n_2 + 2 - n_2 - 1 \\
+	&= 1
+
+(1) Dies gilt, da :math:`n_1 \ge n_2 + 2` vorausgesetzt wird.
+
+Daher hat ein Turàn Graph mindestens so viele Kanten wie ein entsprechender r - patiter Graph.
 
 Sei G ein Graph ohne p-Clique. Dann besitzt G höchstens so viele Kanten wie der (p - 1) Turàn Graph
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
