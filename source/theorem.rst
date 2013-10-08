@@ -3,7 +3,7 @@ Das Theorem
 ===========
 
 .. todo:: Eventuell in Definitionen Part auslagern (Links innerhalb von Sphinx auf die Begriffe)
-.. todo:: Beweis das der k-Turàn Graph größer als jeder vollständige k-partite Graph ist muss noch rein
+.. todo:: Beweis das der k-Turàn Graph größer als jeder vollständige k-partite Graph ist muss noch rein (Sei G ein Graph ohne p-Clique. Dann besitzt G höchstens so viele Kanten wie der (p-1) Turàn Graph ( mit p = 2 anfangen))
 
 *****************
 Umgangssprachlich
@@ -38,8 +38,6 @@ und Kantenmenge E, wobei zwei Knoten :math:`v_i, v_j` benachbart sind falls
 Ordnung des Graphen
 """""""""""""""""""""""
 
-.. todo:: nachfragen ob Notation G(E) korrekt ist
-
 Ein Graph G hat die Ordnung n, wenn G(E) aus n Kanten besteht. In diesem Fall wird G auch als :math:`G_n` benannt.
 
 
@@ -57,9 +55,6 @@ wobei V die Knotenmenge von G ist. Für die Kantenmenge E' gilt in ähnlicher We
 wobei E die Kantenmenge von G ist.
 
 .. todo:: Add Kreiszahl (or sth. like that) => clique number
-
-
-
 
 
 

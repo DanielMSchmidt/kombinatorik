@@ -1,8 +1,6 @@
 Zweiter Beweis: Struktur des Turàn Graphs
 =========================================
 
-.. todo:: Induktion anfangen mit stärkerer Aussage: Sei G ein Graph ohne p-Clique. Dann besitzt G höchstens so viele Kanten wie der (p-1) Turàn Graph ( mit p = 2 anfangen)
-
 In diesem Beweis nutzen wir die Struktur eines Turàn Graphens aus. Wir haben einen p - Cliquenfreien Graphen G gegeben mit der Knotenmenge V und einer Kantenmenge E. Nun setzen wir :math:`v_m` so, dass für dessen Grad gilt :math:`d_m := max_{1 \le j \le n} d_j`, sprich wir suchen uns den Knoten mit den meisten Kanten im Graphen aus.
 
 Nun setzen wir S als Menge der Nachbarn von :math:`v_m`, wodurch :math:`\mid S \mid = d_m` ist und definieren :math:`T := V \backslash S`. Da alle Knoten aus S mit :math:`v_m` verbunden sind, :math:`v_m \notin S` und G p - Cliquenfrei ist muss S (p - 1) - Cliquenfrei sein.
