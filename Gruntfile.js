@@ -58,9 +58,13 @@ module.exports = function (grunt) {
             },
             src: ['**/*']
         },
-        server: {
-            path: 'http://localhost:9000'
-        }
+				open: {
+	        server: {
+	            path: 'http://localhost:9000'
+	        }
+				}
+
+
     });
 
     grunt.registerTask('server', function (target) {
