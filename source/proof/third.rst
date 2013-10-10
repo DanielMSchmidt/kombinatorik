@@ -32,7 +32,7 @@ Da
   &>^2 f(w)
 
 
-(1) .. todo:: Fill me up
+(1) No Idea yet .. todo:: Fill me up
 (2) Da :math:`0 < \varepsilon < w_1 - w_2` gilt.
 
 gilt, optimiert diese Gewichtsverlagerung die k-Clique bis es keine ungleichen Gewichtungen mehr in ihr gibt. Da w = 1 gilt und alle Knoten außerhalb der Clique die Gewichtung 0 hat wird jeder Knoten innerhalb der Clique die Gewichtung :math:`w_i = \frac{1}{k}`.
