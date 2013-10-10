@@ -1,5 +1,5 @@
-Fünfter Beweis
-==============
+Fünfter Beweis: Maximaler Graph und Äquivalenzrelation
+======================================================
 
 In diesem Beweis wird angenommen, dass G ein Graph mit n Ecken und ohne p - Clique ist, welcher die maximale Anzahl an Kanten hat.
 Um :math:`\mid E \mid \le (1- \frac{1}{p-1}) \frac{n^2}{2}` zu zeigen bedient sich dieser Beweis zudem folgender Behauptung:
@@ -29,7 +29,7 @@ Hier kopieren wir u zwei mal, da es vom Grad her maximal ist, wobei wie im erste
 
 .. math::
   \mid E(G') \mid &= \mid E(G) \mid + 2 d(u) - (d(v) + d(w) - 1) \\
-  &> \mid E(G) \mid 
+  &> \mid E(G) \mid
 
 
 Hierbei ergeben sich die :math:`2d(u)` durch das doppelte Kopieren von u, die :math:`- (d(v) + d(w) - 1)` vom entfernen von v und w, sowie der Kante vw. Die Ungleichung gilt, da :math:`d(u) \ge d(v) \wedge d(u) \ge d(w)` gilt. Da G' nun mehr Kanten hat G ergibt sich wieder ein Widerspruch, womit die Behauptung bewiesen wäre.
