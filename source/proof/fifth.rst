@@ -25,8 +25,14 @@ Da G ein maximaler Graph ist, ist dies ein Widerspruch.
 
 **Fall 2:** :math:`d(u) \ge d(v) \wedge d(u) \ge d(w)`
 
-.. todo:: Fall 2 abtippen
+Hier kopieren wir u zwei mal, da es vom Grad her maximal ist, wobei wie im ersten Fall die Kanten mitkopiert werden und entfernen dann v und w. Der hieraus entstehende Graph kann wieder keine p-Clique haben, da er eine bestehende Clique durch die Veränderung nicht erweitern würde. Für die Anzahl der Kanten ergibt sich:
 
+.. math::
+  \mid E(G') \mid &= \mid E(G) \mid + 2 d(u) - (d(v) + d(w) - 1) \\
+  &> \mid E(G) \mid 
+
+
+Hierbei ergeben sich die :math:`2d(u)` durch das doppelte Kopieren von u, die :math:`- (d(v) + d(w) - 1)` vom entfernen von v und w, sowie der Kante vw. Die Ungleichung gilt, da :math:`d(u) \ge d(v) \wedge d(u) \ge d(w)` gilt. Da G' nun mehr Kanten hat G ergibt sich wieder ein Widerspruch, womit die Behauptung bewiesen wäre.
 
 Definieren wir :math:`u \sim v :\Longleftrightarrow \{ u,v \} \notin E(G)`, so ist dies dank der bewiesenen Behauptung eine Äquivalenzrelation:
 
@@ -51,4 +57,5 @@ Definieren wir :math:`u \sim v :\Longleftrightarrow \{ u,v \} \notin E(G)`, so i
   u \sim v &\Rightarrow \{ u,v \} \notin E(G) \\
   &\Rightarrow\ v \sim u
 
-.. todo:: Zeigen, dass daraus folgt, dass G ein vollständiger multipartiter Graph G sein muss (hieraus folgt wie in 3, dass die Gleichung gilt)
+
+Dank unserer im Vorfeld bewiesenen Behauptung, dass der maximale Graph ein Turàn Graph sein muss folgt hieraus nun, dass G ein solcher ist. Daraus folgt wie in den vorigen Beweisen die Behauptung und wir sind fertig.
