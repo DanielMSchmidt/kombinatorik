@@ -58,4 +58,4 @@ Definieren wir :math:`u \sim v :\Longleftrightarrow \{ u,v \} \notin E(G)`, so i
   &\Rightarrow\ v \sim u
 
 
-Dank unserer im Vorfeld bewiesenen Behauptung, dass der maximale Graph ein Turàn Graph sein muss folgt hieraus nun, dass G ein solcher ist. Daraus folgt wie in den vorigen Beweisen die Behauptung und wir sind fertig.
+Dank unserer im Vorfeld bewiesenen Behauptung, dass es einen maximalen Graph geben muss, der ein Turàn Graph ist folgt hieraus, dass G äquivalent zu einen Turàn Graphen ist. Daraus folgt wie in den vorigen Beweisen die Behauptung und wir sind fertig.
