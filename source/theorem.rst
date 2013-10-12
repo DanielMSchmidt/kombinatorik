@@ -2,8 +2,6 @@
 Das Theorem
 ===========
 
-.. todo:: Eventuell in Definitionen Part auslagern (Links innerhalb von Sphinx auf die Begriffe)
-.. todo:: Beweis das der k-Turàn Graph größer als jeder vollständige k-partite Graph ist muss noch rein (Sei G ein Graph ohne p-Clique. Dann besitzt G höchstens so viele Kanten wie der (p-1) Turàn Graph ( mit p = 2 anfangen))
 .. todo:: Was meinte ich mit Kanten shiften?
 
 
@@ -106,15 +104,23 @@ Verschieben wir eine Ecke aus :math:`V_1` in die Ecke :math:`V_2`, so erhalten w
 
 Daher hat ein Turàn Graph mindestens so viele Kanten wie ein entsprechender r - patiter Graph.
 
+
+
 Sei G ein Graph ohne p-Clique. Dann besitzt G höchstens so viele Kanten wie der (p - 1) Turàn Graph
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 **Induktionsanfang:**
 
+Beginnen wir mit p = 2, so kann ein Graph G keine Kanten besitzen, da ein 2 - Clique aus einer Kante besteht. Ebendies gilt auch für einen 1 - Turàn Graph, dieser bestehet aus einer unabhängigen Teilmenge, hat also ebenfalls keine Kanten.
 
 **Induktionvoraussetzung:**
 
+Sei G ein Graph ohne p-Clique. Dann besitzt G höchstens so viele Kanten wie der (p - 1) Turàn Graph.
 
 **Induktionsschluss:**
 
+Sie G nun ein Graph ohne (p + 1) - Clique, so gilt zu zeigen, dass er höchstens so viele Kanten wie ein p Turàn Graph besitzt.
+Ein solcher Graph kann maximal aus p - Cliquen besitzen. Wenn man nun für jede p - Clique jedes Element abzählt und alle Elemente mit dem selben Index in einer unabhängigen Teilmenge zusammenfasst haben wir einen p - patiten Graphen. Hierbei gehen keine Kanten verloren, da wenn mehr als p Elemente über Kanten miteinander verbunden wären sich mindestens eine (p + 1) - Clique bilden würde. Da ein solcher Graph höchstens so viele Kanten hat wie ein vollständiger r - partiter Graph und dieser wie oben gezeigt höchstens so groß wie ein p - Turàn Graph ist ist die Aussage bewiesen.
+
+.. todo:: Kann noch nicht richtig sein, da IV nicht verwendet wurde (Behauptung kommt mir viel zu stark vor)
 
