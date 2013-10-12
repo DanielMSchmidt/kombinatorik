@@ -3,7 +3,7 @@ Dritter Beweis: Wahrscheinlichkeitsverteilung
 
 .. todo:: Im vortrag sagen dass man hiermit das ganze problem ganz leicht erklären
 
-In diesem Beweis betrachten wir die Wahrscheinlichkeitsverteilung auf den Knoten des Graphen. Diese notieren wir als :math:`w = (w_1,...,w_n)` und es gilt :math:`w_i \ge 0`, sowie :math:`\sum^n_{i=1}w_i = 1`. Des weiteren definieren wir eine Funktion :math:`f(w) = \sum_{v_i, v_j \in E} w_i w_j`, welche wir zu maximieren versuchen.
+In diesem Beweis betrachten wir die Wahrscheinlichkeitsverteilung auf den Knoten des Graphen. Diese notieren wir als :math:`w = (w_1,...,w_n)` und es gilt :math:`w_i \ge 0`, sowie :math:`\sum^n_{i=1}w_i = 1`. Des weiteren definieren wir eine Funktion :math:`f(w) = \sum_{ \{v_i, v_j\} \in E} w_i w_j`, welche wir zu maximieren versuchen.
 
 
 Setzen wir nun :math:`v_i` und :math:`v_j` als zwei nicht benachbarte Ecken mit positiven Gewicht :math:`w_i, w_j` und fassen das Gewicht ihrer adjazenten Knoten zusammen als :math:`s_i, s_j` und nehmen :math:`s_i \ge s_j` an.
@@ -19,10 +19,10 @@ Bewegen wir nun das Gewicht von :math:`v_j` nach :math:`v_i`, setzen also :math:
 (1) Dies gilt aufgrund des verschobenen Gewichts. Dieses wird in der Multiplikation auf seitens :math:`s_j` nicht mehr betrachtet, bei :math:`s_i` schon.
 (2) Dies gilt, da :math:`w_j` als Ecke mit positiven Gewicht ausgewählt wurde.
 
-Wir können dies nun wiederholen bis es keine nicht-adjazenten Ecken mit positiver Gewichtung mehr gibt und erhalten danach eine  optimierte Verteilung, da bei jeder Umformung :math:`f(w') \ge f(w)` gilt. Zudem muss es eine optimale Verteilung geben in der alle Gewichte in einer k-Clique zusammengezogen sind, da sich das Gewicht innerhalb einer solchen Clique beim Tausch lediglich verschieben würde, insgesamt aber gleich bleibt.
+Wir können dies nun wiederholen bis es keine nicht-adjazenten Ecken mit positiver Gewichtung mehr gibt und erhalten danach eine  optimierte Verteilung, da bei jeder Umformung :math:`f(w') \ge f(w)` gilt. Da wir das Gewicht nach einer gewissen Zeit nurnoch innerhalb einer k - Clique verschieben müssen wir im folgenden nun betrachten wie wir dies optimieren können.
 
 
-Gehen wir nun von einer solchen Clique aus, so lassen sich die Gewichte innerhalb der Clique ebenfalls verschieben. Diese bewegen wir in der Form, dass wir uns zwei Ecken mit positiven Gewicht wählen für die :math:`w_1 > w_2 > 0` gilt und ein :math:`\varepsilon` für das :math:`0 < \varepsilon < w_1 - w_2` gilt. Dieses :math:`\varepsilon` addieren wir auf :math:`w_2` und subtrahieren es von :math:`w_1`.
+Bewegen wir die Gweichte innerhalb einer solchen k - Clique nun in der Form, dass wir uns zwei Ecken mit positiven Gewicht wählen für die :math:`w_1 > w_2 > 0` gilt und ein :math:`\varepsilon` für das :math:`0 < \varepsilon < w_1 - w_2` gilt. Dieses :math:`\varepsilon` addieren wir auf :math:`w_2` und subtrahieren es von :math:`w_1`.
 
 Da
 
