@@ -16,13 +16,13 @@ Bewegen wir nun das Gewicht von :math:`v_j` nach :math:`v_i`, setzen also :math:
   &= f(w) + (s_i - s_j) w_j \\
   &\ge^2 f(w)
 
-(1) Dies gilt aufgrund des verschobenen Gewichts. Dieses wird in der Multiplikation auf seitens :math:`s_j` nicht mehr betrachtet, bei :math:`s_i` schon.
+(1) Dies gilt aufgrund des verschobenen Gewichts. Dieses wird in der Multiplikation auf seitens :math:`s_j` nicht mehr betrachtet, bei :math:`s_i` schon. Da :math:`w_j` für :math:`s_j` wegfällt wird das Gewicht hier also abgezogen und bei :math:`s_i` umgekehrt draufgerechnet in der MUltiplikation.
 (2) Dies gilt, da :math:`w_j` als Ecke mit positiven Gewicht ausgewählt wurde.
 
 Wir können dies nun wiederholen bis es keine nicht-adjazenten Ecken mit positiver Gewichtung mehr gibt und erhalten danach eine  optimierte Verteilung, da bei jeder Umformung :math:`f(w') \ge f(w)` gilt. Da wir das Gewicht nach einer gewissen Zeit nurnoch innerhalb einer k - Clique verschieben müssen wir im folgenden nun betrachten wie wir dies optimieren können.
 
 
-Bewegen wir die Gweichte innerhalb einer solchen k - Clique nun in der Form, dass wir uns zwei Ecken mit positiven Gewicht wählen für die :math:`w_1 > w_2 > 0` gilt und ein :math:`\varepsilon` für das :math:`0 < \varepsilon < w_1 - w_2` gilt. Dieses :math:`\varepsilon` addieren wir auf :math:`w_2` und subtrahieren es von :math:`w_1`.
+Bewegen wir die Gewichte innerhalb einer solchen k - Clique nun in der Form, dass wir uns zwei Ecken mit positiven Gewicht wählen für die :math:`w_1 > w_2 > 0` gilt und ein :math:`\varepsilon` für das :math:`0 < \varepsilon < w_1 - w_2` gilt. Dieses :math:`\varepsilon` addieren wir auf :math:`w_2` und subtrahieren es von :math:`w_1`.
 
 Da
 
@@ -32,7 +32,8 @@ Da
   &>^2 f(w)
 
 
-(1) No Idea yet .. todo:: Fill me up
+(1) No Idea yet
+.. todo:: Fill me up
 (2) Da :math:`0 < \varepsilon < w_1 - w_2` gilt.
 
 gilt, optimiert diese Gewichtsverlagerung die k-Clique bis es keine ungleichen Gewichtungen mehr in ihr gibt. Da w = 1 gilt und alle Knoten außerhalb der Clique die Gewichtung 0 hat wird jeder Knoten innerhalb der Clique die Gewichtung :math:`w_i = \frac{1}{k}`.
