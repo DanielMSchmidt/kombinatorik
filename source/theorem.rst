@@ -15,7 +15,7 @@ Die Frage mit der sich das Theorem beschäftigt ist, wie viele Kanten kann man m
 Turáns Graphtheorem
 *******************
 
-Turáns Graphtheorem besagt, dass für einen Graph G = (V,E) mit n Kanten ohne p-Kreis gilt:
+Turáns Graphtheorem besagt, dass für einen Graph G = (V,E) mit n Knoten ohne p-Clique gilt:
 
 .. math:: \mid E \mid \le (1- \frac{1}{p-1}) \frac{n^2}{2}
 
