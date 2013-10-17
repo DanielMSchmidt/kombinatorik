@@ -21,26 +21,18 @@ Bewegen wir nun das Gewicht von :math:`v_j` nach :math:`v_i`, setzen also :math:
 Wir können diese Verschiebung nun wiederholen bis es keine nicht-adjazenten Knoten mit positiver Gewichtung mehr gibt und erhalten danach eine optimierte Verteilung, da für jede Umformung :math:`f(w') \ge f(w)` gilt. Da wir das Gewicht nach bestimmten Anzahl an Verschiebungen innerhalb einer k - Clique verschieben betrachten wir nun wie wir das Gewicht für eine solche Clique optimieren können.
 
 
-Bewegen wir die Gewichte innerhalb einer solchen k - Clique in der Form, dass wir uns zwei Ecken mit positiven Gewicht wählen für die :math:`w_1 > w_2 > 0` gilt und ein :math:`\varepsilon` setzen für das :math:`0 < \varepsilon < w_1 - w_2` gilt. Addieren wir :math:`\varepsilon` auf :math:`w_2` und subtrahieren es von :math:`w_1`. Setzen wir zudem :math:`NB(w) := \{ v \mid v \in V \wedge \{ w, v \} \in E  \}`, also die Menge der Nachbarn von w. Es ergibt sich also:
+Bewegen wir die Gewichte innerhalb einer solchen k - Clique in der Form, dass wir uns zwei Ecken mit positiven Gewicht wählen für die :math:`w_i > w_j > 0` gilt und ein :math:`\varepsilon` setzen für das :math:`0 < \varepsilon < w_i - w_j` gilt. Addieren wir :math:`\varepsilon` auf :math:`w_j` und subtrahieren es von :math:`w_i`. Es ergibt sich also:
 
 
 .. math::
-  f(w') &=^1 f(w) - \sum_{v \in NB(w_1) \backslash NB(w_2)}(w_1 w) - \sum_{v \in NB(w_2) \backslash NB(w_1)}(w_2 w) + \sum_{v \in NB(w_1) \backslash NB(w_2)}((w_1 - \varepsilon) w) \\ &+ \sum_{v \in NB(w_2) \backslash NB(w_1)}((w_2 + \varepsilon) w) - \sum_{v \in NB(w_1) \cap NB(w_2)}(w_1 w_2) + \sum_{v \in NB(w_1) \cap NB(w_2)}((w_2 + \varepsilon) (w_1 - \varepsilon)) \\
-  &=^2 f(w) - \sum_{v \in NB(w_1) \backslash NB(w_2)}(w_1 w) - \sum_{v \in NB(w_2) \backslash NB(w_1)}(w_2 w) + \sum_{v \in NB(w_1) \backslash NB(w_2)}((w_1 - \varepsilon) w) \\ &+ \sum_{v \in NB(w_2) \backslash NB(w_1)}((w_2 + \varepsilon) w) - (w_1 w_2) + ((w_2 + \varepsilon) (w_1 - \varepsilon)) \\
-  &=^3 f(w) + ((w_2 + \varepsilon) - w_2) + (w_1 - \varepsilon) - w_1) + (w_2 + \varepsilon) (w_1 - \varepsilon) - w_1 w_2 \\
-  &= f(w) + \varepsilon  - \varepsilon + (w_2 + \varepsilon) (w_1 - \varepsilon) - w_1 w_2 \\
-  &= f(w) + (w_2 + \varepsilon) (w_1 - \varepsilon) - w_1 w_2 \\
-  &= f(w) + w_2 w_1 - w_2 \varepsilon + w_1 \varepsilon - \varepsilon^2 - w_1 w_2 \\
-  &= f(w) + w_1 w_2 + \varepsilon (w_1 - w_2) - \varepsilon^2 - w_1 w_2 \\
-  &= f(w) + \varepsilon (w_1 - w_2) - \varepsilon^2 \\
-  &= f(w) + \varepsilon ((w_1 - w_2) - \varepsilon) \\
-  &>^4 f(w)
+	f(w') &=^1 f(w) - w_i w_j + w'_i w'_j \\
+	&= f(w) - w_i w_j + (w_i - \varepsilon)(w_j + \varepsilon) \\
+	&= f(w) + \varepsilon (w_i - w_j) - \varepsilon^2 \\
+  &>^2 f(w)
 
 
-(1) Alle veränderten Kantengewichte sind aufgenommen
-(2) Dies gilt, da :math:`\mid NB(w_1) \cap NB(w_2) \mid = 1` gilt, es also keine doppelten Kanten zwischen zwei Knoten geben kann.
-(3) Die unveränderten Summen weggekürzt
-(4) Da :math:`0 < \varepsilon < w_1 - w_2` gilt.
+(1) Da in einer Clique alle Knoten miteinander verbunden sind, gleichen sich die Unterschiede für die Funktionswerte für alle Kanten aus, außer der zwischen :math:`v_i` und :math:`v_j`. Dementsprechend muss das alte Gewicht abgezogen und das neue addiert werden.
+(2) Da :math:`0 < \varepsilon < w_1 - w_2` gilt.
 
 Daher optimiert diese Gewichtsverlagerung die k-Clique bis es keine ungleichen Gewichtungen mehr in ihr gibt.
 Dass dies irgendwann eintritt ist leicht einzusehen, denn wenn man :math:`\varepsilon` setzt als
