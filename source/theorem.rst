@@ -75,17 +75,17 @@ vollständiger r - partiter Graph
 Ein r - partiter Graph wird vollständig genannt, wenn jedes Element mit jedem anderen verbunden ist, außer mit denen, die in einer unabhängigen Knotenmenge mit ihm sind.
 
 
-Turàn Graph
+Turán Graph
 """""""""""
 
-Ein Turàn Graph ist ein vollständiger r - partiter Graph bei dem sich die Größe jeder Partition maximal um 1 unterscheidet.
+Ein Turán Graph ist ein vollständiger r - partiter Graph bei dem sich die Größe jeder Partition maximal um 1 unterscheidet.
 
 
 ************
 Hilfsbeweise
 ************
 
-Ein Turàn Graph hat immer mindestens so viele Kanten wie ein entsprechender r - patiter Graph
+Ein Turán Graph hat immer mindestens so viele Kanten wie ein entsprechender r - patiter Graph
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 Es ist zu zeigen, dass die Anzahl der Kanten in einem vollständigen (p - 1) - partiten Graphen :math:`K_{n_1,...,n_{p - 1}}` genau dann maximal ist, wenn :math:`\mid n_i - n_j \mid \le 1` f.a. i,j gilt.
@@ -102,25 +102,25 @@ Verschieben wir eine Ecke aus :math:`V_1` in die Ecke :math:`V_2`, so erhalten w
 
 (1) Dies gilt, da :math:`n_1 \ge n_2 + 2` vorausgesetzt wird.
 
-Daher hat ein Turàn Graph mindestens so viele Kanten wie ein entsprechender r - patiter Graph.
+Daher hat ein Turán Graph mindestens so viele Kanten wie ein entsprechender r - patiter Graph.
 
 
 
-Sei G ein Graph ohne p-Clique. Dann besitzt G höchstens so viele Kanten wie der (p - 1) Turàn Graph
+Sei G ein Graph ohne p-Clique. Dann besitzt G höchstens so viele Kanten wie der (p - 1) Turán Graph
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 **Induktionsanfang:**
 
-Beginnen wir mit p = 2, so kann ein Graph G keine Kanten besitzen, da ein 2 - Clique aus einer Kante besteht. Ebendies gilt auch für einen 1 - Turàn Graph, dieser bestehet aus einer unabhängigen Teilmenge, hat also ebenfalls keine Kanten.
+Beginnen wir mit p = 2, so kann ein Graph G keine Kanten besitzen, da ein 2 - Clique aus einer Kante besteht. Ebendies gilt auch für einen 1 - Turán Graph, dieser bestehet aus einer unabhängigen Teilmenge, hat also ebenfalls keine Kanten.
 
 **Induktionvoraussetzung:**
 
-Sei G ein Graph ohne p-Clique. Dann besitzt G höchstens so viele Kanten wie der (p - 1) Turàn Graph.
+Sei G ein Graph ohne p-Clique. Dann besitzt G höchstens so viele Kanten wie der (p - 1) Turán Graph.
 
 **Induktionsschluss:**
 
-Sie G nun ein Graph ohne (p + 1) - Clique, so gilt zu zeigen, dass er höchstens so viele Kanten wie ein p Turàn Graph besitzt.
-Ein solcher Graph kann maximal aus p - Cliquen besitzen. Wenn man nun für jede p - Clique jedes Element abzählt und alle Elemente mit dem selben Index in einer unabhängigen Teilmenge zusammenfasst haben wir einen p - patiten Graphen. Hierbei gehen keine Kanten verloren, da wenn mehr als p Elemente über Kanten miteinander verbunden wären sich mindestens eine (p + 1) - Clique bilden würde. Da ein solcher Graph höchstens so viele Kanten hat wie ein vollständiger r - partiter Graph und dieser wie oben gezeigt höchstens so groß wie ein p - Turàn Graph ist ist die Aussage bewiesen.
+Sie G nun ein Graph ohne (p + 1) - Clique, so gilt zu zeigen, dass er höchstens so viele Kanten wie ein p Turán Graph besitzt.
+Ein solcher Graph kann maximal aus p - Cliquen besitzen. Wenn man nun für jede p - Clique jedes Element abzählt und alle Elemente mit dem selben Index in einer unabhängigen Teilmenge zusammenfasst haben wir einen p - patiten Graphen. Hierbei gehen keine Kanten verloren, da wenn mehr als p Elemente über Kanten miteinander verbunden wären sich mindestens eine (p + 1) - Clique bilden würde. Da ein solcher Graph höchstens so viele Kanten hat wie ein vollständiger r - partiter Graph und dieser wie oben gezeigt höchstens so groß wie ein p - Turán Graph ist ist die Aussage bewiesen.
 
 .. todo:: Kann noch nicht richtig sein, da IV nicht verwendet wurde (Behauptung kommt mir viel zu stark vor)
 

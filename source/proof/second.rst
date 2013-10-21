@@ -1,17 +1,17 @@
-Zweiter Beweis: Struktur des Turàn Graphs
+Zweiter Beweis: Struktur des Turán Graphs
 =========================================
 
-In diesem Beweis nutzen wir die Struktur eines Turàn Graphens aus und beweisen die stärkere Forderung:
+In diesem Beweis nutzen wir die Struktur eines Turán Graphens aus und beweisen die stärkere Forderung:
 
-Sei G ein Graph ohne (p - 1) - Clique, dann besitzt G höchstens so viele Kanten wie der (p - 2) Turàn Graph
+Sei G ein Graph ohne (p - 1) - Clique, dann besitzt G höchstens so viele Kanten wie der (p - 2) Turán Graph
 
 **Induktionsanfang:**
 
-Beginnen wir mit p = 3, so kann ein Graph G keine Kanten besitzen, da ein 2 - Clique aus einer Kante besteht. Ebendies gilt auch für einen 1 - Turàn Graph, dieser bestehet aus einer unabhängigen Teilmenge, hat also ebenfalls keine Kanten.
+Beginnen wir mit p = 3, so kann ein Graph G keine Kanten besitzen, da ein 2 - Clique aus einer Kante besteht. Ebendies gilt auch für einen 1 - Turán Graph, dieser bestehet aus einer unabhängigen Teilmenge, hat also ebenfalls keine Kanten.
 
 **Induktionvoraussetzung:**
 
-Sei G ein Graph ohne (p - 1) - Clique. Dann besitzt G höchstens so viele Kanten wie der (p - 2) - Turàn Graph.
+Sei G ein Graph ohne (p - 1) - Clique. Dann besitzt G höchstens so viele Kanten wie der (p - 2) - Turán Graph.
 
 **Induktionsschluss:**
 
