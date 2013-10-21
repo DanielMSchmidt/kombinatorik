@@ -18,7 +18,9 @@ Bewegen wir nun das Gewicht von :math:`v_j` nach :math:`v_i`, setzen also :math:
 (1) Dies gilt aufgrund des verschobenen Gewichts. Dieses wird in der Multiplikation auf seitens :math:`s_j` nicht mehr betrachtet, bei :math:`s_i` schon. Da :math:`w_j` für :math:`s_j` wegfällt wird das Gewicht hier also abgezogen und bei :math:`s_i` umgekehrt draufgerechnet in der Multiplikation.
 (2) Dies gilt, da :math:`w_j` als Ecke mit positiven Gewicht ausgewählt wurde.
 
+
 Wir können diese Verschiebung nun wiederholen bis es keine nicht-adjazenten Knoten mit positiver Gewichtung mehr gibt und erhalten danach eine optimierte Verteilung, da für jede Umformung :math:`f(w') \ge f(w)` gilt. Da wir das Gewicht nach bestimmten Anzahl an Verschiebungen innerhalb einer k - Clique verschieben betrachten wir nun wie wir das Gewicht für eine solche Clique optimieren können.
+Dies muss nicht zwangsweise die größte Clique sein, obwohl f dann zum Schluss am größten wäre.
 
 
 Bewegen wir die Gewichte innerhalb einer solchen k - Clique in der Form, dass wir uns zwei Ecken mit positiven Gewicht wählen für die :math:`w_i > w_j > 0` gilt und ein :math:`\varepsilon` setzen für das :math:`0 < \varepsilon < w_i - w_j` gilt. Addieren wir :math:`\varepsilon` auf :math:`w_j` und subtrahieren es von :math:`w_i`. Es ergibt sich also:
@@ -38,12 +40,9 @@ Daher optimiert diese Gewichtsverlagerung die k-Clique bis es keine ungleichen G
 Dass dies irgendwann eintritt ist leicht einzusehen, denn wenn man :math:`\varepsilon` setzt als
 
 .. math::
-  \varepsilon := \lim_{n \to \infty}((w_1 - w_2) - \frac{1}{n})
+  \varepsilon := w_i - \frac{1}{k}
 
-geht :math:`\frac{1}{n}` gegen 0. Daher nähern sich :math:`w_1` und :math:`w_2` an, wodurch sie sich an die optimale Gewichtung :math:`\frac{1}{k}` annähern. Diese muss optimal sein, da sich das Gewicht gleichermaßen auf die k Knoten verteilt, deren Gewicht noch größer als 0 ist. Obrige Ungleichung hat gezeigt, dass je näher die Werte der einzelnen Knoten aneinanderliegen desto optimierter ist die Funktion f. Dies liegt an der Eigenschaft der Multiplikation maximal für die Summe der Faktoren zu sein, wenn beide Faktoren gleich groß sind.
-
-Da w = 1 gilt und alle Knoten außerhalb der Clique die Gewichtung 0 hat wird jeder Knoten innerhalb der Clique die Gewichtung :math:`w_i = \frac{1}{k}`.
-
+wodurch :math:`w_i' = w_i - \varepsilon = w_i - w_i + \frac{1}{k} = \frac{1}{k}` gilt, also ein Knoten nach dem anderen die optimale, da gleichmäßige Verteilung einnimmt. Hierzu muss :math:`0 < w_i - \frac{1}{k} < w_i - w_j< `, also :math:`w_i > \frac{1}{k} \wedge w_j < \frac{1}{k}` gelten. Wenn man :math:`w_i` als maximal gewichteten Knoten wählt und :math:`w_j` als minimal gewichteten, dann muss :math:`\frac{1}{k}` zwischen beiden liegen muss. Obrige Ungleichung hat gezeigt, dass je näher die Werte der einzelnen Knoten aneinanderliegen desto optimierter ist die Funktion f, wodurch bei einer gleichmäßigen Verteilung das Optimum liegt. Dies liegt an der Eigenschaft der Multiplikation maximal für die Summe der Faktoren zu sein, wenn beide Faktoren gleich groß sind.
 
 In einer k-Clique können maximal :math:`\frac{k (k-1)}{2}` Kanten sein, also :math:`\frac{\text{Jeder Punkt} (\text{Jeder Punkt mit dem er sich verbinden kann})}{\text{Enden einer Kante}}`. Für die Gewichtung ergibt sich also:
 
