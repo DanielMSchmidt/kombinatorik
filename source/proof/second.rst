@@ -38,7 +38,9 @@ Es gilt :math:`d'_j =^1 \mid S \mid = d_m \ge^3 d_j`.
 
 Hieraus folgt :math:`\forall v_j \in V: d'_j \ge d_j` und somit auch :math:`\mid E(H) \mid \ge \mid E \mid`. Dementsprechend muss es einen maximalen Graphen dieser Form geben.
 
-Da H höchstens eine (p - 1) - Clique hat kann S in H maximal eine (p - 2) - Clique haben. Dadurch lässt sich hier die Induktionvoraussetzung benutzen, sprich S in H hat maximal so viele Kanten wie ein (p - 2) - Turàn Graph, lässt sich mit diesem also nach oben abschätzen. Da in H jeder Knoten aus S mit jedem Knoten der unabhängigen Teilmenge T verbunden ist bildet H insgesamt einen (p - 1) - Turàn Graph, was bedeutet unsere Behauptung ist bewiesen.
+Da H höchstens eine (p - 1) - Clique hat kann S in H maximal eine (p - 2) - Clique haben. Dadurch lässt sich hier die Induktionvoraussetzung benutzen, sprich S in H hat maximal so viele Kanten wie ein (p - 2) - Turán Graph, lässt sich mit diesem also nach oben abschätzen. Da in H jeder Knoten aus S mit jedem Knoten der unabhängigen Teilmenge T verbunden ist bildet H insgesamt einen (p - 1) - Turán Graph. Dies beweist unsere Behauptung, denn dies ist strenger als anzunehmen, dass dies ein Turán Graph ist für den n durch p - 1 teilbar ist. Für einen solchen ist die Anzahl der Kanten maximal, denn alle unabhängigen Teilmengen sind gleich groß, man kann also :math:`n_i := \frac{n}{p-1}` setzen. Es gilt dementsprechend
 
+.. math::
+  &\text{Anzahl der Verbindungsmöglichkeiten zwischen (p - 1) Kanten} \cdot ( \text{Anzahl der unabh. Teilmenge} )^2 = \\ &{ p - 1 \choose 2 } ( \frac{n}{p-1} )^2 = (1 - \frac{1}{p - 1}) \frac{n^2}{2}
 
-.. todo::  |E| \le (1 - \frac{1}{p-1}) \frac{n^2}{2} folgt aus stärkerer Behauptung (Text vor den Beweisen schränkt formel auf teilbare ps ein)
+und unsere Behauptung ist bewiesen.

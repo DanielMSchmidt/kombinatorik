@@ -25,9 +25,9 @@ Bewegen wir die Gewichte innerhalb einer solchen k - Clique in der Form, dass wi
 
 
 .. math::
-	f(w') &=^1 f(w) - w_i w_j + w'_i w'_j \\
-	&= f(w) - w_i w_j + (w_i - \varepsilon)(w_j + \varepsilon) \\
-	&= f(w) + \varepsilon (w_i - w_j) - \varepsilon^2 \\
+  f(w') &=^1 f(w) - w_i w_j + w'_i w'_j \\
+  &= f(w) - w_i w_j + (w_i - \varepsilon)(w_j + \varepsilon) \\
+  &= f(w) + \varepsilon (w_i - w_j) - \varepsilon^2 \\
   &>^2 f(w)
 
 
