@@ -20,7 +20,7 @@ Bewegen wir nun das Gewicht von :math:`v_j` nach :math:`v_i`, setzen also :math:
 
 
 Wir können diese Verschiebung nun wiederholen bis es keine nicht-adjazenten Knoten mit positiver Gewichtung mehr gibt und erhalten danach eine optimierte Verteilung, da für jede Umformung :math:`f(w') \ge f(w)` gilt. Da wir das Gewicht nach bestimmten Anzahl an Verschiebungen innerhalb einer k - Clique verschieben betrachten wir nun wie wir das Gewicht für eine solche Clique optimieren können.
-Dies muss nicht zwangsweise die größte Clique sein, obwohl f dann zum Schluss am größten wäre.
+Dies muss nicht zwangsweise die größte Clique sein, f wäre dann größer als mit einer kleineren Clique.
 
 
 Bewegen wir die Gewichte innerhalb einer solchen k - Clique in der Form, dass wir uns zwei Ecken mit positiven Gewicht wählen für die :math:`w_i > w_j > 0` gilt und ein :math:`\varepsilon` setzen für das :math:`0 < \varepsilon < w_i - w_j` gilt. Addieren wir :math:`\varepsilon` auf :math:`w_j` und subtrahieren es von :math:`w_i`. Es ergibt sich also:
@@ -42,7 +42,7 @@ Dass dies irgendwann eintritt ist leicht einzusehen, denn wenn man :math:`\varep
 .. math::
   \varepsilon := w_i - \frac{1}{k}
 
-wodurch :math:`w_i' = w_i - \varepsilon = w_i - w_i + \frac{1}{k} = \frac{1}{k}` gilt, also ein Knoten nach dem anderen die optimale, da gleichmäßige Verteilung einnimmt. Hierzu muss :math:`0 < w_i - \frac{1}{k} < w_i - w_j< `, also :math:`w_i > \frac{1}{k} \wedge w_j < \frac{1}{k}` gelten. Wenn man :math:`w_i` als maximal gewichteten Knoten wählt und :math:`w_j` als minimal gewichteten, dann muss :math:`\frac{1}{k}` zwischen beiden liegen muss. Obrige Ungleichung hat gezeigt, dass je näher die Werte der einzelnen Knoten aneinanderliegen desto optimierter ist die Funktion f, wodurch bei einer gleichmäßigen Verteilung das Optimum liegt. Dies liegt an der Eigenschaft der Multiplikation maximal für die Summe der Faktoren zu sein, wenn beide Faktoren gleich groß sind.
+wodurch :math:`w_i' = w_i - \varepsilon = w_i - w_i + \frac{1}{k} = \frac{1}{k}` gilt, also ein Knoten nach dem anderen die optimale, da gleichmäßige Verteilung einnimmt. Hierzu muss :math:`0 < w_i - \frac{1}{k} < w_i - w_j`, also :math:`w_j < \frac{1}{k} < w_i` gelten. Wenn man :math:`w_i` als maximal gewichteten Knoten wählt und :math:`w_j` als minimal gewichteten, dann muss :math:`\frac{1}{k}` zwischen beiden liegen muss. Obrige Ungleichung hat gezeigt, dass je näher die Werte der einzelnen Knoten aneinanderliegen desto optimierter ist die Funktion f, wodurch bei einer gleichmäßigen Verteilung das Optimum liegt. Dies liegt an der Eigenschaft der Multiplikation maximal für die Summe der Faktoren zu sein, wenn beide Faktoren gleich groß sind.
 
 In einer k-Clique können maximal :math:`\frac{k (k-1)}{2}` Kanten sein, also :math:`\frac{\text{Jeder Punkt} (\text{Jeder Punkt mit dem er sich verbinden kann})}{\text{Enden einer Kante}}`. Für die Gewichtung ergibt sich also:
 
