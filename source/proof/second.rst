@@ -16,11 +16,11 @@ Sei G ein Graph ohne (p - 1) - Clique. Dann besitzt G höchstens so viele Kanten
 
 **Induktionsschluss:**
 
-Sei ein p - Cliquenfreier Graph G gegeben mit der Knotenmenge V und einer Kantenmenge E. Nun setzen wir :math:`v_m` so, dass für dessen Grad gilt :math:`d_m := max_{1 \le j \le n} d_j`, sprich wir suchen uns den Knoten mit den meisten Kanten im Graphen aus.
+Sei ein p - Cliquenfreier Graph G gegeben mit der Knotenmenge V und einer Kantenmenge E. Nun setzen wir :math:`v_m` so, dass für dessen Grad gilt :math:`d_m := max_{1 \le j \le n} d_j`, sprich wir suchen uns einen Knoten mit den meisten Kanten im Graphen aus.
 
-Nun setzen wir S als Menge der Nachbarn von :math:`v_m`, wodurch :math:`\mid S \mid = d_m` ist und definieren :math:`T := V \backslash S`. Da alle Knoten aus S mit :math:`v_m` verbunden sind, :math:`v_m \notin S` und G p - Cliquenfrei ist muss S (p - 1) - Cliquenfrei sein.
+Nun setzen wir S als Menge der Nachbarn von :math:`v_m`, wodurch :math:`\mid S \mid = d_m` ist und definieren :math:`T := V \backslash S`. Da alle Knoten aus S mit :math:`v_m` verbunden sind, :math:`v_m \notin S` und G p - Cliquenfrei ist muss S (p - 2) - Cliquenfrei sein.
 
-Definieren wir nun H als neuen Graphen mit identischer Knotenmenge, für den lediglich alle Kanten aus S übernommen werden und jeder Knoten aus S mit jedem aus T verbunden ist. Da in T keine Kanten übernommen werden ist T eine unabhängige Menge in H. Hieraus folgt, dass es in T ebenfalls keine p - Clique geben kann, H ist also wie G p - Cliquenfrei.
+Definieren wir nun H als neuen Graphen mit identischer Knotenmenge, für den lediglich alle Kanten aus S übernommen werden und jeder Knoten aus S mit jedem aus T verbunden ist. Da in T keine Kanten übernommen werden ist T eine unabhängige Menge in H. Hieraus folgt, dass es in T ebenfalls keine (p - 1) - Clique geben kann, H ist also wie G (p - 1) - Cliquenfrei.
 
 
 Bezeichnen wir den Grad eines Knotens in H als :math:`d'_j`. Untersucht man nun die Grade in H, so lassen sich zwei Fälle unterscheiden:
@@ -37,9 +37,9 @@ Es gilt :math:`d'_j =^1 \mid S \mid = d_m \ge^3 d_j`.
 (1) gilt, da jedes Element aus T mit jedem Element aus S eine Kante teilt.
 (2) gilt, da :math:`v_m` so gewählt wurde, dass d_m das Maximum ist.
 
-Hieraus folgt :math:`\forall v_j \in V: d'_j \ge d_j` und somit auch :math:`\mid E(H) \mid \ge \mid E \mid`. Dementsprechend muss es einen maximalen Graphen dieser Form geben.
+Hieraus folgt :math:`\forall v_j \in V: d'_j \ge d_j` und somit auch :math:`\mid E(H) \mid \ge \mid E \mid`.
 
-Da H höchstens eine (p - 1) - Clique hat kann S in H maximal eine (p - 2) - Clique haben. Dadurch lässt sich hier die Induktionvoraussetzung benutzen, sprich S in H hat maximal so viele Kanten wie ein (p - 2) - Turán Graph, lässt sich mit diesem also nach oben abschätzen. Da in H jeder Knoten aus S mit jedem Knoten der unabhängigen Teilmenge T verbunden ist bildet H insgesamt einen (p - 1) - Turán Graph. Dies beweist unsere Behauptung, denn dies ist strenger als anzunehmen, dass dies ein Turán Graph ist für den n durch p - 1 teilbar ist. Für einen solchen ist die Anzahl der Kanten maximal, denn alle unabhängigen Teilmengen sind gleich groß, man kann also :math:`n_i := \frac{n}{p-1}` setzen. Es gilt dementsprechend
+Da H höchstens eine (p - 1) - Clique hat kann S in H maximal eine (p - 2) - Clique haben. Dadurch lässt sich hier die Induktionvoraussetzung benutzen, sprich S in H hat maximal so viele Kanten wie ein (p - 2) - Turán Graph, lässt sich mit diesem also nach oben abschätzen. Da in H jeder Knoten aus S mit jedem Knoten der unabhängigen Teilmenge T verbunden ist bildet H insgesamt einen (p - 1) - Turán Graph. Dies beweist unsere Behauptung, denn dies ist strenger als anzunehmen, dass dies ein Turán Graph ist für den n durch p - 1 teilbar ist. Für einen solchen ist die Anzahl der Kanten maximal, denn alle unabhängigen Teilmengen sind gleich groß, man kann also :math:`n_i := \frac{n}{p-1}` setzen. Somit ist die Hilfsbehauptung bewiesen und zudem gilt für die Kantenmenge
 
 .. math::
   &\text{Anzahl der Verbindungsmöglichkeiten zwischen (p - 1) Kanten} \cdot ( \text{Anzahl der unabh. Teilmenge} )^2 = \\ &{ p - 1 \choose 2 } ( \frac{n}{p-1} )^2 = (1 - \frac{1}{p - 1}) \frac{n^2}{2}
