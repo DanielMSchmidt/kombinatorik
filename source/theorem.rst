@@ -41,7 +41,7 @@ Grad eines Knotens
 
 Der Grad :math:`d_m` eines Knotens :math:`v_m` ist definitert als die Anzahl der benachbarten Knoten, sprich
 
-.. math:: d_m = \mid \{ v_i \mid v_i \in V \wedge \{ v_i, v_m \} \in E \} \mid
+.. math:: d_m = \text{  } \mid \{ v_i \mid v_i \in V \wedge \{ v_i, v_m \} \in E \} \mid
 
 p - Clique im Graph G
 """"""""""""""""""""""""""""""

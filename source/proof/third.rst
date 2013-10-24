@@ -23,7 +23,7 @@ Wir können diese Verschiebung nun wiederholen bis es keine nicht-adjazenten Kno
 Dies muss nicht zwangsweise die größte Clique sein, f wäre dann größer als mit einer kleineren Clique.
 
 
-Bewegen wir die Gewichte innerhalb einer solchen k - Clique in der Form, dass wir uns zwei Ecken mit positiven Gewicht wählen für die :math:`w_i > w_j > 0` gilt und ein :math:`\varepsilon` setzen für das :math:`0 < \varepsilon < w_i - w_j` gilt. Addieren wir :math:`\varepsilon` auf :math:`w_j` und subtrahieren es von :math:`w_i`. Es ergibt sich also:
+Bewegen wir die Gewichte innerhalb einer solchen k - Clique in der Form, dass wir uns zwei Knoten mit positiven Gewicht wählen für die :math:`w_i > w_j > 0` gilt und ein :math:`\varepsilon` setzen für das :math:`0 < \varepsilon < w_i - w_j` gilt. Addieren wir :math:`\varepsilon` auf :math:`w_j` und subtrahieren es von :math:`w_i`. Es ergibt sich also:
 
 
 .. math::
