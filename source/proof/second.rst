@@ -20,7 +20,7 @@ Sei ein p - Cliquenfreier Graph G gegeben mit der Knotenmenge V und einer Kanten
 
 Nun setzen wir S als Menge der Nachbarn von :math:`v_m`, wodurch :math:`\mid S \mid = d_m` ist und definieren :math:`T := V \backslash S`. Da alle Knoten aus S mit :math:`v_m` verbunden sind, :math:`v_m \notin S` und G p - Cliquenfrei ist muss S (p - 1) - Cliquenfrei sein.
 
-Definieren wir nun H als neuen Graphen mit identischer Knotenmenge, für den lediglich alle Kanten aus S übernommen werden und jeder Knoten aus S mit jedem aus T verbunden ist. Da in T keine Kanten übernoommern werden ist T eine unabhängige Menge in H. Hieraus folgt, dass es in T ebenfalls keine p - Clique geben kann, H ist also wie G p - Cliquenfrei.
+Definieren wir nun H als neuen Graphen mit identischer Knotenmenge, für den lediglich alle Kanten aus S übernommen werden und jeder Knoten aus S mit jedem aus T verbunden ist. Da in T keine Kanten übernommen werden ist T eine unabhängige Menge in H. Hieraus folgt, dass es in T ebenfalls keine p - Clique geben kann, H ist also wie G p - Cliquenfrei.
 
 
 Bezeichnen wir den Grad eines Knotens in H als :math:`d'_j`. Untersucht man nun die Grade in H, so lassen sich zwei Fälle unterscheiden:
