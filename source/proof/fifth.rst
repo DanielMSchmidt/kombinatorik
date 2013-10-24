@@ -1,15 +1,16 @@
 Fünfter Beweis: Maximaler Graph und Äquivalenzrelation
 ======================================================
 
-In diesem Beweis wird angenommen, dass G ein Graph mit n Ecken und ohne p - Clique ist, welcher die maximale Anzahl an Kanten hat.
+In diesem Beweis wird angenommen, dass G ein Graph mit n Knoten und ohne p - Clique ist, welcher die maximale Anzahl an Kanten hat.
 Um :math:`\mid E \mid \le (1- \frac{1}{p-1}) \frac{n^2}{2}` zu zeigen bedient sich dieser Beweis zudem folgender Behauptung:
 
 
-**Behauptung:** G enthält keine drei Ecken u,v,w mit :math:`\{ v, w \} \in E`, aber :math:`\{ u, v \} \notin E` und :math:`\{ u, w \} \notin E`
+**Behauptung:** G enthält keine drei Knoten u,v,w mit :math:`\{ v, w \} \in E`, aber :math:`\{ u, v \} \notin E` und :math:`\{ u, w \} \notin E`
 
 
 Diese Behauptung beweisen wir durch Widerspruch. Hierzu unterteilen wir das Problem in zwei Fälle:
 
+.. todo:: Bei Wiedersprüchen genau sagen mit was sie wiedersprechen
 
 **Fall 1:** :math:`d(u) < d(v) \vee d(u) < d(w)`
 
@@ -57,5 +58,7 @@ Definieren wir :math:`u \sim v :\Longleftrightarrow \{ u,v \} \notin E(G)`, so i
   u \sim v &\Rightarrow \{ u,v \} \notin E(G) \\
   &\Rightarrow\ v \sim u
 
+
+.. todo::  Da er eine p - 1 Clique haben muss ist er ein vollständiger p -partiter Graph und daher ein Turàn Graph das sonst größer ginge. daher siehe 2. beweis und fertig
 
 Dank unserer im Vorfeld bewiesenen Behauptung, dass es einen maximalen Graph geben muss, der ein Turán Graph ist folgt hieraus, dass G äquivalent zu einen Turán Graphen ist. Daraus folgt wie in den vorigen Beweisen die Behauptung und wir sind fertig.
