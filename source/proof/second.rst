@@ -4,6 +4,7 @@ Zweiter Beweis: Struktur des Turán Graphs
 In diesem Beweis nutzen wir die Struktur eines Turán Graphens aus und beweisen die stärkere Forderung:
 
 Sei G ein Graph ohne (p - 1) - Clique, dann besitzt G höchstens so viele Kanten wie der (p - 2) Turán Graph
+-----------------------------------------------------------------------------------------------------------
 
 **Induktionsanfang:**
 
