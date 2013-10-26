@@ -59,6 +59,6 @@ Definieren wir :math:`u \sim v :\Longleftrightarrow \{ u,v \} \notin E(G)`, so i
   &\Rightarrow\ v \sim u
 
 
-.. todo::  Da er eine p - 1 Clique haben muss ist er ein vollständiger p -partiter Graph und daher ein Turàn Graph das sonst größer ginge. daher siehe 2. beweis und fertig
+Diese Äquivalenzrelation muss ebenfalls für alle vollständigen (p - 1) - partiten Graphen gelten, da dort lediglich Knoten aus unterschiedlichen Partitionen miteinander verbunden sind. Ein dritter Knoten muss also aufgrund der Vollständigkeit entweder mit einem der beiden oder beiden anderen verbunden sein. Dementsprechend gilt die Äquivalenzrelation auch für Turán Graphen, wodurch sowohl der maximale Graph, als auch der Turán Graph in einer Äquivalenzklasse sind.
 
-Dank unserer im Vorfeld bewiesenen Behauptung, dass es einen maximalen Graph geben muss, der ein Turán Graph ist folgt hieraus, dass G äquivalent zu einen Turán Graphen ist. Daraus folgt wie in den vorigen Beweisen die Behauptung und wir sind fertig.
+Dementsprechend können wir unseren maximalen Graphen als einen solchen behandeln und die Aussage ist bewiesen, da wir die Behauptung schon im zweiten Beweis für einen (p - 1) - Turán Graphen gezeigt haben.
