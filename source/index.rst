@@ -14,6 +14,6 @@ Inhaltsverzeichnis:
    introduction
    theorem
    proof
-   sources
 
 
+Die Folien finden sich auf `GitHub <https://github.com/DanielMSchmidt/kombinatorik/blob/master/Kombinatorik.odp?raw=true>`_.

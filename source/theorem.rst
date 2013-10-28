@@ -2,8 +2,6 @@
 Das Theorem
 ===========
 
-.. todo:: Was meinte ich mit Kanten shiften?
-
 
 *****************
 Umgangssprachlich
