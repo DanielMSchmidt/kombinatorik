@@ -86,6 +86,8 @@ Hilfsbeweise
 Ein Turán Graph hat immer mindestens so viele Kanten wie ein entsprechender r - patiter Graph
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+.. todo:: jede 1 mit i und 2 mit j austauschen, bei dem also :math:`n_1 \ge n_2 + 2` noch etwas Ohne Beschränkung der Allgemeinheit angeben
+
 Es ist zu zeigen, dass die Anzahl der Kanten in einem vollständigen (p - 1) - partiten Graphen :math:`K_{n_1,...,n_{p - 1}}` genau dann maximal ist, wenn :math:`\mid n_i - n_j \mid \le 1` f.a. i,j gilt.
 
 
@@ -93,7 +95,7 @@ Wir nehmen für unseren r-partiten Graphen an, dass :math:`\mid n_i - n_j \mid >
 Verschieben wir eine Ecke aus :math:`V_1` in die Ecke :math:`V_2`, so erhalten wir einen Graphen :math:`K_{n_1 - 1, n_2 + 1,...,n_{p - 1}}`. Dieser besitzt aufgrund der Verschiebung :math:`(n_1 - 1)(n_2 + 1) - n_1 n_2` mehr Knoten als der ursprüngliche Graph, denn es gilt
 
 .. math::
-	(n_1 - 1)(n_2 + 1) - n_1 n_2 &= n_1 n_2 - n_2 + n_1 - n_1 - 1 - n_1 n_2 \\
+	(n_1 - 1)(n_2 + 1) - n_1 n_2 &= n_1 n_2 - n_2 + n_1 - 1 - n_1 n_2 \\
 	&= n_1 - n_2 - 1 \\
 	&\ge^1 n_2 + 2 - n_2 - 1 \\
 	&= 1
