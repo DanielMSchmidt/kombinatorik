@@ -154,23 +154,23 @@ In diesem Beweis nutzen wir die Struktur eines Turán Graphens aus und beweisen 
 
 \subsection*{Sei G ein Graph ohne p - Clique, dann besitzt G höchstens so viele Kanten wie der (p - 1) Turán Graph}
 \label{proof/second:sei-g-ein-graph-ohne-p-clique-dann-besitzt-g-hochstens-so-viele-kanten-wie-der-p-1-turan-graph}
-\textbf{Induktionsanfang:}
+\subsubsection*{Induktionsanfang:}
 
 Beginnen wir mit p = 2, so kann ein Graph G keine Kanten besitzen, da ein 2 - Clique aus einer Kante besteht. Ebendies gilt auch für einen 1 - Turán Graph, dieser bestehet aus einer unabhängigen Teilmenge, hat also ebenfalls keine Kanten.
 
-\textbf{Induktionvoraussetzung:}
+\subsubsection*{Induktionvoraussetzung:}
 
 Sei G ein Graph ohne p - Clique. Dann besitzt G höchstens so viele Kanten wie der (p - 1) - Turán Graph.
 
-\textbf{Induktionsschluss:}
+\subsubsection*{Induktionsschluss:}
 
 Sei ein (p + 1) - cliquenfreier Graph G gegeben mit der Knotenmenge V und einer Kantenmenge E. Nun setzen wir $v_m$ so, dass für dessen Grad gilt $d_m := max_{1 \le j \le n} d_j$, sprich wir suchen uns einen Knoten mit den meisten Kanten im Graphen aus.
 
 Nun setzen wir S als Menge der Nachbarn von $v_m$, wodurch $\mid S \mid = d_m$ ist und definieren $T := V \backslash S$. Da alle Knoten aus S mit $v_m$ verbunden sind, $v_m \notin S$ und G (p + 1) - cliquenfrei ist muss S p - cliquenfrei sein.
 
-Definieren wir nun H als neuen Graphen mit identischer Knotenmenge, für den lediglich alle Kanten aus S übernommen werden und jeder Knoten aus S mit jedem aus T verbunden ist. Da in T keine Kanten übernommen werden ist T eine unabhängige Menge in H und damit p - cliquenfrei.
+Definieren wir nun H als neuen Graphen mit identischer Knotenmenge, für den nur die Kanten aus S übernommen werden und jeder Knoten aus S mit jedem aus T verbunden ist. Da in T keine Kanten übernommen werden ist T eine unabhängige Menge in H und damit p - cliquenfrei.
 
-Bezeichnen wir den Grad eines Knotens in H als $d'_j$. Untersucht man nun die Grade in H, so lassen sich zwei Fälle unterscheiden:
+Bezeichnen wir den Grad eines Knotens $v_j$ in H als $d'_j$. Untersucht man nun die Grade in H, so lassen sich zwei Fälle unterscheiden:
 
 \textbf{Fall 1:} $v_j \in S$
 
@@ -203,7 +203,7 @@ und unsere Behauptung ist bewiesen.
 
 \section*{Dritter Beweis: Gewichtsverteilung}
 \label{proof/third::doc}\label{proof/third:dritter-beweis-gewichtsverteilung}
-In diesem Beweis betrachten wir eine Gewichtsverteilung auf den Knoten des Graphen. Diese notieren wir als $w = (w_1,...,w_n)$ und es gilt $w_i \ge 0$, sowie $\sum^n_{i=1}w_i = 1$. Des weiteren definieren wir eine Funktion $f(w) = \sum_{ \{v_i, v_j\} \in E} w_i w_j$, welche wir zu maximieren versuchen. Wieso wir dies für exakt diese Funktion tun wird sich im späteren Verlauf des Beweises klären.
+In diesem Beweis betrachten wir eine Gewichtsverteilung auf den Knoten des Graphen. Diese notieren wir als $w = (w_1,...,w_n)$ und es gilt $w_i \ge 0$, sowie $\sum^n_{i=1}w_i = 1$. Des weiteren definieren wir eine Funktion $f(w) = \sum_{ \{v_i, v_j\} \in E} w_i w_j$, welche wir zu maximieren versuchen. Wir nutzen diese Funktion, da sie für den ganzen Graphen dann maximal ist, wenn die Gewichte möglichst gleichmäßig verteilt sind.
 
 Setzen wir nun $v_i$ und $v_j$ als zwei nicht benachbarte Knoten mit positiven Gewicht $w_i, w_j$ und fassen das Gewicht ihrer adjazenten Knoten zusammen als $s_i, s_j$ und nehmen $s_i \ge s_j$ an.
 
@@ -222,7 +222,7 @@ Dies gilt, da $w_j$ als Ecke mit positiven Gewicht ausgewählt wurde.
 \end{enumerate}
 
 Wir können diese Verschiebung nun wiederholen bis es keine nicht-adjazenten Knoten mit positiver Gewichtung mehr gibt und erhalten danach eine optimierte Verteilung, da für jede Umformung $f(w') \ge f(w)$ gilt. Da wir das Gewicht nach bestimmten Anzahl an Verschiebungen innerhalb einer k - Clique verschieben betrachten wir nun wie wir das Gewicht für eine solche Clique optimieren können.
-Dies muss nicht zwangsweise die größte Clique sein, f wäre dann größer als mit einer kleineren Clique.
+Dies muss nicht zwangsweise die größte Clique sein, aber f wäre dann größer als mit einer kleineren Clique.
 
 Bewegen wir die Gewichte innerhalb einer solchen k - Clique in der Form, dass wir uns zwei Knoten mit positiven Gewicht wählen für die $w_i > w_j > 0$ gilt und ein $\varepsilon$ setzen für das $0 < \varepsilon < w_i - w_j$ gilt. Addieren wir $\varepsilon$ auf $w_j$ und subtrahieren es von $w_i$. Es ergibt sich also:
 \begin{gather}
@@ -232,10 +232,10 @@ Bewegen wir die Gewichte innerhalb einer solchen k - Clique in der Form, dass wi
 &>^2 f(w)\end{split}\notag\\\begin{split}\end{split}\notag
 \end{gather}\begin{enumerate}
 \item {}
-Da in einer Clique alle Knoten miteinander verbunden sind, gleichen sich die Unterschiede für die Funktionswerte für alle Kanten aus, außer der zwischen $v_i$ und $v_j$. Dementsprechend muss das alte Gewicht abgezogen und das neue addiert werden.
+Dies gilt, da in einer Clique alle Knoten miteinander verbunden sind, gleichen sich die Unterschiede für die Funktionswerte für alle Kanten aus, außer der zwischen $v_i$ und $v_j$. Dementsprechend muss das alte Gewicht abgezogen und das neue addiert werden.
 
 \item {}
-Da $0 < \varepsilon < w_1 - w_2$ gilt.
+Dies gilt, da $0 < \varepsilon < w_1 - w_2$ gilt.
 
 \end{enumerate}
 
@@ -326,6 +326,12 @@ Dies ist exakt die oben bewiesene Behauptung.
 \begin{split}u \sim v &\Rightarrow \{ u,v \} \notin E(G) \\
 &\Rightarrow\ v \sim u\end{split}\notag\\\begin{split}\end{split}\notag
 \end{gather}
+
+Für den Graphen G bilden die verschiedenen Partitionen die Äquivalenzklassen bezüglich $\sim$.
+
+
+// TODO: REWRITE THINGS FROM DOWN THERE
+
 Diese Äquivalenzrelation muss ebenfalls für alle vollständigen (p - 1) - partiten Graphen gelten, da dort lediglich Knoten aus unterschiedlichen Partitionen miteinander verbunden sind. Ein dritter Knoten muss also aufgrund der Vollständigkeit entweder mit einem der beiden oder beiden anderen verbunden sein. Dementsprechend gilt die Äquivalenzrelation auch für Turán Graphen, wodurch sowohl der maximale Graph, als auch der Turán Graph in einer Äquivalenzklasse sind.
 
 Dementsprechend können wir unseren maximalen Graphen als einen solchen behandeln und die Aussage ist bewiesen, da wir die Behauptung schon im zweiten Beweis für einen (p - 1) - Turán Graphen gezeigt haben.
