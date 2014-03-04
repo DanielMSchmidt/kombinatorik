@@ -19,3 +19,6 @@ Icon
 node_modules/
 .grunt/
 .~lock.Kombinatorik.odp#
+summary.aux
+summary.log
+summary.synctex.gz
