@@ -53,34 +53,12 @@
 \renewcommand{\headrulewidth}{0pt}
 \fancyhf{}
 \fancyhead[L]{
-\headerleftright{\textbf{Turans Graphtheorem}}{Daniel Schmidt}}
+\headerleftright{\textbf{Turáns Graphtheorem}}{Daniel Schmidt}}
 \fancyfoot[C]{\thepage}
 
-Inhaltsverzeichnis:
-
-
-\chapter{Einleitung}
-\label{introduction:einleitung}\label{introduction::doc}\label{introduction:turans-graph-theorem}
-
-\chapter{Das Theorem}
-\label{theorem:das-theorem}\label{theorem::doc}
-
-\section{Umgangssprachlich}
-\label{theorem:umgangssprachlich}
-Die Frage mit der sich das Theorem beschäftigt ist, wie viele Kanten kann man maximal in einem ungerichteten Graphen mit n Knoten einbringen ohne das eine p - Clique entsteht.
-
-
-\section{Turáns Graphtheorem}
-\label{theorem:turans-graphtheorem}
-Turáns Graphtheorem besagt, dass für einen Graph G = (V,E) mit n Knoten ohne p-Clique gilt:
-\begin{gather}
-\begin{split}\mid E \mid \le (1- \frac{1}{p-1}) \frac{n^2}{2}\end{split}\notag\\\begin{split}\end{split}\notag
-\end{gather}
-Hierbei muss p allerdings größer 1 sein, da wir ansonsten durch 0 teilen würden und da eine 1 - Clique aus weniger als einer Kante bestehen müsste, da eine Kante zwei Knoten verbindet.
-
-
-\section{Definitionen}
-\label{theorem:definitionen}
+\section{Einleitung}
+\label{theorem:einleitung}
+Im folgenden wird Turàns Graphtheorem auf 3 verschiedene Arten bewiesen. Hierzu definieren wir verschiedene Begriffe: 
 
 \subsection{Ungerichteter Graph}
 \label{theorem:ungerichteter-graph}
@@ -133,8 +111,18 @@ Ein r - partiter Graph wird vollständig genannt, wenn jedes Element mit jedem a
 Ein Turán Graph ist ein vollständiger r - partiter Graph bei dem sich die Größe jeder Partition maximal um 1 unterscheidet.
 
 
+\subsection{Turáns Graphtheorem}
+
+Da wir nun über die ausreichenden Grundlagen verfügen, sei nun das Theorem formell definiert als:
+
+Sei G ein Graph mit G = (V, E) mit Knotenmenge V und Kantenmenge E ohne p-Clique, so gilt 
+\begin{align*}
+\mid E \mid \le (1- \frac{1}{p-1}) \frac{n^2}{2}
+\end{align*}
+
 \section{Hilfsbeweise}
 \label{theorem:hilfsbeweise}
+
 
 \subsection{Ein Turán Graph hat immer mindestens so viele Kanten wie ein entsprechender r - patiter Graph}
 \label{theorem:ein-turan-graph-hat-immer-mindestens-so-viele-kanten-wie-ein-entsprechender-r-patiter-graph}
