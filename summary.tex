@@ -120,28 +120,8 @@ Sei G ein Graph mit G = (V, E) mit Knotenmenge V und Kantenmenge E ohne p-Clique
 \mid E \mid \le (1- \frac{1}{p-1}) \frac{n^2}{2}
 \end{align*}
 
-\section*{Hilfsbeweise}
-\label{theorem:hilfsbeweise}
 
 
-\subsection*{Ein Turán Graph hat immer mindestens so viele Kanten wie ein entsprechender r - patiter Graph}
-\label{theorem:ein-turan-graph-hat-immer-mindestens-so-viele-kanten-wie-ein-entsprechender-r-patiter-graph}
-Es ist zu zeigen, dass die Anzahl der Kanten in einem vollständigen (p - 1) - partiten Graphen $K_{n_1,...,n_{p - 1}}$ genau dann maximal ist, wenn $\mid n_i - n_j \mid \le 1$ f.a. i,j gilt.
-
-Wir nehmen für unseren r-partiten Graphen an, dass $\mid n_i - n_j \mid > 1$, also $n_1 \ge n_2 + 2$ gilt.
-Verschieben wir eine Ecke aus $V_1$ in die Ecke $V_2$, so erhalten wir einen Graphen $K_{n_1 - 1, n_2 + 1,...,n_{p - 1}}$. Dieser besitzt aufgrund der Verschiebung $(n_1 - 1)(n_2 + 1) - n_1 n_2$ mehr Knoten als der ursprüngliche Graph, denn es gilt
-\begin{gather}
-\begin{split}(n_1 - 1)(n_2 + 1) - n_1 n_2 &= n_1 n_2 - n_2 + n_1 - 1 - n_1 n_2 \\
-&= n_1 - n_2 - 1 \\
-&\ge^1 n_2 + 2 - n_2 - 1 \\
-&= 1\end{split}\notag\\\begin{split}\end{split}\notag
-\end{gather}\begin{enumerate}
-\item {}
-Dies gilt, da $n_1 \ge n_2 + 2$ vorausgesetzt wird.
-
-\end{enumerate}
-
-Daher hat ein Turán Graph mindestens so viele Kanten wie ein entsprechender r - patiter Graph.
 
 
 \chapter{Beweise}
@@ -327,16 +307,24 @@ Dies ist exakt die oben bewiesene Behauptung.
 &\Rightarrow\ v \sim u\end{split}\notag\\\begin{split}\end{split}\notag
 \end{gather}
 
-Für den Graphen G bilden die verschiedenen Partitionen die Äquivalenzklassen bezüglich $\sim$.
+Für den Graphen G bilden die Äquivalenzklassen bezüglich $\sim$ die verschiedenen Partitionen, wodurch G ein r - partiter Graph ist. Da er p - cliquenfrei und maximal ist muss er aus p - 1 Partitionen bestehen, daher ist G ein vollständiger (p - 1) - partiter Graph. Das bedeutet, wenn wir zeigen können, dass ein (p-1) - Turán Graph mindestens so viele Kanten wie ein vollständiger (p - 1) - partiter Graph, dann folgt daraus, dass die Anzahl der Kanten von G genau wie in Beweis zwei ableitbar sind, sprich Turáns Graphtheorem gilt.
 
+\subsection*{Ein r - Turán Graph hat immer mindestens so viele Kanten wie ein entsprechender r - patiter Graph}
+\label{theorem:ein-turan-graph-hat-immer-mindestens-so-viele-kanten-wie-ein-entsprechender-r-patiter-graph}
+Es ist zu zeigen, dass die Anzahl der Kanten in einem vollständigen r - partiten Graphen $K_{n_1,...,n_r}$ genau dann maximal ist, wenn $\mid n_i - n_j \mid \le 1$ f.a. i,j $\in [1, r]$ gilt.
 
-// TODO: REWRITE THINGS FROM DOWN THERE
+Wir nehmen für unseren r-partiten Graphen an, dass $\mid n_i - n_j \mid > 1$, also $n_1 \ge n_2 + 2$ gilt.
+Verschieben wir eine Ecke aus $V_1$ in die Ecke $V_2$, so erhalten wir einen Graphen $K_{n_1 - 1, n_2 + 1,...,n_{p - 1}}$. Dieser besitzt aufgrund der Verschiebung $(n_1 - 1)(n_2 + 1) - n_1 n_2$ mehr Knoten als der ursprüngliche Graph, denn es gilt
+\begin{gather}
+\begin{split}(n_1 - 1)(n_2 + 1) - n_1 n_2 &= n_1 n_2 - n_2 + n_1 - 1 - n_1 n_2 \\
+&= n_1 - n_2 - 1 \\
+&\ge^1 n_2 + 2 - n_2 - 1 \\
+&= 1\end{split}\notag\\\begin{split}\end{split}\notag
+\end{gather}\begin{enumerate}
+\item {}
+Dies gilt, da $n_1 \ge n_2 + 2$ vorausgesetzt wird.
 
-Diese Äquivalenzrelation muss ebenfalls für alle vollständigen (p - 1) - partiten Graphen gelten, da dort lediglich Knoten aus unterschiedlichen Partitionen miteinander verbunden sind. Ein dritter Knoten muss also aufgrund der Vollständigkeit entweder mit einem der beiden oder beiden anderen verbunden sein. Dementsprechend gilt die Äquivalenzrelation auch für Turán Graphen, wodurch sowohl der maximale Graph, als auch der Turán Graph in einer Äquivalenzklasse sind.
+\end{enumerate}
 
-Dementsprechend können wir unseren maximalen Graphen als einen solchen behandeln und die Aussage ist bewiesen, da wir die Behauptung schon im zweiten Beweis für einen (p - 1) - Turán Graphen gezeigt haben.
-
-Zu diesem Theorem gibt es viele Beweise und es wurde auf viele verschiedene Weisen wiederentdeckt. Von den fünfen, die es in ``The Book'' geschafft haben sind die drei behandelten oben aufgelistet.
-
-
+Daher hat ein Turán Graph mindestens so viele Kanten wie ein entsprechender r - patiter Graph, wodurch Turáns Graphtheorem gilt.
 \end{document}
