@@ -56,11 +56,12 @@
 \headerleftright{\textbf{Turáns Graphtheorem}}{Daniel Schmidt}}
 \fancyfoot[C]{\thepage}
 
-\section*{Einleitung}
+\section{Einleitung}
 \label{theorem:einleitung}
-Im folgenden wird Turàns Graphtheorem auf 3 verschiedene Arten bewiesen. Hierzu definieren wir verschiedene Begriffe:
+Im Folgenden wird Turàns Graphtheorem auf 3 verschiedene Arten bewiesen. Hierzu definieren wir verschiedene Begriffe:
 
-\subsection*{Ungerichteter Graph}
+\section{Definitionen}
+\subsection{Ungerichteter Graph}
 \label{theorem:ungerichteter-graph}
 Sei der ungerichtete Graph G definiert als Knotenmenge V
 \begin{gather}
@@ -71,14 +72,14 @@ und Kantenmenge E, wobei zwei Knoten $v_i, v_j$ benachbart sind falls
 \begin{split}\{v_i, v_j\} \in E\end{split}\notag\\\begin{split}\end{split}\notag
 \end{gather}
 
-\subsection*{Grad eines Knotens}
+\subsection{Grad eines Knotens}
 \label{theorem:grad-eines-knotens}
 Der Grad $d_m$ eines Knotens $v_m$ ist definitert als die Anzahl der benachbarten Knoten, sprich
 \begin{gather}
 \begin{split}d_m = \text{  } \mid \{ v_i \mid v_i \in V \wedge \{ v_i, v_m \} \in E \} \mid\end{split}\notag\\\begin{split}\end{split}\notag
 \end{gather}
 
-\subsection*{p - Clique im Graph G}
+\subsection{p - Clique im Graph G}
 \label{theorem:p-clique-im-graph-g}
 Dies ist ein vollständiger Untergraph von G mit p Kanten, also ein Graph K für dessen Knotenmenge V' gilt
 \begin{gather}
@@ -91,34 +92,34 @@ wobei V die Knotenmenge von G ist. Für die Kantenmenge E' gilt in ähnlicher We
 wobei E die Kantenmenge von G ist.
 
 
-\subsection*{unabhängige Knotenmenge}
+\subsection{unabhängige Knotenmenge}
 \label{theorem:unabhangige-knotenmenge}
 Eine Menge von Knoten wird als unabhängig bezeichnet, wenn es innerhalb dieser Menge keine Kanten gibt, sondern nur nach Knoten außerhalb dieser.
 
 
-\subsection*{r - partiter Graph}
+\subsection{r - partiter Graph}
 \label{theorem:r-partiter-graph}
 Ein r - partiter Graph besteht aus r disjunkten und unabhängigen Knotenmengen, welche untereinander durch Kanten verbunden sein können. Diese Knotenmengen bilden zudem eine Partition der gesamten Knotenmenge.
 
 
-\subsection*{vollständiger r - partiter Graph}
+\subsection{vollständiger r - partiter Graph}
 \label{theorem:vollstandiger-r-partiter-graph}
 Ein r - partiter Graph wird vollständig genannt, wenn jedes Element mit jedem anderen verbunden ist, außer mit denen, die in einer unabhängigen Knotenmenge mit ihm sind.
 
 
-\subsection*{Turán Graph}
+\subsection{Turán Graph}
 \label{theorem:turan-graph}
 Ein Turán Graph ist ein vollständiger r - partiter Graph bei dem sich die Größe jeder Partition maximal um 1 unterscheidet.
 
 
-\subsection*{Turáns Graphtheorem}
+\subsection{Turáns Graphtheorem}
 
 Da wir nun über die ausreichenden Grundlagen verfügen, sei nun das Theorem formell definiert als:
 
 Sei G ein Graph mit G = (V, E) mit Knotenmenge V und Kantenmenge E ohne p-Clique, so gilt
-\begin{align*}
+\begin{align}
 \mid E \mid \le (1- \frac{1}{p-1}) \frac{n^2}{2}
-\end{align*}
+\end{align}
 
 
 
@@ -127,22 +128,22 @@ Sei G ein Graph mit G = (V, E) mit Knotenmenge V und Kantenmenge E ohne p-Clique
 \chapter{Beweise}
 \label{proof::doc}\label{proof:beweise}
 
-\section*{Zweiter Beweis: Struktur des Turán Graphs}
+\section{Zweiter Beweis: Struktur des Turán Graphs}
 \label{proof/second:zweiter-beweis-struktur-des-turan-graphs}\label{proof/second::doc}
 In diesem Beweis nutzen wir die Struktur eines Turán Graphens aus und beweisen die stärkere Forderung:
 
 
-\subsection*{Sei G ein Graph ohne p - Clique, dann besitzt G höchstens so viele Kanten wie der (p - 1) Turán Graph}
+\subsection{Sei G ein Graph ohne p - Clique, dann besitzt G höchstens so viele Kanten wie der (p - 1) Turán Graph}
 \label{proof/second:sei-g-ein-graph-ohne-p-clique-dann-besitzt-g-hochstens-so-viele-kanten-wie-der-p-1-turan-graph}
-\subsubsection*{Induktionsanfang:}
+\subsubsection{Induktionsanfang:}
 
 Beginnen wir mit p = 2, so kann ein Graph G keine Kanten besitzen, da ein 2 - Clique aus einer Kante besteht. Ebendies gilt auch für einen 1 - Turán Graph, dieser bestehet aus einer unabhängigen Teilmenge, hat also ebenfalls keine Kanten.
 
-\subsubsection*{Induktionvoraussetzung:}
+\subsubsection{Induktionvoraussetzung:}
 
 Sei G ein Graph ohne p - Clique. Dann besitzt G höchstens so viele Kanten wie der (p - 1) - Turán Graph.
 
-\subsubsection*{Induktionsschluss:}
+\subsubsection{Induktionsschluss:}
 
 Sei ein (p + 1) - cliquenfreier Graph G gegeben mit der Knotenmenge V und einer Kantenmenge E. Nun setzen wir $v_m$ so, dass für dessen Grad gilt $d_m := max_{1 \le j \le n} d_j$, sprich wir suchen uns einen Knoten mit den meisten Kanten im Graphen aus.
 
@@ -181,7 +182,7 @@ Da ein Turán Graph für n Knoten genau dann die meisten Kanten hat, wenn alle P
 und unsere Behauptung ist bewiesen.
 
 
-\section*{Dritter Beweis: Gewichtsverteilung}
+\section{Dritter Beweis: Gewichtsverteilung}
 \label{proof/third::doc}\label{proof/third:dritter-beweis-gewichtsverteilung}
 In diesem Beweis betrachten wir eine Gewichtsverteilung auf den Knoten des Graphen. Diese notieren wir als $w = (w_1,...,w_n)$ und es gilt $w_i \ge 0$, sowie $\sum^n_{i=1}w_i = 1$. Des weiteren definieren wir eine Funktion $f(w) = \sum_{ \{v_i, v_j\} \in E} w_i w_j$, welche wir zu maximieren versuchen. Wir nutzen diese Funktion, da sie für den ganzen Graphen dann maximal ist, wenn die Gewichte möglichst gleichmäßig verteilt sind.
 
@@ -251,10 +252,10 @@ Da diese Funktion maximal ist wenn k maximal ist und der höchstmögliche Wert f
 Insbesondere gilt dies dann auch für die uniforme Verteilung
 \begin{gather}
 \begin{split}&\frac{\mid E \mid}{n^2} = f(w_i = \frac{1}{n}) \le \frac{1}{2} (1 - \frac{1}{p-1}) \\
-\Longleftrightarrow &\mid E \mid = f(w_i = \frac{1}{n}) * n^2 \le \frac{1}{2} (1 - \frac{1}{p-1}) * n^2\end{split}\notag\\\begin{split}\end{split}\notag
+\Longleftrightarrow &\mid E \mid = f(w_i = \frac{1}{n})  n^2 \le \frac{1}{2} (1 - \frac{1}{p-1})  n^2\end{split}\notag\\\begin{split}\end{split}\notag
 \end{gather}
 
-\section*{Fünfter Beweis: Maximaler Graph und Äquivalenzrelation}
+\section{Fünfter Beweis: Maximaler Graph und Äquivalenzrelation}
 \label{proof/fifth:funfter-beweis-maximaler-graph-und-aquivalenzrelation}\label{proof/fifth::doc}\label{proof/fifth:index-1}
 In diesem Beweis wird angenommen, dass G ein Graph mit n Knoten und ohne p - Clique ist, welcher die maximale Anzahl an Kanten hat.
 Um $\mid E \mid \le (1- \frac{1}{p-1}) \frac{n^2}{2}$ zu zeigen bedient sich dieser Beweis zudem folgender Behauptung:
@@ -309,7 +310,7 @@ Dies ist exakt die oben bewiesene Behauptung.
 
 Für den Graphen G bilden die Äquivalenzklassen bezüglich $\sim$ die verschiedenen Partitionen, wodurch G ein r - partiter Graph ist. Da er p - cliquenfrei und maximal ist muss er aus p - 1 Partitionen bestehen, daher ist G ein vollständiger (p - 1) - partiter Graph. Das bedeutet, wenn wir zeigen können, dass ein (p-1) - Turán Graph mindestens so viele Kanten wie ein vollständiger (p - 1) - partiter Graph, dann folgt daraus, dass die Anzahl der Kanten von G genau wie in Beweis zwei ableitbar sind, sprich Turáns Graphtheorem gilt.
 
-\subsection*{Ein r - Turán Graph hat immer mindestens so viele Kanten wie ein entsprechender r - patiter Graph}
+\subsection{Ein r - Turán Graph hat immer mindestens so viele Kanten wie ein entsprechender r - patiter Graph}
 \label{theorem:ein-turan-graph-hat-immer-mindestens-so-viele-kanten-wie-ein-entsprechender-r-patiter-graph}
 Es ist zu zeigen, dass die Anzahl der Kanten in einem vollständigen r - partiten Graphen $K_{n_1,...,n_r}$ genau dann maximal ist, wenn $\mid n_i - n_j \mid \le 1$ f.a. i,j $\in [1, r]$ gilt.
 
