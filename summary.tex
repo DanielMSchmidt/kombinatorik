@@ -64,73 +64,71 @@ Im Folgenden werde ich zunächst Definitionen für die in den Beweisen verwendet
 Zunächst wird das Theorem über eine vollständige Induktion bewiesen, die sich die Struktur der Turán Graphen zu eigen macht. \\
 In dem zweiten vorgestellten Beweis werden wir das Theorem über eine Gewichtsverteilung beweisen. \\
 Der letzte Beweis bedient sich der Annahme der gegebene Graph sei maximal und zeigt schließlich, dass dieser ein Turán Graph sein muss. Dieser erreicht wie sich im folgenden zeigen wird unter gewissen Umständen für die Kantenanzahl die obere Schranke welche im Theorem gegeben ist.
+
 \section{Definitionen}
+\subsection{Anmerkungen}
+Es sei gesagt, dass die Konstante vor sämtlichen Graphen (r - Turán Graph, p - Clique, etc) Element der natürlichen Zahlen ist.
+
 \subsection{Ungerichteter Graph}
 \label{theorem:ungerichteter-graph}
-Sei der ungerichtete Graph G definiert als Knotenmenge V
+Der ungerichtete Graph G = (V,E) sei definiert als Knotenmenge V
 \begin{gather}
 \begin{split}V = \{ v_1, ..., v_n \}\end{split}\notag\\\begin{split}\end{split}\notag
 \end{gather}
-und Kantenmenge E, wobei zwei Knoten $v_i, v_j$ benachbart sind falls
+und Kantenmenge E, wobei zwei Knoten $v_i, v_j$ benachbart heißen, falls
 \begin{gather}
 \begin{split}\{v_i, v_j\} \in E\end{split}\notag\\\begin{split}\end{split}\notag
 \end{gather}
 
 \subsection{Grad eines Knotens}
 \label{theorem:grad-eines-knotens}
-Der Grad $d_m$ eines Knotens $v_m$ ist definitert als die Anzahl der benachbarten Knoten, sprich
+Der Grad $d_m$ eines Knotens $v_m$ ist definiert als die Anzahl der benachbarten Knoten, sprich
 \begin{gather}
 \begin{split}d_m = \text{  } \mid \{ v_i \mid v_i \in V \wedge \{ v_i, v_m \} \in E \} \mid\end{split}\notag\\\begin{split}\end{split}\notag
 \end{gather}
 
+\subsection{Vollständiger Graph}
+Ein Graph G = (V,E) heißt vollständig, falls alle Knoten durch Kanten verbunden sind. Es gilt also 
+
+\begin{align*}
+	E  = \{ \{ v_i , v_j \} \mid v_i, v_j \in V  \wedge v_i \neq v_j \}
+\end{align*}
+
+\subsection{Untergraph von G}
+Ein Graph G' = (V', E') heißt Untergraph von G = (V, E), falls $V' \subseteq V$ und $E' \subseteq E$ gilt. 
+
 \subsection{p - Clique im Graph G}
 \label{theorem:p-clique-im-graph-g}
-Dies ist ein vollständiger Untergraph von G mit p Kanten, also ein Graph K für dessen Knotenmenge V' gilt
-\begin{gather}
-\begin{split}\forall v \in V': v \in V\end{split}\notag\\\begin{split}\end{split}\notag
-\end{gather}
-wobei V die Knotenmenge von G ist. Für die Kantenmenge E' gilt in ähnlicher Weise
-\begin{gather}
-\begin{split}\forall e \in E': e \in E\end{split}\notag\\\begin{split}\end{split}\notag
-\end{gather}
-wobei E die Kantenmenge von G ist.
+Ein Graph heißt p - Clique im Graph G, falls er ein vollständiger Untergraph von G mit p Knoten ist.
 
 
-\subsection{unabhängige Knotenmenge}
+\subsection{Unabhängige Knotenmenge}
 \label{theorem:unabhangige-knotenmenge}
 Eine Menge von Knoten wird als unabhängig bezeichnet, wenn es innerhalb dieser Menge keine Kanten gibt, sondern nur nach Knoten außerhalb dieser.
 
 
 \subsection{r - partiter Graph}
 \label{theorem:r-partiter-graph}
-Ein r - partiter Graph besteht aus r disjunkten und unabhängigen Knotenmengen, welche untereinander durch Kanten verbunden sein können. Diese Knotenmengen bilden zudem eine Partition der gesamten Knotenmenge.
+Ein r - partiter Graph besteht aus $r \in \mathbb{N}$  disjunkten und unabhängigen Knotenmengen, welche untereinander durch Kanten verbunden sein können. Diese Knotenmengen bilden zudem eine Partition der gesamten Knotenmenge.
 
 
-\subsection{vollständiger r - partiter Graph}
+\subsection{Vollständiger r - partiter Graph}
 \label{theorem:vollstandiger-r-partiter-graph}
-Ein r - partiter Graph wird vollständig genannt, wenn jedes Element mit jedem anderen verbunden ist, außer mit denen, die in einer unabhängigen Knotenmenge mit ihm sind.
+Ein r - partiter Graph wird vollständig genannt, wenn jeder Knoten mit jedem anderen verbunden ist, außer mit denen, die in einer unabhängigen Knotenmenge mit ihm sind.
 
 
-\subsection{Turán Graph}
+\subsection{r - Turán Graph}
 \label{theorem:turan-graph}
-Ein Turán Graph ist ein vollständiger r - partiter Graph bei dem sich die Größe jeder Partition maximal um 1 unterscheidet.
+Ein r - Turán Graph ist ein vollständiger r - partiter Graph bei dem sich die Größe jeder Partition maximal um 1 unterscheidet.
 
 
 \subsection{Turáns Graphtheorem}
-
-Da wir nun über die ausreichenden Grundlagen verfügen, sei nun das Theorem formell definiert als:
-
-Sei G ein Graph mit G = (V, E) mit Knotenmenge V und Kantenmenge E ohne p-Clique, so gilt
-\begin{align}
+Sei $p \in \mathbb{N} \wedge p \ge 2$,  G = (V, E) ein Graph ohne p - Clique und n := $\mid V \mid$, so gilt
+\begin{align} 
 \mid E \mid \le (1- \frac{1}{p-1}) \frac{n^2}{2}
 \end{align}
 
 
-
-
-
-\chapter{Beweise}
-\label{proof::doc}\label{proof:beweise}
 
 \section{Zweiter Beweis: Struktur des Turán Graphs}
 \label{proof/second:zweiter-beweis-struktur-des-turan-graphs}\label{proof/second::doc}
