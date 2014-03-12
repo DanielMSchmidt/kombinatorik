@@ -286,24 +286,24 @@ Diese Behauptung beweisen wir durch Widerspruch. Hierzu unterteilen wir das Prob
 \textbf{Fall 1:} $d(u) < d(v) \vee d(u) < d(w)$
 
 Nehmen wir an, dass d(u) \textless{} d(v) gilt, denn u und v sind austauschbar.
-Entfernen wir nun u, verdoppeln wir v und nennen den neuen Knoten v', wobei alle Kanten ebenfalls kopiert werden, sodass v' die selben Nachbarn wie v hat. Der hieraus entstehende Graph G' hat ebenfalls keine p-Clique, da v' lediglich doppelte, so zu sagen parallele Verbindungen hinzufügt, eine bestehende Clique also nicht erweitert wird. Hieraus ergibt sich für die Kantenanzahl:
+Entfernen wir nun u, verdoppeln wir v und nennen den neuen Knoten v', wobei alle Kanten ebenfalls kopiert werden, sodass v' die selben Nachbarn wie v hat. Der hieraus entstehende Graph G' hat ebenfalls keine p-Clique, da v' bestehende Cliquen nicht erweitern kann, denn v und v' sind nicht verbunden. Hieraus ergibt sich für die Kantenanzahl:
 \begin{gather}
-\begin{split}\mid E(G') \mid = \mid E(G) \mid + d(v) - d(u) >^{\text{da } d(u) < d(v)} \mid E(G) \mid\end{split}\notag\\\begin{split}\end{split}\notag
+\begin{split}\mid E(G') \mid = \mid E(G) \mid + d(v) - d(u) \overset{\text{da } d(u) < d(v)}{>} \mid E(G) \mid\end{split}\notag\\\begin{split}\end{split}\notag
 \end{gather}
 Da G ein maximaler Graph ist, ist dies ein Widerspruch.
 
 \textbf{Fall 2:} $d(u) \ge d(v) \wedge d(u) \ge d(w)$
 
-Hier kopieren wir u zwei mal, da es vom Grad her maximal ist, wobei wie im ersten Fall die Kanten mitkopiert werden und entfernen dann v und w. Der hieraus entstehende Graph kann wieder keine p-Clique haben, da er eine bestehende Clique durch die Veränderung nicht erweitern würde. Für die Anzahl der Kanten ergibt sich:
+Hier kopieren wir u zwei mal, da es vom Grad her unter den drei Knoten maximal ist, wobei wie im ersten Fall die Kanten mitkopiert werden und entfernen dann v und w. Der hieraus entstehende Graph kann wieder keine p-Clique haben, da die Kopien von u untereinander nicht verbunden. Für die Anzahl der Kanten ergibt sich:
 \begin{gather}
 \begin{split}\mid E(G') \mid &= \mid E(G) \mid + 2 d(u) - (d(v) + d(w) - 1) \\
 &> \mid E(G) \mid\end{split}\notag\\\begin{split}\end{split}\notag
 \end{gather}
-Hierbei ergeben sich die $2d(u)$ durch das doppelte Kopieren von u, die $- (d(v) + d(w) - 1)$ vom entfernen von v und w, sowie der Kante vw. Die Ungleichung gilt, da $d(u) \ge d(v) \wedge d(u) \ge d(w)$ gilt. Da G' nun mehr Kanten hat G ergibt sich wieder ein Widerspruch, womit die Behauptung bewiesen wäre.
+Hierbei ergeben sich die $2d(u)$ durch das doppelte Kopieren von u, die $- (d(v) + d(w) - 1)$ vom Entfernen von v und w, sowie der Kante vw. Die Ungleichung gilt, da $d(u) \ge d(v) \wedge d(u) \ge d(w)$ gilt. Da G' nun mehr Kanten hat als G ergibt sich wieder ein Widerspruch, womit die Behauptung bewiesen wäre.
 
 Definieren wir $u \sim v :\Longleftrightarrow \{ u,v \} \notin E(G)$, so ist dies dank der bewiesenen Behauptung eine Äquivalenzrelation:
 
-\textbf{Reflexiv:}
+\textbf{Reflexivität:}
 \begin{gather}
 \begin{split}u \sim u \Longleftrightarrow^1 \{ u,u \} \notin E(G)\end{split}\notag\\\begin{split}\end{split}\notag
 \end{gather}\begin{enumerate}
@@ -312,29 +312,29 @@ Dies gilt, da die hier betrachteten Graphen keine Kanten mit gleichem Start und 
 
 \end{enumerate}
 
-\textbf{Transitiv:}
+\textbf{Transitivität:}
 \begin{gather}
-\begin{split}u \sim v \wedge v \sim w \Longrightarrow^1 u \sim w\end{split}\notag\\\begin{split}\end{split}\notag
+\begin{split} v \sim u \wedge u \sim w \Longrightarrow^1 v \sim w\end{split}\notag\\\begin{split}\end{split}\notag
 \end{gather}\begin{enumerate}
 \item {}
 Dies ist exakt die oben bewiesene Behauptung.
 
 \end{enumerate}
 
-\textbf{Symetrisch:}
+\textbf{Symmetrie:}
 \begin{gather}
 \begin{split}u \sim v &\Rightarrow \{ u,v \} \notin E(G) \\
 &\Rightarrow\ v \sim u\end{split}\notag\\\begin{split}\end{split}\notag
 \end{gather}
 
-Für den Graphen G bilden die Äquivalenzklassen bezüglich $\sim$ die verschiedenen Partitionen, wodurch G ein r - partiter Graph ist. Da er p - cliquenfrei und maximal ist muss er aus p - 1 Partitionen bestehen, daher ist G ein vollständiger (p - 1) - partiter Graph. Das bedeutet, wenn wir zeigen können, dass ein (p-1) - Turán Graph mindestens so viele Kanten wie ein vollständiger (p - 1) - partiter Graph, dann folgt daraus, dass die Anzahl der Kanten von G genau wie in Beweis zwei ableitbar sind, sprich Turáns Graphtheorem gilt.
+Für den Graphen G bilden die Äquivalenzklassen bezüglich $\sim$ die verschiedenen Partitionen, wodurch G ein r - partiter Graph ist. Da er p - cliquenfrei und maximal ist muss er aus p - 1 Partitionen bestehen, daher ist G ein vollständiger (p - 1) - partiter Graph. Würde G aus weniger Partitionen bestehen ließen sich durch Aufteilung zweier Partitionen mehr Kanten hinzufügen, was die Kantenmaximalität verletzen würde. Das bedeutet, wenn wir zeigen können, dass ein (p - 1) - Turán Graph mindestens so viele Kanten besitzt wie ein vollständiger (p - 1) - partiter Graph, dann folgt daraus, dass die Anzahl der Kanten von G genau wie in Beweis zwei ableitbar sind, sprich Turáns Graphtheorem gilt.
 
-\subsection{Ein r - Turán Graph hat immer mindestens so viele Kanten wie ein entsprechender r - patiter Graph}
-\label{theorem:ein-turan-graph-hat-immer-mindestens-so-viele-kanten-wie-ein-entsprechender-r-patiter-graph}
-Es ist zu zeigen, dass die Anzahl der Kanten in einem vollständigen r - partiten Graphen $K_{n_1,...,n_r}$ genau dann maximal ist, wenn $\mid n_i - n_j \mid \le 1$ f.a. i,j $\in [1, r]$ gilt.
+\subsection{Ein r - Turán Graph hat immer mindestens so viele Kanten wie ein beliebiger  r - patiter Graph}
+Das ein r-patiter Graph höchstens so viele Kanten wie ein vollständiger r-partiter Graph hat wird als trivial vorausgesetzt. Zudem seien bei einem r - partiten Graphen $K_{n_1,...,n_r}$  die Partitionen gegeben als $V_1, ..., V_r$. \\
+Es ist zu zeigen, dass die Anzahl der Kanten in einem vollständigen r - partiten Graphen $K_{n_1,...,n_r}$ genau dann maximal ist, wenn $\mid n_i - n_j \mid \le 1$ f.a. i,j $\in \{1, ...,  r \}$ gilt.
 
-Wir nehmen für unseren r-partiten Graphen an, dass $\mid n_i - n_j \mid > 1$, also $n_1 \ge n_2 + 2$ gilt.
-Verschieben wir eine Ecke aus $V_1$ in die Ecke $V_2$, so erhalten wir einen Graphen $K_{n_1 - 1, n_2 + 1,...,n_{p - 1}}$. Dieser besitzt aufgrund der Verschiebung $(n_1 - 1)(n_2 + 1) - n_1 n_2$ mehr Knoten als der ursprüngliche Graph, denn es gilt
+Wir nehmen für unseren r-partiten Graphen an, dass $\mid n_i - n_j \mid > 1$, also gilt ohne Beschränkung der Allgemeinheit $n_1 \ge n_2 + 2$ gilt.
+Verschieben wir einen Knoten aus $V_1$ in die Partition $V_2$, so erhalten wir einen Graphen $K_{n_1 - 1, n_2 + 1,...,n_{p - 1}}$. Dieser besitzt aufgrund der Verschiebung $(n_1 - 1)(n_2 + 1) - n_1 n_2$ mehr Knoten als der ursprüngliche Graph, denn es gilt
 \begin{gather}
 \begin{split}(n_1 - 1)(n_2 + 1) - n_1 n_2 &= n_1 n_2 - n_2 + n_1 - 1 - n_1 n_2 \\
 &= n_1 - n_2 - 1 \\
