@@ -145,13 +145,13 @@ Sei $p \in \mathbb{N} \wedge p \ge 2$,  G = (V, E) ein Graph ohne p - Clique und
 
 
 
-\section{Zweiter Beweis: Struktur des Turán Graphs}
+\section{Beweis über strukturelle Induktion}
 \label{proof/second:zweiter-beweis-struktur-des-turan-graphs}\label{proof/second::doc}
 In diesem Beweis nutzen wir die Struktur eines Turán Graphens aus und beweisen im Folgenden die stärkere Forderung ''Sei G ein Graph ohne p - Clique, dann besitzt G höchstens so viele Kanten wie der (p - 1) - Turán Graph". \\
 Aus dieser Behauptung folgt direkt der Satz von Turán, denn ein kantenmaximaler, p - cliqenfreier Graph G=(V,E) mit $\mid V \mid = n$ muss aufgrund der Forderung ein Turán Graph sein. \\
 Dieser hat genau dann die meisten Kanten, wenn alle Partitionen gleich groß sind, was der Fall ist, wenn n durch (p - 1) teilbar ist, es also $\frac{n}{p-1}$ Partitionen gibt. Daraus folgt für die Anzahl der Kanten:
 \begin{gather}
-\begin{split}&\text{Anzahl der Verbindungsmöglichkeiten zwischen (p - 1) Kanten} \\
+\begin{split}&\text{Anzahl der Verbindungsmöglichkeiten zwischen je (p - 1) Knoten} \\
 &\cdot ( \text{Anzahl der unabh. Teilmenge} )^2 = \\ &{ p - 1 \choose 2 } ( \frac{n}{p-1} )^2 = (1 - \frac{1}{p - 1}) \frac{n^2}{2}\end{split}\notag\\\begin{split}\end{split}\notag
 \end{gather}
 und unsere Behauptung ist bewiesen. Nun folgt der Beweis der stärkeren Forderung:
@@ -198,7 +198,7 @@ Hieraus folgt $\forall v_j \in V: d'_j \ge d_j$ und somit auch $\mid E(H) \mid \
 Da S wie gezeigt p-cliquenfrei ist lässt sich hier die Induktionsvoraussetzung anwenden, sprich S kann maximal so viele Kanten haben wie ein (p - 1) - Turán Graph haben. Dementsprechend lässt sich H' konstruieren als neuer Graph konstruieren, bei dem S ein (p - 1) - Turán Graph ist und wie beim Graphen H jeder Knoten aus T mit jedem aus S verbunden ist. Durch diese Konstruktion ist H' auf jeden Fall ein p - partiter Graph und hat dadurch höchstens so viele Kanten wie ein p-Turán Graph, wodurch unsere Behauptung bewiesen ist.
 
 
-\section{Dritter Beweis: Gewichtsverteilung}
+\section{Beweis über Gewichtsverteilung}
 \label{proof/third::doc}\label{proof/third:dritter-beweis-gewichtsverteilung}
 In diesem Beweis betrachten wir eine Gewichtsverteilung auf den Knoten des Graphen. Diese notieren wir als $w = (w_1,...,w_n)$ und es gilt $w_i \ge 0$, sowie $\sum^n_{i=1}w_i = 1$. Des weiteren definieren wir eine Funktion $f(w) = \sum_{ \{v_i, v_j\} \in E} w_i w_j$, welche wir zu maximieren versuchen. Wir nutzen diese Funktion, da sie für den ganzen Graphen dann maximal ist, wenn die Gewichte möglichst gleichmäßig verteilt sind.
 
@@ -243,7 +243,8 @@ Dass dies irgendwann eintritt ist leicht einzusehen, denn wenn man $\varepsilon$
 \end{gather}
 wodurch $w_i' = w_i - \varepsilon = w_i - w_i + \frac{1}{k} = \frac{1}{k}$ gilt, also ein Knoten nach dem anderen die optimale, da gleichmäßige Verteilung einnimmt. Hierzu muss $0 < w_i - \frac{1}{k} < w_i - w_j$, also $w_j < \frac{1}{k} < w_i$ gelten. Wenn man $w_i$ als maximal gewichteten Knoten wählt und $w_j$ als minimal gewichteten, dann muss $\frac{1}{k}$ zwischen beiden liegen muss. Obrige Ungleichung hat gezeigt, dass je näher die Werte der einzelnen Knoten aneinanderliegen desto optimierter ist die Funktion f, wodurch bei einer gleichmäßigen Verteilung das Optimum liegt. Dies liegt an der Eigenschaft der Multiplikation maximal für die Summe der Faktoren zu sein, wenn beide Faktoren gleich groß sind.
 
-In einer k-Clique können maximal $\frac{k (k-1)}{2}$ Kanten sein, also $\frac{\text{Jeder Punkt} (\text{Jeder Punkt mit dem er sich verbinden kann})}{\text{Enden einer Kante}}$. Für die Gewichtung ergibt sich also:
+In einer k-Clique können maximal $\frac{k (k-1)}{2}$ Kanten sein, also \\
+ $\frac{\text{Jeder Punkt} (\text{Jeder Punkt mit dem er sich verbinden kann})}{\text{Enden einer Kante}}$. Für die Gewichtung ergibt sich also:
 \begin{gather}
 \begin{split}f(w) &=^1 \sum_{v_i, v_j \in E} w_i w_j =^2 \sum_{v_i, v_j \in E} \frac{1}{k^2}  \\
 &= \mid E \mid \frac{1}{k^2} =^3 \frac{k (k-1)}{2} \frac{1}{k^2}  \\
@@ -271,7 +272,9 @@ Insbesondere gilt dies dann auch für die uniforme Verteilung
 \Longleftrightarrow &\mid E \mid = f(w_i = \frac{1}{n})  n^2 \le \frac{1}{2} (1 - \frac{1}{p-1})  n^2\end{split}\notag\\\begin{split}\end{split}\notag
 \end{gather}
 
-\section{Fünfter Beweis: Maximaler Graph und Äquivalenzrelation}
+Dies ist die im Satz von Turán als obere Schranke angegebene Kantenanzahl, wodurch dieser bewiesen ist.
+
+\section{Beweis über den maximaler Graph und eine Äquivalenzrelation}
 \label{proof/fifth:funfter-beweis-maximaler-graph-und-aquivalenzrelation}\label{proof/fifth::doc}\label{proof/fifth:index-1}
 In diesem Beweis wird angenommen, dass G ein Graph mit n Knoten und ohne p - Clique ist, welcher die maximale Anzahl an Kanten hat.
 Um $\mid E \mid \le (1- \frac{1}{p-1}) \frac{n^2}{2}$ zu zeigen bedient sich dieser Beweis zudem folgender Behauptung:
