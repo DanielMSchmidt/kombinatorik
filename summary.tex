@@ -214,12 +214,12 @@ Bewegen wir nun das Gewicht von $v_j$ nach $v_i$, setzen also $w'_i := w_i + w_j
 Dies gilt aufgrund des verschobenen Gewichts. Dieses wird in der Multiplikation auf seitens $s_j$ nicht mehr betrachtet, bei $s_i$ schon. Da $w_j$ für $s_j$ wegfällt wird das Gewicht hier also abgezogen und bei $s_i$ umgekehrt draufgerechnet in der Multiplikation.
 
 \item {}
-Dies gilt, da $w_j$ als Ecke mit positiven Gewicht ausgewählt wurde.
+Dies gilt, da $(s_i - s_j) w_j \ge 0$ ist.
 
 \end{enumerate}
 
-Wir können diese Verschiebung nun wiederholen bis es keine nicht-adjazenten Knoten mit positiver Gewichtung mehr gibt und erhalten danach eine optimierte Verteilung, da für jede Umformung $f(w') \ge f(w)$ gilt. Da wir das Gewicht nach bestimmten Anzahl an Verschiebungen innerhalb einer k - Clique verschieben betrachten wir nun wie wir das Gewicht für eine solche Clique optimieren können.
-Dies muss nicht zwangsweise die größte Clique sein, aber f wäre dann größer als mit einer kleineren Clique.
+Wir können diese Verschiebung nun wiederholen bis es keine nicht-adjazenten Knoten mit positiver Gewichtung mehr gibt und erhalten danach eine optimierte Verteilung, da für jede Umformung $f(w') \ge f(w)$ gilt. Da wir das Gewicht nach einer bestimmten Anzahl an Verschiebungen in eine k - Clique verschoben haben betrachten wir nun wie wir das Gewicht für eine solche Clique optimieren können. Das Gewicht muss in einer k-Clique sein, da bei jeder Verschiebung mindestens ein Knoten aus der Menge der Knoten herausfällt, die verschoben werden können. Daher muss sich das Gewicht so lange Sammeln, bis es keine nicht benachbarten Knoten mit positiven Gewicht mehr gibt.
+Die sich bildende Clique muss nicht zwangsweise die größte Clique sein, aber f wäre dann am Ende größer als mit einer kleineren Clique.
 
 Bewegen wir die Gewichte innerhalb einer solchen k - Clique in der Form, dass wir uns zwei Knoten mit positiven Gewicht wählen für die $w_i > w_j > 0$ gilt und ein $\varepsilon$ setzen für das $0 < \varepsilon < w_i - w_j$ gilt. Addieren wir $\varepsilon$ auf $w_j$ und subtrahieren es von $w_i$. Es ergibt sich also:
 \begin{gather}
@@ -243,7 +243,7 @@ Dass dies irgendwann eintritt ist leicht einzusehen, denn wenn man $\varepsilon$
 \end{gather}
 wodurch $w_i' = w_i - \varepsilon = w_i - w_i + \frac{1}{k} = \frac{1}{k}$ gilt, also ein Knoten nach dem anderen die optimale, da gleichmäßige Verteilung einnimmt. Hierzu muss $0 < w_i - \frac{1}{k} < w_i - w_j$, also $w_j < \frac{1}{k} < w_i$ gelten. Wenn man $w_i$ als maximal gewichteten Knoten wählt und $w_j$ als minimal gewichteten, dann muss $\frac{1}{k}$ zwischen beiden liegen muss. Obrige Ungleichung hat gezeigt, dass je näher die Werte der einzelnen Knoten aneinanderliegen desto optimierter ist die Funktion f, wodurch bei einer gleichmäßigen Verteilung das Optimum liegt. Dies liegt an der Eigenschaft der Multiplikation maximal für die Summe der Faktoren zu sein, wenn beide Faktoren gleich groß sind.
 
-In einer k-Clique können maximal $\frac{k (k-1)}{2}$ Kanten sein, also \\
+In einer k-Clique können sind genau $\frac{k (k-1)}{2}$ Kanten, also \\
  $\frac{\text{Jeder Punkt} (\text{Jeder Punkt mit dem er sich verbinden kann})}{\text{Enden einer Kante}}$. Für die Gewichtung ergibt sich also:
 \begin{gather}
 \begin{split}f(w) &=^1 \sum_{v_i, v_j \in E} w_i w_j =^2 \sum_{v_i, v_j \in E} \frac{1}{k^2}  \\
@@ -257,7 +257,7 @@ Definition von f.
 Setzung von $w_i := \frac{1}{k}$.
 
 \item {}
-Dies gilt, da wie oben erwähnt in einer k-Clique maximal $\frac{k (k-1)}{2}$ Kanten sein.
+Dies gilt, da wie oben erwähnt in einer k-Clique genau $\frac{k (k-1)}{2}$ Kanten sind.
 
 \end{enumerate}
 
