@@ -276,7 +276,7 @@ Dies ist die im Satz von Turán als obere Schranke angegebene Kantenanzahl, wodu
 
 \section{Beweis über den maximaler Graph und eine Äquivalenzrelation}
 \label{proof/fifth:funfter-beweis-maximaler-graph-und-aquivalenzrelation}\label{proof/fifth::doc}\label{proof/fifth:index-1}
-In diesem Beweis wird angenommen, dass G ein Graph mit n Knoten und ohne p - Clique ist, welcher die maximale Anzahl an Kanten hat.
+In diesem Beweis wird angenommen, dass G=(V,E) ein Graph mit n Knoten und ohne p - Clique ist, welcher unter diesen Eigenschaften die maximale Anzahl an Kanten hat.
 Um $\mid E \mid \le (1- \frac{1}{p-1}) \frac{n^2}{2}$ zu zeigen bedient sich dieser Beweis zudem folgender Behauptung:
 
 \textbf{Behauptung:} G enthält keine drei Knoten u,v,w mit $\{ v, w \} \in E$, aber $\{ u, v \} \notin E$ und $\{ u, w \} \notin E$
@@ -286,7 +286,7 @@ Diese Behauptung beweisen wir durch Widerspruch. Hierzu unterteilen wir das Prob
 \textbf{Fall 1:} $d(u) < d(v) \vee d(u) < d(w)$
 
 Nehmen wir an, dass d(u) \textless{} d(v) gilt, denn u und v sind austauschbar.
-Entfernen wir nun u, verdopplen wir v und nennen den neuen Knoten v', wobei alle Kanten ebenfalls kopiert werden, sodass v' die selben Nachbarn wie v hat. Der hieraus entstehende Graph G' hat ebenfalls keine p-Clique, da v' lediglich doppelte, so zu sagen parallele Verbindungen hinzufügt, eine bestehende Clique also nicht erweitert wird. Hieraus ergibt sich für die Kantentzahl:
+Entfernen wir nun u, verdoppeln wir v und nennen den neuen Knoten v', wobei alle Kanten ebenfalls kopiert werden, sodass v' die selben Nachbarn wie v hat. Der hieraus entstehende Graph G' hat ebenfalls keine p-Clique, da v' lediglich doppelte, so zu sagen parallele Verbindungen hinzufügt, eine bestehende Clique also nicht erweitert wird. Hieraus ergibt sich für die Kantenanzahl:
 \begin{gather}
 \begin{split}\mid E(G') \mid = \mid E(G) \mid + d(v) - d(u) >^{\text{da } d(u) < d(v)} \mid E(G) \mid\end{split}\notag\\\begin{split}\end{split}\notag
 \end{gather}
