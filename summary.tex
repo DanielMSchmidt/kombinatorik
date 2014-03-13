@@ -175,6 +175,12 @@ Nun setzen wir S als Menge der Nachbarn von $v_m$, wodurch $\mid S \mid = d_m$ i
 
 Definieren wir nun H als neuen Graphen mit identischer Knotenmenge, für den nur die Kanten aus S übernommen werden und jeder Knoten aus S mit jedem aus T verbunden ist. Da in T keine Kanten übernommen werden ist T eine unabhängige Menge in H und damit (p + 1)-cliquenfrei.
 
+\begin{figure}[H] 
+		\centering
+		\includegraphics[page=1, width=\textwidth]{assets/proof2}
+		\caption{Konstruktion von H} 
+\end{figure}
+
 Bezeichnen wir den Grad eines Knotens $v_j$ in H als $d'_j$. Untersucht man nun die Grade in H, so lassen sich zwei Fälle unterscheiden:
 
 \textbf{Fall 1:} $v_j \in S$
@@ -204,6 +210,12 @@ In diesem Beweis betrachten wir eine Gewichtsverteilung auf den Knoten des Graph
 
 Setzen wir nun $v_i$ und $v_j$ als zwei nicht benachbarte Knoten mit positiven Gewicht $w_i, w_j$ und fassen das Gewicht ihrer adjazenten Knoten zusammen als $s_i, s_j$ und nehmen $s_i \ge s_j$ an.
 
+\begin{figure}[H] 
+		\centering
+		\includegraphics[page=1, width=\textwidth]{assets/proof3_first_move}
+		\caption{Gewichtsverschiebung zwischen nicht benachbarten Knoten} 
+\end{figure}
+
 Bewegen wir nun das Gewicht von $v_j$ nach $v_i$, setzen also $w'_i := w_i + w_j$ und $w'_j := 0$, dann ergibt sich für die neue Gewichtung $w'$:
 \begin{gather}
 \begin{split}f(w') &=^1 f(w) + w_j s_i - w_j s_j \\
@@ -218,8 +230,15 @@ Dies gilt, da $(s_i - s_j) w_j \ge 0$ ist.
 
 \end{enumerate}
 
-Wir können diese Verschiebung nun wiederholen bis es keine nicht-adjazenten Knoten mit positiver Gewichtung mehr gibt und erhalten danach eine optimierte Verteilung, da für jede Umformung $f(w') \ge f(w)$ gilt. Da wir das Gewicht nach einer bestimmten Anzahl an Verschiebungen in eine k - Clique verschoben haben betrachten wir nun wie wir das Gewicht für eine solche Clique optimieren können. Das Gewicht muss in einer k-Clique sein, da bei jeder Verschiebung mindestens ein Knoten aus der Menge der Knoten herausfällt, die verschoben werden können. Daher muss sich das Gewicht so lange Sammeln, bis es keine nicht benachbarten Knoten mit positiven Gewicht mehr gibt.
+Wir können diese Verschiebung nun wiederholen bis es keine nicht-adjazenten Knoten mit positiver Gewichtung mehr gibt und erhalten danach eine optimierte Verteilung, da für jede Umformung $f(w') \ge f(w)$ gilt. Da wir das Gewicht nach einer bestimmten Anzahl an Verschiebungen in eine k - Clique verschoben haben betrachten wir nun wie wir das Gewicht für eine solche Clique optimieren können. \\
+Das Gewicht muss in einer k-Clique sein, da bei jeder Verschiebung mindestens ein Knoten aus der Menge der Knoten herausfällt, die verschoben werden können. Daher muss sich das Gewicht so lange Sammeln, bis es keine nicht benachbarten Knoten mit positiven Gewicht mehr gibt. \\
 Die sich bildende Clique muss nicht zwangsweise die größte Clique sein, aber f wäre dann am Ende größer als mit einer kleineren Clique.
+
+\begin{figure}[H] 
+		\centering
+		\includegraphics[page=1, width=\textwidth]{assets/proof3_before_first_moving_step}
+		\caption{Gewichtsverschiebung innerhalb der Clique} 
+\end{figure}
 
 Bewegen wir die Gewichte innerhalb einer solchen k - Clique in der Form, dass wir uns zwei Knoten mit positiven Gewicht wählen für die $w_i > w_j > 0$ gilt und ein $\varepsilon$ setzen für das $0 < \varepsilon < w_i - w_j$ gilt. Addieren wir $\varepsilon$ auf $w_j$ und subtrahieren es von $w_i$. Es ergibt sich also:
 \begin{gather}
@@ -242,6 +261,12 @@ Dass dies irgendwann eintritt ist leicht einzusehen, denn wenn man $\varepsilon$
 \begin{split}\varepsilon := w_i - \frac{1}{k}\end{split}\notag\\\begin{split}\end{split}\notag
 \end{gather}
 wodurch $w_i' = w_i - \varepsilon = w_i - w_i + \frac{1}{k} = \frac{1}{k}$ gilt, also ein Knoten nach dem anderen die optimale, da gleichmäßige Verteilung einnimmt. Hierzu muss $0 < w_i - \frac{1}{k} < w_i - w_j$, also $w_j < \frac{1}{k} < w_i$ gelten. Wenn man $w_i$ als maximal gewichteten Knoten wählt und $w_j$ als minimal gewichteten, dann muss $\frac{1}{k}$ zwischen beiden liegen muss. Obrige Ungleichung hat gezeigt, dass je näher die Werte der einzelnen Knoten aneinanderliegen desto optimierter ist die Funktion f, wodurch bei einer gleichmäßigen Verteilung das Optimum liegt. Dies liegt an der Eigenschaft der Multiplikation maximal für die Summe der Faktoren zu sein, wenn beide Faktoren gleich groß sind.
+
+\begin{figure}[H] 
+		\centering
+		\includegraphics[page=1, width=\textwidth]{assets/proof3_after_second_moving_step}
+		\caption{uniforme Gewichtsverteilung innerhalb der Clique} 
+\end{figure}
 
 In einer k-Clique können sind genau $\frac{k (k-1)}{2}$ Kanten, also \\
  $\frac{\text{Jeder Punkt} (\text{Jeder Punkt mit dem er sich verbinden kann})}{\text{Enden einer Kante}}$. Für die Gewichtung ergibt sich also:
@@ -283,6 +308,12 @@ Um $\mid E \mid \le (1- \frac{1}{p-1}) \frac{n^2}{2}$ zu zeigen bedient sich die
 
 Diese Behauptung beweisen wir durch Widerspruch. Hierzu unterteilen wir das Problem in zwei Fälle:
 
+\begin{figure}[H] 
+		\centering
+		\includegraphics[page=1, width=\textwidth]{assets/proof5-case1}
+		\caption{1. Fall} 
+\end{figure}
+
 \textbf{Fall 1:} $d(u) < d(v) \vee d(u) < d(w)$
 
 Nehmen wir an, dass d(u) \textless{} d(v) gilt, denn u und v sind austauschbar.
@@ -291,6 +322,13 @@ Entfernen wir nun u, verdoppeln wir v und nennen den neuen Knoten v', wobei alle
 \begin{split}\mid E(G') \mid = \mid E(G) \mid + d(v) - d(u) \overset{\text{da } d(u) < d(v)}{>} \mid E(G) \mid\end{split}\notag\\\begin{split}\end{split}\notag
 \end{gather}
 Da G ein maximaler Graph ist, ist dies ein Widerspruch.
+
+
+\begin{figure}[H] 
+		\centering
+		\includegraphics[page=1, width=\textwidth]{assets/proof5-case2}
+		\caption{2. Fall} 
+\end{figure}
 
 \textbf{Fall 2:} $d(u) \ge d(v) \wedge d(u) \ge d(w)$
 
