@@ -75,10 +75,10 @@
 \section{Einleitung}
 \label{theorem:einleitung}
 Diese Ausarbeitung beschäftigt sich mit Turáns Graphtheorem, auch Satz von Turán genannt. Dieser ist in der extremalen Graphentheorie einzuordnen und gibt eine obere Schranke für die maximale Anzahl an Kanten in einem p - cliquenfreien Graphen an.\\
-Im Folgenden werde ich zunächst Definitionen für die in den Beweisen verwendeten Begriffe liefern, danach werde ich die drei Beweisen vorstellen, welche den Kern dieser Ausarbeitung bilden. \\
+Im Folgenden werde ich zunächst Definitionen für die in den Beweisen verwendeten Begriffe liefern und danach werde ich die drei Beweisen vorstellen, welche den Kern dieser Ausarbeitung bilden. \\
 Zunächst wird das Theorem über eine vollständige Induktion bewiesen, die sich die Struktur der Turán Graphen zu eigen macht. \\
 In dem zweiten vorgestellten Beweis werden wir das Theorem über eine Gewichtsverteilung beweisen. \\
-Der letzte Beweis bedient sich der Annahme der gegebene Graph sei maximal und zeigt schließlich, dass dieser ein Turán Graph sein muss. Dieser erreicht wie sich im folgenden zeigen wird unter gewissen Umständen für die Kantenanzahl die obere Schranke welche im Theorem gegeben ist.
+Der letzte Beweis bedient sich der Annahme, der gegebene Graph sei maximal und zeigt schließlich, dass dieser ein Turán Graph sein muss. Dieser erreicht wie sich im folgenden zeigen wird unter gewissen Umständen für die Kantenanzahl die obere Schranke welche im Theorem gegeben ist.
 
 \section{Definitionen}
 \subsection{Anmerkungen}
@@ -161,7 +161,7 @@ und unsere Behauptung ist bewiesen. Nun folgt der Beweis der stärkeren Forderun
 \label{proof/second:sei-g-ein-graph-ohne-p-clique-dann-besitzt-g-hochstens-so-viele-kanten-wie-der-p-1-turan-graph}
 \subsubsection{Induktionsanfang:}
 
-Beginnen wir mit p = 2, so kann ein Graph G keine Kanten besitzen, da ein 2 - Clique aus einer Kante besteht. Ebendies gilt auch für einen 1 - Turán Graph, dieser bestehet aus einer unabhängigen Teilmenge, hat also ebenfalls keine Kanten. 
+Beginnen wir mit p = 2, so kann ein Graph G keine Kanten besitzen, da ein 2 - Clique aus einer Kante besteht. Ebendies gilt auch für einen 1 - Turán Graph, dieser besteht aus einer unabhängigen Teilmenge, hat also ebenfalls keine Kanten. 
 
 \subsubsection{Induktionvoraussetzung:}
 
@@ -171,9 +171,9 @@ Sei G ein Graph ohne p - Clique. Dann besitzt G höchstens so viele Kanten wie d
 
 Sei ein (p + 1)-cliquenfreier Graph G gegeben mit der Knotenmenge V und einer Kantenmenge E. Nun setzen wir $v_m$ so, dass für dessen Grad gilt $d_m := max_{1 \le j \le n} d_j$, sprich wir suchen uns einen Knoten mit den meisten Kanten im Graphen aus.
 
-Nun setzen wir S als Menge der Nachbarn von $v_m$, wodurch $\mid S \mid = d_m$ ist und definieren $T := V \backslash S$. Da alle Knoten aus S mit $v_m$ verbunden sind, $v_m \notin S$ und G (p + 1)-cliquenfrei ist muss S p-cliquenfrei sein.
+Nun setzen wir S als Menge der Nachbarn von $v_m$, wodurch $\mid S \mid = d_m$ ist und definieren $T := V \backslash S$. Da alle Knoten aus S mit $v_m$ verbunden sind, $v_m \notin S$ und G (p + 1)-cliquenfrei ist, muss S p-cliquenfrei sein.
 
-Definieren wir nun H als neuen Graphen mit identischer Knotenmenge, für den nur die Kanten aus S übernommen werden und jeder Knoten aus S mit jedem aus T verbunden ist. Da in T keine Kanten übernommen werden ist T eine unabhängige Menge in H und damit (p + 1)-cliquenfrei.
+Definieren wir nun H als neuen Graphen mit identischer Knotenmenge, für den nur die Kanten aus S übernommen werden und jeder Knoten aus S mit jedem aus T verbunden ist. Da in T keine Kanten übernommen werden, ist T eine unabhängige Menge in H und damit (p + 1)-cliquenfrei.
 
 \begin{figure}[H] 
 		\centering
@@ -201,14 +201,14 @@ gilt, da $v_m$ so gewählt wurde, dass $d_m$ maximal ist.
 
 Hieraus folgt $\forall v_j \in V: d'_j \ge d_j$ und somit auch $\mid E(H) \mid \ge \mid E \mid$.
 
-Da S wie gezeigt p-cliquenfrei ist lässt sich hier die Induktionsvoraussetzung anwenden, sprich S kann maximal so viele Kanten haben wie ein (p - 1) - Turán Graph haben. Dementsprechend lässt sich H' konstruieren als neuer Graph konstruieren, bei dem S ein (p - 1) - Turán Graph ist und wie beim Graphen H jeder Knoten aus T mit jedem aus S verbunden ist. Durch diese Konstruktion ist H' auf jeden Fall ein p - partiter Graph und hat dadurch höchstens so viele Kanten wie ein p-Turán Graph, wodurch unsere Behauptung bewiesen ist.
+Da S wie gezeigt p-cliquenfrei ist, lässt sich hier die Induktionsvoraussetzung anwenden, sprich S kann maximal so viele Kanten haben wie ein (p - 1) - Turán Graph haben. Dementsprechend lässt sich H' als neuer Graph konstruieren, bei dem S ein (p - 1) - Turán Graph ist und wie beim Graphen H jeder Knoten aus T mit jedem aus S verbunden ist. Durch diese Konstruktion ist H' auf jeden Fall ein p - partiter Graph und hat dadurch höchstens so viele Kanten wie ein p-Turán Graph, wodurch unsere Behauptung bewiesen ist.
 
 
 \section{Beweis über Gewichtsverteilung}
 \label{proof/third::doc}\label{proof/third:dritter-beweis-gewichtsverteilung}
 In diesem Beweis betrachten wir eine Gewichtsverteilung auf den Knoten des Graphen. Diese notieren wir als $w = (w_1,...,w_n)$ und es gilt $w_i \ge 0$, sowie $\sum^n_{i=1}w_i = 1$. Des weiteren definieren wir eine Funktion $f(w) = \sum_{ \{v_i, v_j\} \in E} w_i w_j$, welche wir zu maximieren versuchen. Wir nutzen diese Funktion, da sie für den ganzen Graphen dann maximal ist, wenn die Gewichte möglichst gleichmäßig verteilt sind.
 
-Setzen wir nun $v_i$ und $v_j$ als zwei nicht benachbarte Knoten mit positiven Gewicht $w_i, w_j$ und fassen das Gewicht ihrer adjazenten Knoten zusammen als $s_i, s_j$ und nehmen $s_i \ge s_j$ an.
+Setzen wir nun $v_i$ und $v_j$ als zwei nicht benachbarte Knoten mit positivem Gewicht $w_i, w_j$ und fassen das Gewicht ihrer adjazenten Knoten zusammen als $s_i, s_j$ und nehmen $s_i \ge s_j$ an.
 
 \begin{figure}[H] 
 		\centering
@@ -223,14 +223,14 @@ Bewegen wir nun das Gewicht von $v_j$ nach $v_i$, setzen also $w'_i := w_i + w_j
 &\ge^2 f(w)\end{split}\notag\\\begin{split}\end{split}\notag
 \end{gather}\begin{enumerate}
 \item {}
-Dies gilt aufgrund des verschobenen Gewichts. Dieses wird in der Multiplikation auf seitens $s_j$ nicht mehr betrachtet, bei $s_i$ schon. Da $w_j$ für $s_j$ wegfällt wird das Gewicht hier also abgezogen und bei $s_i$ umgekehrt draufgerechnet in der Multiplikation.
+Dies gilt aufgrund des verschobenen Gewichts. Dieses wird in der Multiplikation auf seitens $s_j$ nicht mehr betrachtet, bei $s_i$ schon. Da $w_j$ für $s_j$ wegfällt, wird das Gewicht hier also abgezogen und bei $s_i$ umgekehrt hinzugerechnet in der Multiplikation.
 
 \item {}
 Dies gilt, da $(s_i - s_j) w_j \ge 0$ ist.
 
 \end{enumerate}
 
-Wir können diese Verschiebung nun wiederholen bis es keine nicht-adjazenten Knoten mit positiver Gewichtung mehr gibt und erhalten danach eine optimierte Verteilung, da für jede Umformung $f(w') \ge f(w)$ gilt. Da wir das Gewicht nach einer bestimmten Anzahl an Verschiebungen in eine k - Clique verschoben haben betrachten wir nun wie wir das Gewicht für eine solche Clique optimieren können. \\
+Wir können diese Verschiebung nun wiederholen bis es keine nicht-adjazenten Knoten mit positiver Gewichtung mehr gibt und erhalten danach eine optimierte Verteilung, da für jede Umformung $f(w') \ge f(w)$ gilt. Da wir das Gewicht nach einer bestimmten Anzahl an Verschiebungen in eine k - Clique verschoben haben, betrachten wir nun wie wir das Gewicht für eine solche Clique optimieren können. \\
 Das Gewicht muss in einer k-Clique sein, da bei jeder Verschiebung mindestens ein Knoten aus der Menge der Knoten herausfällt, die verschoben werden können. Daher muss sich das Gewicht so lange Sammeln, bis es keine nicht benachbarten Knoten mit positiven Gewicht mehr gibt. \\
 Die sich bildende Clique muss nicht zwangsweise die größte Clique sein, aber f wäre dann am Ende größer als mit einer kleineren Clique.
 
@@ -256,11 +256,11 @@ Dies gilt, da $0 < \varepsilon < w_1 - w_2$ gilt.
 \end{enumerate}
 
 Daher optimiert diese Gewichtsverlagerung die k-Clique bis es keine ungleichen Gewichtungen mehr in ihr gibt.
-Dass dies irgendwann eintritt ist leicht einzusehen, denn wenn man $\varepsilon$ setzt als
+Dass dies irgendwann eintritt, ist leicht einzusehen, denn wenn man $\varepsilon$ setzt als
 \begin{gather}
 \begin{split}\varepsilon := w_i - \frac{1}{k}\end{split}\notag\\\begin{split}\end{split}\notag
 \end{gather}
-wodurch $w_i' = w_i - \varepsilon = w_i - w_i + \frac{1}{k} = \frac{1}{k}$ gilt, also ein Knoten nach dem anderen die optimale, da gleichmäßige Verteilung einnimmt. Hierzu muss $0 < w_i - \frac{1}{k} < w_i - w_j$, also $w_j < \frac{1}{k} < w_i$ gelten. Wenn man $w_i$ als maximal gewichteten Knoten wählt und $w_j$ als minimal gewichteten, dann muss $\frac{1}{k}$ zwischen beiden liegen muss. Obrige Ungleichung hat gezeigt, dass je näher die Werte der einzelnen Knoten aneinanderliegen desto optimierter ist die Funktion f, wodurch bei einer gleichmäßigen Verteilung das Optimum liegt. Dies liegt an der Eigenschaft der Multiplikation maximal für die Summe der Faktoren zu sein, wenn beide Faktoren gleich groß sind.
+wodurch $w_i' = w_i - \varepsilon = w_i - w_i + \frac{1}{k} = \frac{1}{k}$ gilt, also ein Knoten nach dem anderen die optimale, da gleichmäßige Verteilung einnimmt, wodurch sich die Anzahl der Knoten mit unterschiedlichem Gewicht schrittweise verringert. Hierzu muss $0 < w_i - \frac{1}{k} < w_i - w_j$, also $w_j < \frac{1}{k} < w_i$ gelten. Wenn man $w_i$ als maximal gewichteten Knoten wählt und $w_j$ als minimal gewichteten, dann muss $\frac{1}{k}$ zwischen beiden liegen. Obrige Ungleichung hat gezeigt, dass je näher die Werte der einzelnen Knoten aneinanderliegen, desto optimierter ist die Funktion f, wodurch bei einer gleichmäßigen Verteilung das Optimum liegt. Dies liegt an der Eigenschaft der Multiplikation maximal für die Summe der Faktoren zu sein, wenn beide Faktoren gleich groß sind.
 
 \begin{figure}[H] 
 		\centering
@@ -286,7 +286,7 @@ Dies gilt, da wie oben erwähnt in einer k-Clique genau $\frac{k (k-1)}{2}$ Kant
 
 \end{enumerate}
 
-Da diese Funktion maximal ist wenn k maximal ist und der höchstmögliche Wert für k genau p - 1 ist gilt weiter:
+Da diese Funktion maximal ist wenn k maximal ist und der höchstmögliche Wert für k genau p - 1 ist, gilt weiter:
 \begin{gather}
 \begin{split}f(w) &= \frac{1}{2} (1 - \frac{1}{k}) \\
 &\le \frac{1}{2} (1 - \frac{1}{p-1})\end{split}\notag\\\begin{split}\end{split}\notag
@@ -332,12 +332,12 @@ Da G ein maximaler Graph ist, ist dies ein Widerspruch.
 
 \textbf{Fall 2:} $d(u) \ge d(v) \wedge d(u) \ge d(w)$
 
-Hier kopieren wir u zwei mal, da es vom Grad her unter den drei Knoten maximal ist, wobei wie im ersten Fall die Kanten mitkopiert werden und entfernen dann v und w. Der hieraus entstehende Graph kann wieder keine p-Clique haben, da die Kopien von u untereinander nicht verbunden. Für die Anzahl der Kanten ergibt sich:
+Hier kopieren wir u zwei mal, da es vom Grad her unter den drei Knoten maximal ist, wobei wie im ersten Fall die Kanten mitkopiert werden. Danach entfernen wir dann v und w. Der hieraus entstehende Graph kann wieder keine p-Clique haben, da die Kopien von u untereinander nicht verbunden sind. Für die Anzahl der Kanten ergibt sich:
 \begin{gather}
 \begin{split}\mid E(G') \mid &= \mid E(G) \mid + 2 d(u) - (d(v) + d(w) - 1) \\
 &> \mid E(G) \mid\end{split}\notag\\\begin{split}\end{split}\notag
 \end{gather}
-Hierbei ergeben sich die $2d(u)$ durch das doppelte Kopieren von u, die $- (d(v) + d(w) - 1)$ vom Entfernen von v und w, sowie der Kante vw. Die Ungleichung gilt, da $d(u) \ge d(v) \wedge d(u) \ge d(w)$ gilt. Da G' nun mehr Kanten hat als G ergibt sich wieder ein Widerspruch, womit die Behauptung bewiesen wäre.
+Hierbei ergeben sich die $2d(u)$ durch das doppelte Kopieren von u, die $- (d(v) + d(w) - 1)$ vom Entfernen von v und w, sowie der Kante vw. Die Ungleichung gilt, da $d(u) \ge d(v) \wedge d(u) \ge d(w)$ gilt. Da G' nun mehr Kanten hat als G, ergibt sich wieder ein Widerspruch, womit die Behauptung bewiesen wäre.
 
 Definieren wir $u \sim v :\Longleftrightarrow \{ u,v \} \notin E(G)$, so ist dies dank der bewiesenen Behauptung eine Äquivalenzrelation:
 
@@ -368,7 +368,7 @@ Dies ist exakt die oben bewiesene Behauptung.
 Für den Graphen G bilden die Äquivalenzklassen bezüglich $\sim$ die verschiedenen Partitionen, wodurch G ein r - partiter Graph ist. Da er p - cliquenfrei und maximal ist muss er aus p - 1 Partitionen bestehen, daher ist G ein vollständiger (p - 1) - partiter Graph. Würde G aus weniger Partitionen bestehen ließen sich durch Aufteilung zweier Partitionen mehr Kanten hinzufügen, was die Kantenmaximalität verletzen würde. Das bedeutet, wenn wir zeigen können, dass ein (p - 1) - Turán Graph mindestens so viele Kanten besitzt wie ein vollständiger (p - 1) - partiter Graph, dann folgt daraus, dass die Anzahl der Kanten von G genau wie in Beweis zwei ableitbar sind, sprich Turáns Graphtheorem gilt.
 
 \subsection{Ein r - Turán Graph hat immer mindestens so viele Kanten wie ein beliebiger  r - patiter Graph}
-Das ein r-patiter Graph höchstens so viele Kanten wie ein vollständiger r-partiter Graph hat wird als trivial vorausgesetzt. Zudem seien bei einem r - partiten Graphen $K_{n_1,...,n_r}$  die Partitionen gegeben als $V_1, ..., V_r$. \\
+Dass ein r-patiter Graph höchstens so viele Kanten wie ein vollständiger r-partiter Graph hat, wird als trivial vorausgesetzt. Zudem seien bei einem r - partiten Graphen $K_{n_1,...,n_r}$  die Partitionen gegeben als $V_1, ..., V_r$. \\
 Es ist zu zeigen, dass die Anzahl der Kanten in einem vollständigen r - partiten Graphen $K_{n_1,...,n_r}$ genau dann maximal ist, wenn $\mid n_i - n_j \mid \le 1$ f.a. i,j $\in \{1, ...,  r \}$ gilt.
 
 Wir nehmen für unseren r-partiten Graphen an, dass $\mid n_i - n_j \mid > 1$, also gilt ohne Beschränkung der Allgemeinheit $n_1 \ge n_2 + 2$ gilt.
